@@ -50,3 +50,23 @@ body {
 .post-wrapper {
     padding: 0% 29%;
 }
+
+.home {
+    color: #C7FCFF;
+}
+
+.groups {
+    color: #FFE1A9;
+}
+
+.profile {
+    color: #D3FFE8;
+}
+
+.settings {
+    color: #FFB05B;
+}
+
+.inbox {
+    color: #FF8411;
+}
