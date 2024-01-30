@@ -12,6 +12,7 @@
   
     <script defer src="/editProfile.js"></script>
     <script defer src="/hamburger.js"></script>
+    <script defer src="/editImage.js"></script>
   </head>
 
   <body class="font-gilroy">
@@ -26,7 +27,7 @@
 
           <div class="sidebar-image hidden flex-col items-center justify-center">
             <div class="relative">
-              <img src="/images/profile.png" alt="" class="w-28 h-28 rounded-full object-cover mt-16 border border-white">
+              <img src="/images/profile.png" alt="" class="w-28 h-28 rounded-full object-cover mt-16">
               <span class="active rounded-full bg-green-700 h-6 w-6 absolute bottom-0 right-0 border-white border"></span>
             </div>
             <strong class="text-white mt-3 text-lg">Martine Midttveit</strong>
@@ -34,28 +35,28 @@
           </div>
   
           <nav class="flex flex-col space-y-16 mt-28">
-              <a href="#" class="flex justify-center items-center gap-x-6 home navLink">
-                  <i class="fa-solid fa-house text-2xl"></i>
+              <a href="#" class="flex justify-center items-center home navLink gap-x-6">
+                  <i class="fa-solid fa-house text-2xl w-8"></i>
                   <span class="hidden navOption">Home</span>
               </a>
   
-              <a href="" class="flex justify-center items-center gap-x-6 profile navLink">
-                  <i class="fa-solid fa-user text-2xl"></i>
+              <a href="" class="flex justify-center items-center profile navLink gap-x-6">
+                  <i class="fa-solid fa-user text-2xl w-8"></i>
                   <span class="hidden navOption">Profile</span>
               </a>
   
-              <a href="" class="flex justify-center items-center gap-x-6 groups navLink">
-                  <i class="fa-solid fa-user-group text-xl"></i>
+              <a href="" class="flex justify-center items-center groups navLink  gap-x-6">
+                  <i class="fa-solid fa-user-group text-xl w-8"></i>
                   <span class="hidden navOption">Groups</span>
               </a>
   
-              <a href="" class="flex justify-center items-center gap-x-6 settings navLink">
-                  <i class="fa-solid fa-gear text-2xl"></i>
+              <a href="" class="flex justify-center items-center settings navLink gap-x-6">
+                  <i class="fa-solid fa-gear text-2xl w-8"></i>
                   <span class="hidden navOption">Settings</span>
               </a>
   
-              <a href="" class="flex justify-center items-center gap-x-6 inbox navLink">
-                  <i class="fa-solid fa-envelope text-2xl"></i>
+              <a href="" class="flex justify-center items-center inbox navLink gap-x-6">
+                  <i class="fa-solid fa-envelope text-2xl w-8"></i>
                   <span class="hidden navOption">Inbox</span>
               </a>
           </nav>
@@ -101,11 +102,14 @@
       <div class="relative flex items-center flex-col">
         <img src="/images/profile.png" alt="" class="rounded-full relative border top-20 object-cover">
 
-        <div class="flex relative left-48 items-center gap-x-6 top-4">
-          <i class="fa-solid fa-gear text-xl bg-white w-14 h-14 flex justify-center items-center rounded-full shadow-sm text-secondary"></i>
-          <p>Edit profile image</p>
+        <div class="relative top-4 left-48">
+          <button class="flex items-center gap-x-6" id="editImage">
+            <i class="fa-solid fa-gear text-xl bg-white w-14 h-14 flex justify-center items-center rounded-full shadow-sm text-secondary"></i>
+            <p>Edit profile image</p>
+          </button>
+
+          <div class="imageOptions  absolute bg-white rounded shadow-xl border right-40 z-10"></div>
         </div>
-        
       </div>
     </div>
 

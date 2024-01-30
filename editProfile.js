@@ -6,9 +6,8 @@ option1.classList.add("block");
 
 const icon1 = document.createElement("i");
 icon1.classList.add("fa-regular", "fa-pen-to-square", "text-secondary", "text-xl", "mr-5");
-
-option1.appendChild(icon1);
-option1.appendChild(document.createTextNode("Edit post"));
+option1.textContent = "Edit post";
+option1.prepend(icon1);
 
 const separateLine = document.createElement("div");
 separateLine.classList.add("border-t", "bg-primary", "muted", "my-5");
@@ -19,9 +18,8 @@ option2.classList.add("block");
 
 const icon2 = document.createElement("i");
 icon2.classList.add("fa-solid", "fa-trash", "text-secondary", "text-xl", "mr-5");
-
-option2.appendChild(icon2);
-option2.appendChild(document.createTextNode("Delete post"));
+option2.textContent = "Delete post";
+option2.prepend(icon2);
 
 editPostButton.addEventListener("click", function () {
     toggleOptions();
