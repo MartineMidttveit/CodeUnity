@@ -14,390 +14,390 @@
     <script defer src="/hamburger.js"></script>
   </head>
 
-  <body class="font-gilroy">
-    <!--Sidebar-->
-    <div class="bg-primary w-24 h-screen fixed flex justify-center items-start sidebar">
-      <div class="sidebar-content">
-          <button class="hamburger mt-12" id="hamburgerBtn">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-8 h-8">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"></path>
-              </svg>
-          </button>
+<body class="font-gilroy">
 
-          <div class="sidebar-image hidden flex-col items-center justify-center">
-            <div class="relative">
-              <img src="/images/profile.png" alt="" class="w-28 h-28 rounded-full object-cover mt-16 border border-white">
-              <span class="active rounded-full bg-green-700 h-6 w-6 absolute bottom-0 right-0 border-white border"></span>
-            </div>
-            <strong class="text-white mt-3 text-lg">Martine Midttveit</strong>
-            <p class="text-white mt-1 text-sm">Change status</p>
-          </div>
-  
-          <nav class="flex flex-col space-y-16 mt-28">
-              <a href="#" class="flex justify-center items-center gap-x-6 home navLink">
-                  <i class="fa-solid fa-house text-2xl"></i>
-                  <span class="hidden navOption">Home</span>
-              </a>
-  
-              <a href="" class="flex justify-center items-center gap-x-6 profile navLink">
-                  <i class="fa-solid fa-user text-2xl"></i>
-                  <span class="hidden navOption">Profile</span>
-              </a>
-  
-              <a href="" class="flex justify-center items-center gap-x-6 groups navLink">
-                  <i class="fa-solid fa-user-group text-xl"></i>
-                  <span class="hidden navOption">Groups</span>
-              </a>
-  
-              <a href="" class="flex justify-center items-center gap-x-6 settings navLink">
-                  <i class="fa-solid fa-gear text-2xl"></i>
-                  <span class="hidden navOption">Settings</span>
-              </a>
-  
-              <a href="" class="flex justify-center items-center gap-x-6 inbox navLink">
-                  <i class="fa-solid fa-envelope text-2xl"></i>
-                  <span class="hidden navOption">Inbox</span>
-              </a>
-          </nav>
+<!--Sidebar-->
+
+<div class="bg-primary w-24 h-screen fixed flex justify-center items-start sidebar">
+  <div class="sidebar-content">
+    <button class="hamburger mt-12" id="hamburgerBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"></path>
+        </svg>
+    </button>
+
+    <div class="sidebar-image hidden flex-col items-center justify-center">
+      <div class="relative">
+        <img src="/images/profile.png" alt="" class="w-28 h-28 rounded-full object-cover mt-16 border border-white">
+        <span class="active rounded-full bg-green-700 h-6 w-6 absolute bottom-0 right-0 border-white border"></span>
       </div>
+      <strong class="text-white mt-3 text-lg">Martine Midttveit</strong>
+      <p class="text-white mt-1 text-sm">Change status</p>
+    </div>
+  
+    <nav class="flex flex-col space-y-16 mt-28">
+      <a href="#" class="flex justify-center items-center gap-x-6 home navLink">
+        <i class="fa-solid fa-house text-2xl"></i>
+        <span class="hidden navOption">Home</span>
+      </a>
+  
+      <a href="" class="flex justify-center items-center gap-x-6 profile navLink">
+        <i class="fa-solid fa-user text-2xl"></i>
+        <span class="hidden navOption">Profile</span>
+      </a>
+  
+      <a href="" class="flex justify-center items-center gap-x-6 groups navLink">
+        <i class="fa-solid fa-user-group text-xl"></i>
+        <span class="hidden navOption">Groups</span>
+      </a>
+  
+      <a href="" class="flex justify-center items-center gap-x-6 settings navLink">
+        <i class="fa-solid fa-gear text-2xl"></i>
+        <span class="hidden navOption">Settings</span>
+      </a>
+  
+      <a href="" class="flex justify-center items-center gap-x-6 inbox navLink">
+        <i class="fa-solid fa-envelope text-2xl"></i>
+        <span class="hidden navOption">Inbox</span>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<!--Header-->
+
+<header class="ml-24 flex-grow pt-9 box-content pb-12">
+  <div class="secondary-light wrapper flex justify-between items-center">
+    <div class="logo flex items-end gap-x-5">
+      <strong class="text-3xl">CodeUnity</strong>
+      <strong>/</strong>
+      <a href="#" class="muted text-xl">Your profile</a>
+    </div>
+
+    <form action="search" class="bg-white p-2 rounded-md flex w-1/3 border">
+      <input type="text" placeholder="Search..." class="border-none outline-none flex-grow px-4 w-full">
+        <button type="submit" class="px-4 py-2 rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z">
+          </svg>
+        </button>
+      </form>
+
+      <div class="flex items-center gap-x-5">
+        <div class="notifications flex items-center justify-center bg-white rounded-full w-16 h-16 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0">
+          </svg>
+      </div>
+
+      <div class="w-16 h-16">
+        <img src="/images/profile.png" alt="" class="rounded-full w-16 h-16 object-cover shadow-sm">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--Banner & Profile Image-->
+
+<div class="banner pl-24">
+  <div class="relative flex items-center flex-col">
+    <img src="/images/profile.png" alt="" class="rounded-full relative border top-20 object-cover">
+
+    <div class="flex relative left-48 items-center gap-x-6 top-4">
+      <i class="fa-solid fa-gear text-xl bg-white w-14 h-14 flex justify-center items-center rounded-full shadow-sm text-secondary"></i>
+      <p>Edit profile image</p>
+    </div>  
+  </div>
+</div>
+
+<!--Profile information-->
+
+<section class="ml-24 post-wrapper mt-16 flex flex-col">
+  <div class="pt-10">
+    <h1 class="text-2xl font-semibold pb-2">Martine Midttveit</h1>
+    <p class="text-xl muted">martinemidttveit@hotmail.com</p>
   </div>
 
-    <!--Header-->
+  <p class="text-lg py-6">Studying frontend development at Noroff, currently on the 2nd year. Love being creative, making designs and make cool user experiences through code! Follow to join my journey on becoming a frontend developer.</p>
 
-    <header class="ml-24 flex-grow pt-9 box-content pb-12">
-      <div class="secondary-light wrapper flex justify-between items-center">
-        <div class="logo flex items-end gap-x-5">
-          <strong class="text-3xl">CodeUnity</strong>
-          <strong>/</strong>
-          <a href="#" class="muted text-xl">Your profile</a>
-        </div>
-
-        <form action="search" class="bg-white p-2 rounded-md flex w-1/3 border">
-          <input type="text" placeholder="Search..." class="border-none outline-none flex-grow px-4 w-full">
-          <button type="submit" class="px-4 py-2 rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z">
-            </svg>
-          </button>
-        </form>
-
-        <div class="flex items-center gap-x-5">
-          <div class="notifications flex items-center justify-center bg-white rounded-full w-16 h-16 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0">
-            </svg>
-          </div>
-
-          <div class="w-16 h-16">
-            <img src="/images/profile.png" alt="" class="rounded-full w-16 h-16 object-cover shadow-sm">
-          </div>
-        </div>
+  <div class="flex items-center justify-between pt-8">
+    <div class="flex gap-x-20">
+      <div class="text-center text-primary flex flex-col">
+        <strong class="text-lg">5</strong>
+        <span class="text-lg">Posts</span>
       </div>
-    </header>
 
-    <!--Banner & Profile Image-->
+      <div class="text-center text-primary flex flex-col">
+        <strong class="text-lg">15</strong>
+        <span class="text-lg">Followers</span>
+      </div>
 
-    <div class="banner pl-24">
-      <div class="relative flex items-center flex-col">
-        <img src="/images/profile.png" alt="" class="rounded-full relative border top-20 object-cover">
-
-        <div class="flex relative left-48 items-center gap-x-6 top-4">
-          <i class="fa-solid fa-gear text-xl bg-white w-14 h-14 flex justify-center items-center rounded-full shadow-sm text-secondary"></i>
-          <p>Edit profile image</p>
-        </div>
-        
+      <div class="text-center text-primary flex flex-col">
+        <strong class="text-lg">18</strong>
+        <span class="text-lg">Following</span>
       </div>
     </div>
 
-    <!--Profile information-->
+    <div class="flex justify-end gap-x-5">
+      <button class="flex items-center gap-2 p-4 rounded border border-primary hover:bg-light hover:border-light">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10">
+        </svg>
+        Edit profile
+      </button>
 
-    <section class="ml-24 post-wrapper mt-16 flex flex-col">
-      <div class="pt-10">
-        <h1 class="text-2xl font-semibold pb-2">Martine Midttveit</h1>
-        <p class="text-xl muted">martinemidttveit@hotmail.com</p>
+      <button class="flex items-center gap-2 text-white bg-secondary p-4 rounded hover:bg-light hover:text-primary" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z">
+        </svg>
+        New post
+      </button>
+    </div>
+  </div>
+</section>
+
+<!--Posts-->
+
+<section class="posts post-wrapper ml-24 mt-16">
+
+<!--Post 1-->
+
+<div class="bg-white rounded-xl shadow-lg mb-8 px-12 pt-9 pb-12">
+  <div class="flex justify-between items-center pb-5">
+    <div class="flex items-center">
+      <div class="w-16 h-16">
+        <img src="/images/profile.png" alt="" class="w-16 h-16 rounded-full object-cover">
       </div>
-
-      <p class="text-lg py-6">Studying frontend development at Noroff, currently on the 2nd year. Love being creative, making designs and make cool user experiences through code! Follow to join my journey on becoming a frontend developer.</p>
-
-      <div class="flex items-center justify-between pt-8">
-        <div class="flex gap-x-20">
-          <div class="text-center text-primary flex flex-col">
-            <strong class="text-lg">5</strong>
-            <span class="text-lg">Posts</span>
-          </div>
-
-          <div class="text-center text-primary flex flex-col">
-            <strong class="text-lg">15</strong>
-            <span class="text-lg">Followers</span>
-          </div>
-
-          <div class="text-center text-primary flex flex-col">
-            <strong class="text-lg">18</strong>
-            <span class="text-lg">Following</span>
-          </div>
-        </div>
-
-        <div class="flex justify-end gap-x-5">
-          <button class="flex items-center gap-2 p-4 rounded border border-primary hover:bg-light hover:border-light">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10">
-            </svg>
-            Edit profile
-          </button>
-          <button class="flex items-center gap-2 text-white bg-secondary p-4 rounded hover:bg-light hover:text-primary" >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z">
-            </svg>
-            New post
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!--Posts-->
-
-    <section class="posts post-wrapper ml-24 mt-16">
-      <!--Post 1-->
-
-      <div class="bg-white rounded-xl shadow-lg mb-8 px-12 pt-9 pb-12">
-        <div class="flex justify-between items-center pb-5">
-          <div class="flex items-center">
-              <div class="w-16 h-16">
-                  <img src="/images/profile.png" alt="" class="w-16 h-16 rounded-full object-cover">
-              </div>
       
-              <div class="ml-9">
-                  <p class="font-semibold text-lg">Martine Midttveit</p>
-                  <p class="text-muted">posted 2 hours ago</p>
-              </div>
-          </div>
+      <div class="ml-9">
+        <p class="font-semibold text-lg">Martine Midttveit</p>
+        <p class="text-muted">posted 2 hours ago</p>
+      </div>
+    </div>
       
-          <div class="relative right-0">
-            <button class="flex items-center justify-center rounded-full h-14 editPost">
-                <i class="fa-solid fa-ellipsis text-2xl"></i>
-            </button>
-        
-            <div class="options hidden absolute bg-white rounded shadow-xl border"></div>
-        </div>
+    <div class="relative right-0">
+      <button class="flex items-center justify-center rounded-full h-14 editPost">
+          <i class="fa-solid fa-ellipsis text-2xl"></i>
+        </button>
+          
+      <div class="options hidden absolute bg-white rounded shadow-xl border"></div>
+    </div>
+  </div>
+
+  <img src="/images/china.png" alt="Post Image" class="w-full object-cover rounded-lg">
+
+  <div class="pt-6">
+    <h2 class="text-xl font-semibold mb-2">A cool title here</h2>
+      <p class="text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Consectetur adipiscing elit incididunt ut labore et dolore magna
+        aliqua.
+      </p>
+  </div>
+
+  <div class="pt-4 pb-5 gap-x-5 flex">
+    <span class="text-secondary text-lg">#HTML</span>
+    <span class="text-secondary text-lg">#CSS</span>
+    <span class="text-secondary text-lg">#JavaScript</span>
+    <span class="text-secondary text-lg">#Programming</span>
+  </div>
+
+  <div class="border-t bg-primary muted mb-5"></div>
+
+  <div class="flex gap-x-8">
+    <div class="flex items-center gap-x-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z">
+      </svg>
+      Likes
+    </div>
+
+    <div class="flex items-center gap-x-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z">
+      </svg>
+      Comments
+    </div>
+  </div>
+
+  <div class="mt-4 flex items-center">
+    <input type="text" placeholder="Add a comment..." class="flex-grow border p-2 rounded-md outline-none h-16">
+      <button class="ml-10">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5">
+        </svg>
+      </button>
+  </div>
+</div>
+
+<!--Post 2-->
+
+<div class="bg-white rounded-xl shadow-lg mb-8 px-12 pt-9 pb-12">
+  <div class="flex items-center pb-5">
+    <div class="w-16 h-16">
+      <img src="/images/profile.png" alt="" class="w-16 h-16 rounded-full object-cover">
+    </div>
+
+    <div class="ml-10">
+      <p class="font-semibold text-lg">Martine Midttveit</p>
+      <p class="muted">posted 2 hours ago</p>
+    </div>
+  </div>
+
+  <div class="pt-4">
+    <h2 class="text-xl font-semibold mb-2">A cool title here</h2>
+    <p class="text-lg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Consectetur adipiscing elit incididunt ut labore et dolore magna
+      aliqua.
+    </p>
+  </div>
+
+  <div class="pt-4 pb-5 gap-x-5 flex">
+    <span class="text-secondary text-lg">#HTML</span>
+    <span class="text-secondary text-lg">#CSS</span>
+    <span class="text-secondary text-lg">#JavaScript</span>
+    <span class="text-secondary text-lg">#Programming</span>
+  </div>
+
+  <div class="border-t bg-primary muted mb-5"></div>
+
+  <div class="flex gap-x-8">
+    <div class="flex items-center gap-x-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z">
+      </svg>
+      Likes
+    </div>
+
+    <div class="flex items-center gap-x-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z">
+      </svg>
+      Comments
+    </div>
+  </div>
+
+  <div class="mt-4 flex items-center">
+    <input type="text" placeholder="Add a comment..." class="flex-grow border p-2 rounded-md outline-none h-16">
+    <button class="ml-10">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5">
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!--Post 3-->
+
+<div class="bg-white rounded-xl shadow-lg mb-8 px-12 pt-9 pb-12">
+  <div class="flex items-center pb-5">
+    <div class="w-16 h-16 flex-shrink-0">
+      <img src="/images/profile.png" alt="" class="w-16 h-16 rounded-full object-cover">
+    </div>
+
+    <div class="ml-10">
+      <p class="font-semibold text-lg">Martine Midttveit</p>
+      <p class="muted">posted 2 hours ago</p>
+    </div>
+  </div>
+
+  <img src="/images/newyork2.png" alt="Post Image" class="w-full object-cover rounded-lg">
+
+  <div class="pt-6">
+    <h2 class="text-xl font-semibold mb-2">A cool title here</h2>
+    <p class="text-lg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Consectetur adipiscing elit incididunt ut labore et dolore magna
+      aliqua.
+    </p>
+  </div>
+
+  <div class="pt-4 pb-5 gap-x-5 flex">
+    <span class="text-secondary text-lg">#HTML</span>
+    <span class="text-secondary text-lg">#CSS</span>
+    <span class="text-secondary text-lg">#JavaScript</span>
+    <span class="text-secondary text-lg">#Programming</span>
+  </div>
+
+  <div class="border-t bg-primary muted mb-5"></div>
+
+  <div class="flex gap-x-8">
+    <div class="flex items-center gap-x-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z">
+      </svg>
+      Likes
+    </div>
+
+    <div class="flex items-center gap-x-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z">
+      </svg>
+      Comments
+    </div>
+  </div>
+
+  <div class="mt-4 flex items-center">
+    <input type="text" placeholder="Add a comment..." class="flex-grow border p-2 rounded-md outline-none h-16">
+    <button class="ml-10">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5">
+      </svg>
+    </button>
+  </div>
+</div>
+</section>
+
+<!--Footer-->
+
+<footer class="bg-primary text-white py-10 mt-28">
+  <div class="flex justify-between wrapper">
+    <div>
+      <h2 class="text-2xl font-bold">CodeUnity</h2>
+    </div>
+
+    <div class="flex justify-between w-3/6">
+      <div class="ml-8">
+        <h3 class="text-lg font-semibold">Support</h3>
+        <ul class="mt-2 space-y-2">
+          <li><a href="#" class="text-gray-300 hover:text-white">FAQ</a> </li>
+          <li><a href="#" class="text-gray-300 hover:text-white">Online support</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white">Contact us</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white">Account settings</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white">Terms of use</a></li>
+        </ul>
       </div>
 
-        <img src="/images/china.png" alt="Post Image" class="w-full object-cover rounded-lg">
-
-        <div class="pt-6">
-          <h2 class="text-xl font-semibold mb-2">A cool title here</h2>
-          <p class="text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Consectetur adipiscing elit incididunt ut labore et dolore magna
-            aliqua.
-          </p>
-        </div>
-
-        <div class="pt-4 pb-5 gap-x-5 flex">
-          <span class="text-secondary text-lg">#HTML</span>
-          <span class="text-secondary text-lg">#CSS</span>
-          <span class="text-secondary text-lg">#JavaScript</span>
-          <span class="text-secondary text-lg">#Programming</span>
-        </div>
-
-        <div class="border-t bg-primary muted mb-5"></div>
-
-        <div class="flex gap-x-8">
-          <div class="flex items-center gap-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z">
-            </svg>
-            Likes
-          </div>
-
-          <div class="flex items-center gap-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z">
-            </svg>
-            Comments
-          </div>
-        </div>
-
-        <div class="mt-4 flex items-center">
-          <input type="text" placeholder="Add a comment..." class="flex-grow border p-2 rounded-md outline-none h-16">
-          <button class="ml-10">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5">
-            </svg>
-          </button>
-        </div>
+      <div class="ml-8">
+        <h3 class="text-lg font-semibold">About</h3>
+        <ul class="mt-2 space-y-2">
+          <li>
+            <a href="#" class="text-gray-300 hover:text-white">About us</a>
+          </li>
+        </ul>
       </div>
 
-      <!--Post 2-->
-
-      <div class="bg-white rounded-xl shadow-lg mb-8 px-12 pt-9 pb-12">
-        <div class="flex items-center pb-5">
-          <div class="w-16 h-16">
-            <img src="/images/profile.png" alt="" class="w-16 h-16 rounded-full object-cover">
-          </div>
-
-          <div class="ml-10">
-            <p class="font-semibold text-lg">Martine Midttveit</p>
-            <p class="muted">posted 2 hours ago</p>
-          </div>
-        </div>
-
-        <div class="pt-4">
-          <h2 class="text-xl font-semibold mb-2">A cool title here</h2>
-          <p class="text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Consectetur adipiscing elit incididunt ut labore et dolore magna
-            aliqua.
-          </p>
-        </div>
-
-        <div class="pt-4 pb-5 gap-x-5 flex">
-          <span class="text-secondary text-lg">#HTML</span>
-          <span class="text-secondary text-lg">#CSS</span>
-          <span class="text-secondary text-lg">#JavaScript</span>
-          <span class="text-secondary text-lg">#Programming</span>
-        </div>
-
-        <div class="border-t bg-primary muted mb-5"></div>
-
-        <div class="flex gap-x-8">
-          <div class="flex items-center gap-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z">
-            </svg>
-            Likes
-          </div>
-
-          <div class="flex items-center gap-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z">
-            </svg>
-            Comments
-          </div>
-        </div>
-
-        <div class="mt-4 flex items-center">
-          <input type="text" placeholder="Add a comment..." class="flex-grow border p-2 rounded-md outline-none h-16">
-          <button class="ml-10">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5">
-            </svg>
-          </button>
-        </div>
+      <div class="ml-8">
+        <h3 class="text-lg font-semibold">Privacy</h3>
+        <ul class="mt-2 space-y-2">
+          <li><a href="#" class="text-gray-300 hover:text-white">Privacy Settings</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white">Guidelines</a></li>
+        </ul>
       </div>
+    </div>
+  </div>
 
-      <!--Post 3-->
+  <div class="border-t bg-light mt-12 my-8"></div>
 
-      <div class="bg-white rounded-xl shadow-lg mb-8 px-12 pt-9 pb-12">
-        <div class="flex items-center pb-5">
-          <div class="w-16 h-16 flex-shrink-0">
-            <img src="/images/profile.png" alt="" class="w-16 h-16 rounded-full object-cover">
-          </div>
+  <div class="flex justify-between wrapper">
+    <p>Copyright CodeUnity © 2023</p>
+    <p>All rights reserved.</p>
+  </div>
+</footer>
 
-          <div class="ml-10">
-            <p class="font-semibold text-lg">Martine Midttveit</p>
-            <p class="muted">posted 2 hours ago</p>
-          </div>
-        </div>
-
-        <img src="/images/newyork2.png" alt="Post Image" class="w-full object-cover rounded-lg">
-
-        <div class="pt-6">
-          <h2 class="text-xl font-semibold mb-2">A cool title here</h2>
-          <p class="text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Consectetur adipiscing elit incididunt ut labore et dolore magna
-            aliqua.
-          </p>
-        </div>
-
-        <div class="pt-4 pb-5 gap-x-5 flex">
-          <span class="text-secondary text-lg">#HTML</span>
-          <span class="text-secondary text-lg">#CSS</span>
-          <span class="text-secondary text-lg">#JavaScript</span>
-          <span class="text-secondary text-lg">#Programming</span>
-        </div>
-
-        <div class="border-t bg-primary muted mb-5"></div>
-
-        <div class="flex gap-x-8">
-          <div class="flex items-center gap-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z">
-            </svg>
-            Likes
-          </div>
-
-          <div class="flex items-center gap-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z">
-            </svg>
-            Comments
-          </div>
-        </div>
-
-        <div class="mt-4 flex items-center">
-          <input type="text" placeholder="Add a comment..." class="flex-grow border p-2 rounded-md outline-none h-16">
-          <button class="ml-10">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5">
-            </svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!--Footer-->
-
-    <footer class="bg-primary text-white py-10 mt-28">
-      <div class="flex justify-between wrapper">
-        <div>
-          <h2 class="text-2xl font-bold">CodeUnity</h2>
-        </div>
-
-        <div class="flex justify-between w-3/6">
-          <div class="ml-8">
-            <h3 class="text-lg font-semibold">Support</h3>
-            <ul class="mt-2 space-y-2">
-              <li><a href="#" class="text-gray-300 hover:text-white">FAQ</a> </li>
-              <li><a href="#" class="text-gray-300 hover:text-white">Online support</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-white">Contact us</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-white">Account settings</a></li>
-              <li><a href="#" class="text-gray-300 hover:text-white">Terms of use</a></li>
-            </ul>
-          </div>
-
-          <div class="ml-8">
-            <h3 class="text-lg font-semibold">About</h3>
-            <ul class="mt-2 space-y-2">
-              <li>
-                <a href="#" class="text-gray-300 hover:text-white">About us</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="ml-8">
-            <h3 class="text-lg font-semibold">Privacy</h3>
-            <ul class="mt-2 space-y-2">
-              <li>
-                <a href="#" class="text-gray-300 hover:text-white">Privacy Settings</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-300 hover:text-white">Guidelines</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="border-t bg-light mt-12 my-8"></div>
-
-      <div class="flex justify-between wrapper">
-        <p>Copyright CodeUnity © 2023</p>
-        <p>All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
+</body>
 </html>
