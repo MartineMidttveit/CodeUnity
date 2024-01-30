@@ -11,6 +11,7 @@ module.exports = {
         light: "#B1D0D2",
         yellow: "#FFE68C",
         orange: "#F5841A",
+        background: "#F7F7F7"
       },
       fontFamily: {
         'gilroy': ['Gilroy', 'sans-serif'],
