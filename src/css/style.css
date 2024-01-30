@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '@heroicons/react/solid.css';
+@import '@heroicons/react/outline.css';
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/Gilroy/Gilroy-Light.woff2') format('woff2'),
+        url('/Gilroy/Gilroy-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/Gilroy/Gilroy-ExtraBold.woff2') format('woff2'),
+        url('/Gilroy/Gilroy-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.wrapper {
+    padding: 0% 15%;
+}
+
+.muted {
+    opacity: 0.8;
+}
+
+body {
+    color: #0D0D25;
+    background-color: #F7F7F7;
+}
+
+.banner {
+    background: linear-gradient(180deg, #dfbaa1 0%, #909fb5 100%);
+    height: 25rem;
+}
+
+.banner img {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    top: 18%;
+}
+
+.post-wrapper {
+    padding: 0% 29%;
+}

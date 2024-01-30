@@ -8,7 +8,12 @@ module.exports = {
       colors: {
         primary: "#0D0D25",
         secondary: "#0B4B66",
-        // "secondary-light": "",
+        light: "#B1D0D2",
+        yellow: "#FFE68C",
+        orange: "#F5841A",
+      },
+      fontFamily: {
+        'gilroy': ['Gilroy', 'sans-serif'],
       },
     },
   },
