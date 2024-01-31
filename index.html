@@ -7,40 +7,80 @@
     <link rel="stylesheet" href="dist/tailwind.css" />
     <script type="module" src="/src/js/index.mjs"></script>
   </head>
-  <body>
+  <body class="bg-background">
+    <main class="py-8 p px-6 xl:px-14 flex justify-center items-center gap-24  max-w-7xl m-auto">
+      <div class="img-container hidden xl:flex flex-col relative w-full gap-8">
+        <!-- <img src="/src/images/code-unity-logo.png" alt=""> -->
+<div class="flex gap-8  w-40">
+        <img src="src/images/logo-1.png"  alt="">
+        <img src="src/images/logo-2.png" alt="">
+        <img src="src/images/logo-3.png" alt="">
+
+        </div>
+        <div  class="flex gap-8  w-40"  >
+        <img src="src/images/logo-4.png" alt="">
+        <img src="src/images/logo-5.png" alt="">
+        <img src="src/images/logo-6.png" alt="">
+      </div>
+      <div  class="flex gap-8  w-40"  >
+        <img src="src/images/logo-7.png" alt="">
+        <img src="src/images/logo-8.png" alt="">
+        <img src="src/images/logo-9.png" alt="">
+      </div>
+    
+  </div>
+    <section class="min-h-screen  flex flex-col gap-10 items-center justify-center max-w-xl" >
+      <h1 class="text-4xl font-bold w-full">Log in.</h1>
+      <p class="text-xl">A community of coders. Sign in to your account and dive into latest posts while engaging in vibrant online discussions.</p>
     <form
       id="login-form"
       method="post"
       action="auth/login"
-      class="md:bg-gray-100 w-full max-w-md flex flex-col md:rounded-md gap-5 self-center md:shadow-md md:py-8 md:px-10"
+      class=" w-full flex flex-col rounded-md gap-5  "
     >
-      <div class="flex flex-col mt-8">
-        <label for="email" class="text-lg">Email</label>
+      <div class="flex flex-col">
+        <label for="email" class="text-lg">Email:</label>
         <input
           type="email"
           name="email"
           id="email"
-          class="rounded-sm py-0.5 px-3 border-gray-300 text-lg mt-1.5"
+          class="py-1 px-3  rounded-sm border text-lg mt-1.5"
           title="Must be a valid email address."
           autocomplete="username"
           required
         />
       </div>
       <div class="flex flex-col mt-4">
-        <label for="" class="text-lg">Password</label>
+        <label for="" class="text-lg">Password:</label>
         <input
           type="password"
           name="password"
           id="password"
-          class="rounded-sm py-1 px-3 text-lg mt-1.5 border-gray-300"
+          class="rounded-sm py-1 px-3 border text-lg mt-1.5 "
           pattern=".{8,}"
           minlength="8"
           autocomplete="current-password"
           required
           title="Password must be at least 8 characters long."
         />
+      </div class="flex justify-between">
+  
+      <div class="flex justify-between">
+        <div class="flex gap-3 items-center justify-center">
+          <input
+            type="checkbox"
+            class="center w-5 h-5 rounded-sm bg-white checked:bg-primary-light focus:outline-none border-gray-200"
+          />
+          <label for="checkbox" class="text-lg">Remember me</label>
+        </div>
+        <a href="#" class="text-secondary">Forgot your password?
+        
+        </a>
       </div>
-      <button class="bg-primary py-2 text-white rounded-md">Login</button>
+      <button class="bg-secondary py-2 mt-2 w-32 text-white rounded-md">Login</button>
+      <div class="text-lg">Don't have an account yet? <a href="#" class="border-b border-secondary text-secondary">Sign up</a></div>
     </form>
+  </section>
   </body>
+</main>
 </html>
