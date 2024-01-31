@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="dist/tailwind.css" />
+    <script type="module" src="/src/js/index.mjs"></script>
   </head>
-  <body></body>
+  <body>
+    <form
+      id="login-form"
+      method="post"
+      action="auth/login"
+      class="md:bg-gray-100 w-full max-w-md flex flex-col md:rounded-md gap-5 self-center md:shadow-md md:py-8 md:px-10"
+    >
+      <div class="flex flex-col mt-8">
+        <label for="email" class="text-lg">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="rounded-sm py-0.5 px-3 border-gray-300 text-lg mt-1.5"
+          title="Must be a valid email address."
+          autocomplete="username"
+          required
+        />
+      </div>
+      <div class="flex flex-col mt-4">
+        <label for="" class="text-lg">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="rounded-sm py-1 px-3 text-lg mt-1.5 border-gray-300"
+          pattern=".{8,}"
+          minlength="8"
+          autocomplete="current-password"
+          required
+          title="Password must be at least 8 characters long."
+        />
+      </div>
+      <button class="bg-primary py-2 text-white rounded-md">Login</button>
+    </form>
+  </body>
 </html>
