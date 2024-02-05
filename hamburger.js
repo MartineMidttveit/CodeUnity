@@ -31,3 +31,5 @@ hamburgerBtn.addEventListener("click", function () {
         });
     }
 });
+
+const status = document.querySelector(".status");
