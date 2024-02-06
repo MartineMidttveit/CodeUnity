@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "@heroicons/react/solid.css";
-@import "@heroicons/react/outline.css";
 
 @font-face {
   font-family: "Gilroy";

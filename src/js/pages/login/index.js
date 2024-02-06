@@ -1,4 +1,3 @@
-// import submitEvent from "../../api/handlers/eventListeners/submit.js";
 import submit from "../../api/handlers/eventListeners/submit.js";
 import login from "../../api/auth/requests/login.js";
 
