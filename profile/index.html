@@ -66,8 +66,8 @@
 <!--Header-->
 
 <header class="md:ml-24 flex-grow pt-9 box-content pb-12">
-  <div class="secondary-light px-10 md:px-12 lg:px-32 md:flex justify-between items-center  ">
-    <div class="logo flex items-end gap-x-5">
+  <div class="secondary-light px-4 sm:px-10 md:px-12 lg:px-32 md:flex justify-between items-center  ">
+    <div class="logo flex items-end gap-x-2 sm:gap-x-5">
       <strong class="text-3xl">CodeUnity</strong>
       <strong>/</strong>
       <a href="#" class="muted text-xl">Your profile</a>
@@ -98,33 +98,34 @@
 
 <!--Banner & Profile Image-->
 
-<div class="banner md:pl-24 h-96">
+<div class="banner md:pl-24 h-52 sm:h-64 md:h-72 lg:h-96">
   <div class="relative flex items-center flex-col">
-    <img src="/images/profile.png" alt="" class="rounded-full relative border top-16 object-cover">
+    <img src="/images/profile.png" alt="" class="rounded-full relative border top-9 sm:top-12 md:top-16 object-cover max-w-56 max-h-56 sm:max-w-72 sm:max-h-72 lg:max-w-96 lg:max-h-96">
 
-    <div class="relative top-0 left-48">
+    <div class="relative top-0 md:top-2 left-20 sm:left-24 md:left-44">
       <button class="flex items-center gap-x-6" id="editImage">
-        <i class="fa-solid fa-gear text-xl bg-white w-14 h-14 flex justify-center items-center rounded-full shadow-sm text-secondary"></i>
-        <p>Edit profile image</p>
+        <i class="fa-solid fa-gear text-xl bg-white w-14 h-14 flex justify-center items-center rounded-full shadow-md md:shadow-sm text-secondary"></i>
+        <p class="hidden md:flex">Edit profile image</p>
       </button>
 
       <div class="imageOptions absolute bg-white rounded shadow-xl border right-40 z-10 mt-3"></div>
     </div>
   </div>
 </div>
-<main class="px-1 sm:px-8 md:px-12 lg:px-32">
+<main class="px-3 sm:px-8 md:px-12 lg:px-32">
+
 <!--Profile information-->
 
-<section class="max-w-6xl mt-16 flex flex-col mx-auto md:pl-24">
-  <div class="pt-10">
+<section class="max-w-6xl mt-20 sm:mt-24 lg:mt-20 flex flex-col mx-auto md:pl-24">
+  <div>
     <h1 class="text-2xl font-semibold pb-2">Martine Midttveit</h1>
     <p class="text-xl muted">martinemidttveit@hotmail.com</p>
   </div>
 
-  <p class="text-lg py-6">Studying frontend development at Noroff, currently on the 2nd year. Love being creative, making designs and make cool user experiences through code! Follow to join my journey on becoming a frontend developer.</p>
+  <p class="text-lg py-4 sm:py-6">Studying frontend development at Noroff, currently on the 2nd year. Love being creative, making designs and make cool user experiences through code! Follow to join my journey on becoming a frontend developer.</p>
 
-  <div class="flex items-center justify-between flex-wrap gap-6 pt-8">
-    <div class="flex gap-x-20">
+  <div class="flex items-center justify-between flex-wrap gap-6 pt-3 sm:pt-8">
+    <div class="flex gap-x-14 sm:gap-x-20">
       <div class="text-center text-primary flex flex-col">
         <strong class="text-lg">5</strong>
         <span class="text-lg">Posts</span>
@@ -165,14 +166,14 @@
 
 <!--Post 1-->
 
-<div class="bg-white rounded-xl shadow-lg mb-8  px-4 sm:px-12 pt-9 pb-12">
+<div class="bg-white rounded-xl shadow-lg mb-8 px-4 sm:px-12 pt-9 pb-12">
   <div class="flex justify-between items-center pb-5">
     <div class="flex items-center">
-      <div class="w-16 h-16">
-        <img src="/images/profile.png" alt="" class="w-10 h-10 lg:w-16 lg:h-16 rounded-full object-cover">
+      <div class="w-12 h-12 md:w-16 md:h-16 flex items-center">
+        <img src="/images/profile.png" alt="" class="w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover">
       </div>
       
-      <div class="ml-9">
+      <div class="ml-6 sm:ml-8 md:ml-10">
         <p class="font-semibold text-lg">Martine Midttveit</p>
         <p class="text-muted">posted 2 hours ago</p>
       </div>
@@ -236,13 +237,13 @@
 
 <!--Post 2-->
 
-<div class="bg-white rounded-xl shadow-lg mb-8 px-12 pt-9 pb-12">
+<div class="bg-white rounded-xl shadow-lg mb-8 px-4 sm:px-12 pt-9 pb-12">
   <div class="flex items-center pb-5">
-    <div class="w-16 h-16">
-      <img src="/images/profile.png" alt="" class="w-16 h-16 rounded-full object-cover">
+    <div class="w-12 h-12 md:w-16 md:h-16 flex items-center">
+      <img src="/images/profile.png" alt="" class="w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover">
     </div>
 
-    <div class="ml-10">
+    <div class="ml-6 sm:ml-8 md:ml-10">
       <p class="font-semibold text-lg">Martine Midttveit</p>
       <p class="muted">posted 2 hours ago</p>
     </div>
@@ -295,13 +296,13 @@
 
 <!--Post 3-->
 
-<div class="bg-white rounded-xl shadow-lg mb-8 px-12 pt-9 pb-12">
+<div class="bg-white rounded-xl shadow-lg mb-8 px-4 sm:px-12 pt-9 pb-12">
   <div class="flex items-center pb-5">
-    <div class="w-16 h-16 flex-shrink-0">
-      <img src="/images/profile.png" alt="" class="w-16 h-16 rounded-full object-cover">
+    <div class="w-12 h-12 md:w-16 md:h-16 flex items-center">
+      <img src="/images/profile.png" alt="" class="w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover">
     </div>
 
-    <div class="ml-10">
+    <div class="ml-6 sm:ml-8 md:ml-10">
       <p class="font-semibold text-lg">Martine Midttveit</p>
       <p class="muted">posted 2 hours ago</p>
     </div>
@@ -355,16 +356,17 @@
 </div>
 </section>
 </main>
+
 <!--Footer-->
 
-<footer class="bg-primary text-white py-10 mt-28">
-  <div class="flex justify-between wrapper">
+<footer class="bg-primary text-white py-10 mt-12 md:mt-28">
+  <div class="md:ml-24 flex justify-between flex-col lg:flex-row px-3 sm:px-8 md:px-12 lg:px-32">
     <div>
-      <h2 class="text-2xl font-bold">CodeUnity</h2>
+      <h2 class="text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">CodeUnity</h2>
     </div>
 
-    <div class="flex justify-between w-3/6">
-      <div class="ml-8">
+    <div class="flex flex-col sm:flex-row justify-between lg:w-3/4 xl:w-1/2">
+      <div class="lg:ml-8 my-5 sm:my-0">
         <h3 class="text-lg font-semibold">Support</h3>
         <ul class="mt-2 space-y-2">
           <li><a href="#" class="text-gray-300 hover:text-white">FAQ</a> </li>
@@ -375,7 +377,7 @@
         </ul>
       </div>
 
-      <div class="ml-8">
+      <div class="lg:ml-8 my-5 sm:my-0">
         <h3 class="text-lg font-semibold">About</h3>
         <ul class="mt-2 space-y-2">
           <li>
@@ -384,7 +386,7 @@
         </ul>
       </div>
 
-      <div class="ml-8">
+      <div class="lg:ml-8 my-5 sm:my-0">
         <h3 class="text-lg font-semibold">Privacy</h3>
         <ul class="mt-2 space-y-2">
           <li><a href="#" class="text-gray-300 hover:text-white">Privacy Settings</a></li>
