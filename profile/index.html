@@ -18,9 +18,9 @@
   <body class="font-gilroy">
 
 <!--Sidebar-->
-    <div class="bg-primary w-24 h-screen fixed flex justify-center items-start sidebar">
+    <div class="w-full z-30 bg-primary md:w-24 md:h-screen md:fixed md:flex md:justify-center md:items-start sidebar">
       <div class="sidebar-content">
-          <button class="hamburger mt-12" id="hamburgerBtn">
+          <button class="hamburger md:mt-12 hidden md:inline-block" id="hamburgerBtn">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-8 h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"></path>
               </svg>
@@ -35,18 +35,18 @@
             <button class="text-white mt-1 text-sm status">Change status</button>
           </div>
   
-          <nav class="flex flex-col space-y-16 mt-28">
+          <nav class="flex justify-between md:flex-col py-4 px-10 md:px-0 md:space-y-16 md:mt-28 ">
               <a href="#" class="flex justify-center items-center home navLink gap-x-6">
                   <i class="fa-solid fa-house text-2xl w-8"></i>
                   <span class="hidden navOption">Home</span>
               </a>
   
-              <a href="" class="flex justify-center items-center profile navLink gap-x-6">
+              <a href="" class="flex justify-center items-center profile navLink md:gap-x-6">
                   <i class="fa-solid fa-user text-2xl w-8"></i>
                   <span class="hidden navOption">Profile</span>
               </a>
   
-              <a href="" class="flex justify-center items-center groups navLink  gap-x-6">
+              <a href="" class="flex justify-center items-center groups navLink  md:gap-x-6">
                   <i class="fa-solid fa-user-group text-xl w-8"></i>
                   <span class="hidden navOption">Groups</span>
               </a>
@@ -65,7 +65,7 @@
     </div>
 <!--Header-->
 
-<header class="ml-24 flex-grow pt-9 box-content pb-12">
+<header class="md:ml-24 flex-grow pt-9 box-content pb-12">
   <div class="secondary-light wrapper flex justify-between items-center">
     <div class="logo flex items-end gap-x-5">
       <strong class="text-3xl">CodeUnity</strong>
@@ -98,7 +98,7 @@
 
 <!--Banner & Profile Image-->
 
-<div class="banner pl-24 h-96">
+<div class="banner md:pl-24 h-96">
   <div class="relative flex items-center flex-col">
     <img src="/images/profile.png" alt="" class="rounded-full relative border top-16 object-cover">
 
@@ -115,7 +115,7 @@
 
 <!--Profile information-->
 
-<section class="max-w-6xl mt-16 flex flex-col mx-auto pl-24">
+<section class="max-w-6xl mt-16 flex flex-col mx-auto md:pl-24">
   <div class="pt-10">
     <h1 class="text-2xl font-semibold pb-2">Martine Midttveit</h1>
     <p class="text-xl muted">martinemidttveit@hotmail.com</p>
@@ -161,7 +161,7 @@
 
 <!--Posts-->
 
-<section class="posts max-w-6xl pl-24 mt-16 mx-auto">
+<section class="posts max-w-6xl md:pl-24 mt-16 mx-auto">
 
 <!--Post 1-->
 
