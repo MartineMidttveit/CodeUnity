@@ -46,5 +46,6 @@ function toggleImageOptions() {
         imageOptionsContainer.appendChild(imageOption3.option);
         imageOptionsContainer.appendChild(imageOption3.separateLine);
         imageOptionsContainer.appendChild(imageOption4.option);
+
     }
 }
