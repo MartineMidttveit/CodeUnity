@@ -8,12 +8,12 @@ import config from "../config.js";
 export default class Auth {
   /**
 
-   *
-   * @param {string} method - The HTTP method for the request.
-   * @param {Object} headers - The headers for the request.
-   * @param {string} endpoint - The endpoint URL for the request.
-   * @param {Object|null} body - The request body (optional).
-   */
+    *
+    * @param {string} method - The HTTP method for the request.
+    * @param {Object} headers - The headers for the request.
+    * @param {string} endpoint - The endpoint URL for the request.
+    * @param {Object|null} body - The request body (optional).
+    */
   constructor(method, headers, endpoint, body = null) {
     this.method = method;
     this.headers = headers;
