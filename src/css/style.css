@@ -63,11 +63,11 @@ body {
   background-color: #f7f7f7;
 }
 
-.banner {
+#banner {
   background: linear-gradient(180deg, #dfbaa1 0%, #909fb5 100%);
 }
 
-.banner img {
+#banner img {
   height: 400px;
   width: 400px;
 }
