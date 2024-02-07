@@ -4,6 +4,8 @@ import profileComponents from "../../components/profile/index.js";
 import storage from "../../utils/storage.js";
 import pageHandlers from "../../api/handlers/pageHandlers.js";
 
+const profileOwner = document.querySelector("#profileOwner");
+
 pageHandlers.enterPage();
 
 let params = new URLSearchParams(window.location.search);
@@ -22,3 +24,5 @@ const user = storage.load("profile");
 const isOwner = name === user.name ? true : false;
 
 profileComponents(userProfile.data, isOwner, user.name);
+
+profileOwner.textContent = isOwner ? "Your Profile" : "@" + userProfile.data.name;

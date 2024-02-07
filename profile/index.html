@@ -42,7 +42,7 @@
                   <span class="hidden navOption">Home</span>
               </a>
   
-              <a href="" class="flex justify-center items-center profile navLink md:gap-x-6">
+              <a href="" class="flex justify-center items-center profile navLink md:gap-x-6" id="sidebarProfileLink">
                   <i class="fa-solid fa-user text-2xl w-8"></i>
                   <span class="hidden navOption">Profile</span>
               </a>
@@ -72,7 +72,7 @@
     <div class="logo flex items-end gap-x-2 sm:gap-x-5">
       <strong class="text-3xl">CodeUnity</strong>
       <strong>/</strong>
-      <a href="#" class="muted text-xl">Your profile</a>
+      <span class="muted text-xl" id="profileOwner"></span>
     </div>
 
     <form action="search" class="bg-white p-2 rounded-md flex md:w-1/3 border mt-6 md:mt-auto">
@@ -87,9 +87,7 @@
           <i class="fa-regular fa-bell text-xl"></i>
         </button>
 
-      <a href="#" class="w-16 h-16">
-        <img src="/images/profile.png" alt="" class="rounded-full w-16 h-16 object-cover border">
-      </a>
+      <a href="#" class="w-16 h-16" id="headerProfile"></a>
     </div>
   </div>
 </header>
