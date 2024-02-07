@@ -20,6 +20,7 @@ export default function sidebarDetails(profile) {
 
     const changeStatus = document.createElement("button");
     changeStatus.classList.add("text-white", "mt-1", "text-sm", "status");
+    changeStatus.textContent = "Change status";
 
     sidebarContainer.append(sidebarContent, sidebarName, changeStatus);
     return sidebarContainer;

@@ -1,4 +1,5 @@
 import storage from "../../utils/storage.js";
+import sidebarDetails from "../../components/sidebar/index.js"
 
 export default {
   enterPage() {
@@ -7,7 +8,10 @@ export default {
     if (!profile || !token) {
       window.location.href = "/";
     }
+
+    sidebarDetails(profile);
   },
 
   leavePage() {},
 };
+
