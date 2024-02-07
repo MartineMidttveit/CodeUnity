@@ -75,6 +75,8 @@ export default function profileMedia(profile, isOwner) {
     editBtn.append(editIcon, editText);
     editProfileImage.append(editBtn, imageOptions);
     container.append(editProfileImage);
+
+    editBtn.addEventListener("click", function () {});
   }
 
   return container;
