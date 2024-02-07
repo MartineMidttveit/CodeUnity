@@ -95,3 +95,7 @@ body {
 .inbox {
   color: #ff8411;
 }
+
+.customBorder {
+  border-radius: 12px 0px 0px 12px;
+}
