@@ -12,6 +12,8 @@ let name = params.get("name");
 const userProfile = await profiles(name);
 console.log(userProfile);
 
+const allProfiles = await profiles();
+console.log(allProfiles);
 const posts = await getPosts();
 console.log(posts);
 
