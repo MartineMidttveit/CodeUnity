@@ -1,9 +1,27 @@
 import EventListener from "./index.js";
+import putRequest from "../../auth/requests/putRequest.js";
 
-export default function followUser(btn, type = "click") {
-  function callBackListen(e) {
+export default function followUser(element, name) {
+  const type = "click";
+
+  async function callBackListen(e) {
     e.preventDefault();
+    const buttonText = e.target.firstChild.nodeValue;
+
+    const endpoint = `/social/profiles/${name}/${buttonText.toLowerCase()}`;
+    const request = await putRequest(endpoint);
+    if (request) {
+      e.target.textContent = buttonText === "Follow" ? "Unfollow" : "Follow";
+      const icon = buttonText === "Follow" ? "minus" : "plus";
+
+      const followIcon = document.createElement("i");
+      followIcon.classList.add("text-xl", "fa-solid", `fa-user-${icon}`);
+      e.target.append(followIcon);
+      e.target.classList.toggle("bg-red-900");
+      e.target.classList.toggle("hover:bg-red-300");
+    }
   }
 
-  const followUser = new EventListener(btn, type, callBackListen);
+  const followUser = new EventListener(element, type, callBackListen);
+  followUser.add();
 }

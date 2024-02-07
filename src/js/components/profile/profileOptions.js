@@ -1,4 +1,7 @@
-export default function profileOptions(profile, isOwner) {
+import followUser from "../../api/handlers/eventListeners/followUser.js";
+
+export default function profileOptions(profile, isOwner, user) {
+  // if (profile.followers)
   const container = document.createElement("div");
   container.classList.add("flex", "justify-end", "gap-x-5");
   if (isOwner) {
@@ -41,21 +44,38 @@ export default function profileOptions(profile, isOwner) {
     container.append(editProfile, newPost);
   } else {
     const followButton = document.createElement("button");
+
+    let ifFollowing = profile.followers.find(({ name }) => name === user)
+      ? "Unfollow"
+      : "Follow";
+
+    let icon = "plus";
+
+    if (ifFollowing === "Unfollow") {
+      icon = "minus";
+      followButton.classList.add("bg-red-900");
+      followButton.classList.add("hover:bg-red-300");
+    }
+
     followButton.classList.add(
       "flex",
       "items-center",
+      "justify-center",
       "gap-3",
       "text-white",
-      "bg-secondary",
+      `bg-secondary`,
       "p-4",
       "rounded",
       "hover:bg-light",
-      "hover:text-primary"
+      "hover:text-primary",
+      "duration-500",
+      "w-32"
     );
-    followButton.textContent = "Follow";
+
+    followButton.textContent = ifFollowing;
 
     const followIcon = document.createElement("i");
-    followIcon.classList.add("fa-solid", "fa-user-plus", "text-xl");
+    followIcon.classList.add("text-xl", "fa-solid", `fa-user-${icon}`);
 
     const messageButton = document.createElement("button");
     messageButton.classList.add(
@@ -69,6 +89,7 @@ export default function profileOptions(profile, isOwner) {
       "hover:bg-light",
       "hover:border-light"
     );
+
     messageButton.textContent = "Message";
     const messageIcon = document.createElement("i");
     messageIcon.classList.add("fa-regular", "fa-envelope", "text-xl");
@@ -76,6 +97,8 @@ export default function profileOptions(profile, isOwner) {
     messageButton.append(messageIcon);
     followButton.append(followIcon);
     container.append(followButton, messageButton);
+
+    followUser(followButton, profile.name);
   }
   return container;
 }

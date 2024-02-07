@@ -7,11 +7,10 @@ const profileContainer = document.querySelector("#profileContainer");
 
 const banner = document.querySelector("#banner");
 
-export default function (profile, isOwner) {
-  console.log(profile._count);
+export default function (profile, isOwner, user) {
   const details = profileDetails(profile);
   const images = profileMedia(profile, isOwner);
-  const options = profileOptions(profile, isOwner);
+  const options = profileOptions(profile, isOwner, user);
   const stats = profileStats(profile);
 
   const statsAndOptions = document.createElement("div");

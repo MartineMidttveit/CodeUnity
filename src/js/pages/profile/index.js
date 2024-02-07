@@ -10,16 +10,13 @@ let params = new URLSearchParams(window.location.search);
 let name = params.get("name");
 
 const userProfile = await profiles(name);
-console.log(userProfile);
 
 const allProfiles = await profiles();
-console.log(allProfiles);
 const posts = await getPosts();
-console.log(posts);
+console.log(userProfile);
 
 const user = storage.load("profile");
-console.log(user);
 
 const isOwner = name === user.name ? true : false;
 
-profileComponents(userProfile.data, isOwner);
+profileComponents(userProfile.data, isOwner, user.name);
