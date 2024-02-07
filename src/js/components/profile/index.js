@@ -10,8 +10,10 @@ const banner = document.querySelector("#banner");
 export default function (profile, isOwner, user) {
   const details = profileDetails(profile);
   const images = profileMedia(profile, isOwner);
-  const options = profileOptions(profile, isOwner, user);
   const stats = profileStats(profile);
+  const options = profileOptions(profile, isOwner, user);
+
+  console.log(stats);
 
   const statsAndOptions = document.createElement("div");
 

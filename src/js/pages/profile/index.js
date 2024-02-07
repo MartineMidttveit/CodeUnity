@@ -14,6 +14,8 @@ const userProfile = await profiles(name);
 const allProfiles = await profiles();
 const posts = await getPosts();
 console.log(userProfile);
+console.log(allProfiles);
+console.log(posts);
 
 const user = storage.load("profile");
 
