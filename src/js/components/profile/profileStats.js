@@ -1,10 +1,19 @@
 export default function profileStats(profile) {
     const container = document.createElement("div");
-    container.classList.add("flex", "gap-x-14", "sm:gap-x-20");
+    container.classList.add(
+        "flex", 
+        "gap-x-14", 
+        "sm:gap-x-20"
+    );
     
     // Posts
     const posts = document.createElement("div");
-    posts.classList.add("text-center", "text-primary", "flex", "flex-col");
+    posts.classList.add(
+        "text-center", 
+        "text-primary", 
+        "flex", 
+        "flex-col"
+    );
 
     const xPosts = document.createElement("strong");
     xPosts.classList.add("text-lg");
@@ -18,7 +27,12 @@ export default function profileStats(profile) {
 
     // Followers
     const followers = document.createElement("div");
-    followers.classList.add("text-center", "text-primary", "flex", "flex-col");
+    followers.classList.add(
+        "text-center", 
+        "text-primary", 
+        "flex", 
+        "flex-col"
+    );
 
     const xFollowers = document.createElement("strong");
     xFollowers.classList.add("text-lg");
@@ -32,7 +46,12 @@ export default function profileStats(profile) {
 
     // Following
     const following = document.createElement("div");
-    following.classList.add("text-center", "text-primary", "flex", "flex-col");
+    following.classList.add(
+        "text-center", 
+        "text-primary", 
+        "flex", 
+        "flex-col"
+    );
 
     const xFollowing = document.createElement("strong");
     xFollowing.classList.add("text-lg");
