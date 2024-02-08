@@ -1,4 +1,5 @@
 const sidebarContainer = document.querySelector("#sidebarContainer");
+const sidebarProfileLink = document.querySelector("#sidebarProfileLink");
 
 export default function sidebarDetails(profile) {
     const sidebarContent = document.createElement("div");
@@ -42,11 +43,18 @@ export default function sidebarDetails(profile) {
     const changeStatus = document.createElement("button");
     changeStatus.classList.add(
         "text-white", 
-        "mt-1", "text-sm", 
+        "mt-1",  
         "status"
     );
     changeStatus.textContent = "Change status";
 
+    // changeStatus.addEventListener('click', function (){
+
+    // })
+
     sidebarContainer.append(sidebarContent, sidebarName, changeStatus);
+
+    sidebarProfileLink.href = `/profile/?name=${profile.name}`
+
     return sidebarContainer;
 }
