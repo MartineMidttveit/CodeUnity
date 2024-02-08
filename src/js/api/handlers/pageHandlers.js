@@ -17,8 +17,12 @@ export default {
     const headerProfileImage = document.createElement("img");
     headerProfileImage.classList.add(
       "rounded-full", 
-      "w-16",
-      "h-16",
+      "w-12",
+      "h-12",
+      "md:w-14",
+      "md:h-14",
+      "lg:w-16",
+      "lg:h-16",
       "object-cover",
       "border"
     );
