@@ -3,6 +3,7 @@ import getPosts from "../../api/auth/requests/getPosts.js";
 import profileComponents from "../../components/profile/index.js";
 import storage from "../../utils/storage.js";
 import pageHandlers from "../../api/handlers/pageHandlers.js";
+import searchbar from "../../utils/helpers/searchbar.js";
 
 pageHandlers.enterPage();
 
@@ -15,7 +16,8 @@ const allProfiles = await profiles();
 const posts = await getPosts();
 console.log(userProfile);
 console.log(allProfiles);
-console.log(posts);
+console.log(posts.data);
+searchbar(posts.data);
 
 const user = storage.load("profile");
 
