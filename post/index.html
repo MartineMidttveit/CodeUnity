@@ -4,6 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post</title>
+
+    <link rel="stylesheet" href="/dist/tailwind.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+
+    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
   </head>
-  <body></body>
+
+  <body class="bg-primary">
+    <section class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg">
+      <h2 class="text-2xl font-semibold mb-4">Create a new post</h2>
+      <figure class="mt-2 mb-6">
+          <img id="previewImage" src="/images/image.png" alt="" class="rounded-md">
+      </figure>
+  
+      <form action="" class="w-full">
+          <label for="image" class="text-lg">Image:</label>
+          <input type="url" id="image" class="w-full border rounded mb-4 h-14 mt-2 outline-none pl-3">
+            
+          <label for="title" class="text-lg">Title:</label>
+          <input type="text" id="title" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3">
+            
+          <label for="description" class="text-lg">Description:</label>
+          <input type="text" id="description" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3">
+            
+          <label for="tags" class="text-lg">Tags:</label>
+          
+          <div class="flex gap-4 flex-col">
+            <div class="w-1/2 flex h-14 rounded my-2">
+              <span class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold">#</span>
+              <input type="text" id="tags" class="w-full border outline-none pl-3"> 
+              <button class="px-5 bg-light text-2xl">+</button>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="border flex items-center justify-center rounded">
+                <i class="fa-solid fa-xmark text-secondary text-lg px-4"></i>
+                <span class="border-l px-4 py-2">#HTML</span>
+              </div>
+
+              <div class="border flex items-center justify-center rounded">
+                <i class="fa-solid fa-xmark text-secondary text-lg px-4"></i>
+                <span class="border-l px-4 py-2">#CSS</span>
+              </div>
+
+              <div class="border flex items-center justify-center rounded">
+                <i class="fa-solid fa-xmark text-secondary text-lg px-4"></i>
+                <span class="border-l px-4 py-2">#JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-6 justify-end">
+            <button class="rounded border flex items-center justify-center px-10 py-4">Cancel</button>
+            <button class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white">Publish</button>
+          </div>
+      </form>
+  </section>
+  </body>
 </html>
