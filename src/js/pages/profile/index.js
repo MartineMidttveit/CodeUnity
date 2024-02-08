@@ -27,4 +27,6 @@ const isOwner = name === user.name ? true : false;
 
 profileComponents(userProfile.data, isOwner, user.name);
 
-profileOwner.textContent = isOwner ? "Your Profile" : "@" + userProfile.data.name;
+profileOwner.textContent = isOwner
+  ? "Your Profile"
+  : "@" + userProfile.data.name;
