@@ -1,5 +1,7 @@
 import storage from "../../utils/storage.js";
-import sidebarDetails from "../../components/sidebar/index.js"
+import sidebarDetails from "../../components/sidebar/index.js";
+import searchbar from "../../utils/helpers/searchbar.js";
+import getAllPosts from "../../api/auth/requests/getAllPosts.js";
 
 const headerProfile = document.querySelector("#headerProfile");
 
@@ -16,7 +18,7 @@ export default {
 
     const headerProfileImage = document.createElement("img");
     headerProfileImage.classList.add(
-      "rounded-full", 
+      "rounded-full",
       "w-12",
       "h-12",
       "md:w-14",
@@ -30,8 +32,12 @@ export default {
     headerProfileImage.alt = "Your profile image";
 
     headerProfile.append(headerProfileImage);
+
+    document.addEventListener("DOMContentLoaded", async (e) => {
+      const posts = await getAllPosts();
+      searchbar(posts.data);
+    });
   },
 
   leavePage() {},
 };
-

@@ -1,4 +1,4 @@
-import userDetails from "./userDetails";
+import userDetails from "./userDetails.js";
 
 export default function userOptions(post) {
   const container = document.createElement("div");
