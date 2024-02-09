@@ -259,7 +259,7 @@
                 <label for="image" class="text-lg">Image:</label>
                 <input
                   type="url"
-                  id="image"
+                  id="create-post-image"
                   class="w-full border rounded mb-4 h-14 mt-2 outline-none pl-3"
                   name="media"
                 />
@@ -267,7 +267,7 @@
                 <label for="title" class="text-lg">Title:</label>
                 <input
                   type="text"
-                  id="title"
+                  id="create-post-title"
                   name="title"
                   class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
                 />
@@ -275,7 +275,7 @@
                 <label for="description" class="text-lg">Description:</label>
                 <input
                   type="text"
-                  id="description"
+                  id="create-post-body"
                   name="body"
                   class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
                 />
@@ -290,13 +290,14 @@
                     >
                     <input
                       type="text"
-                      id="tags"
+                      id="tags-input"
                       class="w-full border outline-none pl-3"
                       minlength="2"
                       maxlength="12"
                       pattern="[a-zA-Z0-9]+"
                       name="tags"
                       title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."
+                      required
                     />
                     <button
                       id="addTag"

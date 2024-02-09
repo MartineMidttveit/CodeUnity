@@ -5,10 +5,10 @@ export default function submitEvent(form, authRequest) {
     e.preventDefault();
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    const media = form.getAttribute("media");
-    if (media) {
-      data.media = {
-        src: media,
+
+    if (data.avatar) {
+      data.avatar = {
+        url: media,
         alt: "User uploaded img",
       };
     }

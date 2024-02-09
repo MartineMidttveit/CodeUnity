@@ -4,11 +4,15 @@ import profileComponents from "../../components/profile/index.js";
 import storage from "../../utils/storage.js";
 import pageHandlers from "../../api/handlers/pageHandlers.js";
 import postTemp from "../../components/post/thumbnail/index.js";
+import addTag from "../../api/handlers/eventListeners/addTag.js";
+import imagePreview from "../../utils/helpers/imagePreview.js";
 
 // const modalContainer = document.getElementById("create-post");
 
 const postContainer = document.getElementById("profile-user-posts");
 const profileOwner = document.querySelector("#profileOwner");
+const imageInput = document.querySelector("#create-post-image");
+const previewImg = document.querySelector("#previewImage");
 
 pageHandlers.enterPage();
 
@@ -22,7 +26,6 @@ const posts = await getPosts(`/profiles/${name}`);
 console.log(userProfile);
 console.log(allProfiles);
 console.log(posts.data);
-// searchbar(posts.data);
 
 const user = storage.load("profile");
 
@@ -37,3 +40,9 @@ profileOwner.textContent = isOwner
 posts.data.forEach((post) => {
   postTemp(post, postContainer);
 });
+
+let tagsContainer = [];
+addTag(tagsContainer);
+
+/* IMAGE PREVIEW */
+imagePreview(imageInput, previewImg);
