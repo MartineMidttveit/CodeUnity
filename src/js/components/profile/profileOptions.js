@@ -1,5 +1,32 @@
 import followUser from "../../api/handlers/eventListeners/followUser.js";
 
+const modalContainer = document.querySelector("#modalContainer");
+const modal = document.querySelector("#modal");
+
+// Function to open the modal
+function openModal() {
+  modalContainer.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  modalContainer.style.display = "none";
+}
+
+// Get the xmark icon
+const xmarkIcon = document.querySelector(".fa-xmark");
+
+// Click event listener for the xmark icon
+xmarkIcon.addEventListener("click", closeModal);
+
+// Click event listener for the modal container
+modalContainer.addEventListener("click", function(event) {
+  // If the click is outside of the modal content, close the modal
+  if (event.target === modalContainer) {
+    closeModal();
+  }
+});
+
 export default function profileOptions(profile, isOwner, user) {
   // if (profile.followers)
   const container = document.createElement("div");
@@ -29,17 +56,15 @@ export default function profileOptions(profile, isOwner, user) {
       "gap-3",
       "text-white",
       "bg-secondary",
-      "p-4",
+      "py-4",
+      "px-8",
       "rounded",
       "hover:bg-light",
       "hover:text-primary"
     );
     newPost.textContent = "New post";
+    newPost.addEventListener("click", openModal);
 
-    const newPostIcon = document.createElement("i");
-    newPostIcon.classList.add("fa-regular", "fa-square-plus", "text-xl");
-
-    newPost.append(newPostIcon);
     editProfile.append(editIcon);
     container.append(editProfile, newPost);
   } else {
