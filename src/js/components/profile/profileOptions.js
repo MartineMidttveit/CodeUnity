@@ -1,34 +1,26 @@
 import followUser from "../../api/handlers/eventListeners/followUser.js";
 
 const modalContainer = document.querySelector("#modalContainer");
-const modal = document.querySelector("#modal");
 
-// Function to open the modal
+
 function openModal() {
   modalContainer.style.display = "block";
 }
-
-// Function to close the modal
 function closeModal() {
   modalContainer.style.display = "none";
 }
 
-// Get the xmark icon
-const xmarkIcon = document.querySelector(".fa-xmark");
 
-// Click event listener for the xmark icon
+const xmarkIcon = document.querySelector(".fa-xmark");
 xmarkIcon.addEventListener("click", closeModal);
 
-// Click event listener for the modal container
 modalContainer.addEventListener("click", function(event) {
-  // If the click is outside of the modal content, close the modal
   if (event.target === modalContainer) {
     closeModal();
   }
 });
 
 export default function profileOptions(profile, isOwner, user) {
-  // if (profile.followers)
   const container = document.createElement("div");
   container.classList.add("flex", "justify-end", "gap-x-5");
   if (isOwner) {
