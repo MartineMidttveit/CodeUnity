@@ -4,3 +4,7 @@ import login from "../../api/auth/requests/login.js";
 const loginForm = document.querySelector("#login-form");
 
 submit(loginForm, login);
+
+const loginCreatePost = document.getElementById("login-create-post");
+
+createPostListen(loginCreatePost);

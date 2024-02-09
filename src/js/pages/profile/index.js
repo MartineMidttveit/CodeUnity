@@ -5,6 +5,8 @@ import storage from "../../utils/storage.js";
 import pageHandlers from "../../api/handlers/pageHandlers.js";
 import postTemp from "../../components/post/thumbnail/index.js";
 
+// const modalContainer = document.getElementById("create-post");
+
 const postContainer = document.getElementById("profile-user-posts");
 const profileOwner = document.querySelector("#profileOwner");
 

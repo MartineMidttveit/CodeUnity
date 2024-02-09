@@ -2,19 +2,17 @@ import followUser from "../../api/handlers/eventListeners/followUser.js";
 
 const modalContainer = document.querySelector("#modalContainer");
 
-
 function openModal() {
-  modalContainer.style.display = "block";
+  modalContainer.style.display = "flex";
 }
 function closeModal() {
   modalContainer.style.display = "none";
 }
 
-
 const xmarkIcon = document.querySelector(".fa-xmark");
 xmarkIcon.addEventListener("click", closeModal);
 
-modalContainer.addEventListener("click", function(event) {
+modalContainer.addEventListener("click", function (event) {
   if (event.target === modalContainer) {
     closeModal();
   }
