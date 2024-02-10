@@ -13,22 +13,19 @@
     <script defer src="/tags.js"></script>
   </head>
 
-  <body class="bg-primary">
+  <body class="bg-gray-50">
     <section class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg">
-      <h2 class="text-2xl font-semibold mb-4">Create a new post</h2>
-      <figure class="mt-2 mb-6">
-          <img id="previewImage" src="/images/image.png" alt="" class="rounded-md">
+      <h2 class="text-2xl font-semibold mb-4">Edit post</h2>
+      <figure class="mt-2 mb-6"><!--Bildet de har i innlegget sitt om det går an-->
+          <img id="previewImage" src="/images/china.png" alt="" class="rounded-md">
       </figure>
   
       <form action="" class="w-full">
-        <label for="image" class="text-lg">Image:</label>
-        <input type="url" id="image" class="w-full border rounded mb-4 h-14 mt-2 outline-none pl-3">
-        
         <label for="title" class="text-lg">Title:</label>
-        <input type="text" id="title" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3">
+        <input type="text" id="title" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="Their current title on the post">
         
         <label for="description" class="text-lg">Description:</label>
-        <input type="text" id="description" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3">
+        <input type="text" id="description" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="The current text within the description.">
         
         <label for="tags" class="text-lg">Tags:</label>
         
@@ -40,13 +37,37 @@
             </div>
     
             <div id="tagContainer" class="flex gap-4"></div>
+            <!--Få med taggene de har lagt til med mulighet for å fjerne dem-->
         </div>
     
         <div class="flex gap-4 mt-6 justify-end">
-            <button type="button" class="rounded border flex items-center justify-center px-10 py-4">Cancel</button>
-            <button type="submit" class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white">Publish</button>
+            <button type="button" class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md">Cancel</button>
+            <button type="submit" class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg">Save changes</button>
         </div>
     </form>
   </section>
+
+  <!--Hvis de trykker delete post-->
+
+  <section class="deletePost bg-white mx-auto max-w-3xl flex flex-col p-12 shadow-sm mt-10 rounded-lg items-center">
+    <h2 class="text-2xl font-semibold mb-4">Are you sure you want to delete post?</h2>
+    <p class="px-8 py-1 text-center text-lg">This action cannot be undone. The post and all associated data will be permanently removed from the system. Please consider carefully before proceeding.</p>
+
+    <div class="flex gap-4 mt-6">
+      <button type="button" class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md">Cancel</button>
+      <button type="submit" class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg">Delete post</button>
+    </div>
+  </section>
+
+  <div class="mb-40"></div>
+
+  <!--Etter at de har trykket delete. Tanken var at når de har trykket på delete knappen, så kommer denne inn og ut med opacity 0-100-->
+
+  <section class="alert flex max-w-80 px-8 py-6 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light">
+    <i class="fa-solid fa-trash text-lg text-primary"></i>
+    <h3 class="text-lg text-primary">Post successfully deleted!</h3>
+  </section>
+
+
   </body>
 </html>
