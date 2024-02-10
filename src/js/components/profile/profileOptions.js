@@ -27,7 +27,8 @@ export default function profileOptions(profile, isOwner, user) {
       "flex",
       "items-center",
       "gap-3",
-      "p-4",
+      "py-4",
+      "px-8",
       "rounded",
       "border",
       "border-primary",
@@ -35,9 +36,6 @@ export default function profileOptions(profile, isOwner, user) {
       "hover:border-light"
     );
     editProfile.textContent = "Edit profile";
-
-    const editIcon = document.createElement("i");
-    editIcon.classList.add("fa-regular", "fa-pen-to-square", "text-xl");
 
     const newPost = document.createElement("button");
     newPost.classList.add(
@@ -55,7 +53,6 @@ export default function profileOptions(profile, isOwner, user) {
     newPost.textContent = "New post";
     newPost.addEventListener("click", openModal);
 
-    editProfile.append(editIcon);
     container.append(editProfile, newPost);
   } else {
     const followButton = document.createElement("button");
