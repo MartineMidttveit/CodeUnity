@@ -45,6 +45,7 @@ export default class Auth {
       }
 
       if (!data) throw new Error("Promise returns no data.  ");
+
       return data;
     } catch (error) {
       console.error(error);

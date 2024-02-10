@@ -28,8 +28,10 @@ export default async function pageSpecific() {
   const profile = await profiles(name);
   const allProfiles = await profiles();
   const profilePosts = await getPosts(`/profiles/${name}`);
+  const allPosts = await getPosts();
   console.log(profilePosts);
   console.log(profile);
+  console.log(allPosts);
 
   const isOwner = name === user.name ? true : false;
 

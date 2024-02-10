@@ -1,10 +1,3 @@
-import submit from "../../api/handlers/eventListeners/submit.js";
-import login from "../../api/auth/requests/login.js";
+import listener from "../../api/handlers/eventListeners/formListen.js";
 
-const loginForm = document.querySelector("#login-form");
-
-submit(loginForm, login);
-
-const loginCreatePost = document.getElementById("login-create-post");
-
-createPostListen(loginCreatePost);
+listener.login.auth();

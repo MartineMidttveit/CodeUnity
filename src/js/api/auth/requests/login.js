@@ -1,16 +1,6 @@
-import config from "../../config.js";
-import Auth from "../index.js";
-import header from "../headers.js";
 import storage from "../../../utils/storage.js";
 
-export default async function login(body) {
-  const endpoint = config.LOGIN;
-  const method = "POST";
-  const headers = header.basic();
-
-  console.log(method, headers, endpoint, body);
-  const loginRequest = new Auth(method, headers, endpoint, body);
-
+export default async function loginSpecific(loginRequest) {
   try {
     const response = await loginRequest.fetch();
     if (!response) return null;
@@ -18,6 +8,7 @@ export default async function login(body) {
     storage.save("token", accessToken);
     storage.save("profile", profileData);
     window.location.href = "/profile/?name=" + profileData.name;
+    return { accessToken, ...profileData };
   } catch (error) {
     console.error(error);
   }
