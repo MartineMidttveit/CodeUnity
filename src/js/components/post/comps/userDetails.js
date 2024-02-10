@@ -21,7 +21,7 @@ export default function userDetails(post) {
   imgContainer.appendChild(img);
 
   const textContainer = document.createElement("div");
-  textContainer.setAttribute("class", "ml-6 sm:ml-8 md:ml-10");
+  textContainer.setAttribute("class", "ml-2 sm:ml-4  md:ml-8");
 
   const nameP = document.createElement("p");
   nameP.setAttribute("class", "font-semibold text-lg");

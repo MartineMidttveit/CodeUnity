@@ -37,6 +37,8 @@ export default {
       const posts = await getAllPosts();
       searchbar(posts.data);
     });
+
+    return { profile, token };
   },
 
   leavePage() {},
