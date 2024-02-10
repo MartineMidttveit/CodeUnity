@@ -4,7 +4,10 @@ export default function imagePreview(input, image) {
     // Can you check if the URL is valid?
 
     const url = e.target.value;
-    if (!url) return;
+    if (!url) {
+      image.src = "/images/image.png";
+      return;
+    }
     console.log(url);
     console.log(image);
 
