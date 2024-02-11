@@ -19,6 +19,8 @@ export default class Auth {
     this.headers = headers;
     this.url = `${config.BASE_URL}${endpoint}`;
     this.body = body;
+
+    console.log(this.body);
   }
 
   /**
@@ -43,6 +45,8 @@ export default class Auth {
           throw new Error("Something went wrong: " + response);
         }
       }
+      console.log(response);
+      console.log(data);
 
       if (!data) throw new Error("Promise returns no data.  ");
 

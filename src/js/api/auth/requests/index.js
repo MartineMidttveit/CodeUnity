@@ -24,5 +24,6 @@ export default {
       headers.withAuthToken(),
       "PUT"
     );
+    data.fetch();
   },
 };
