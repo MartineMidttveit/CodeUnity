@@ -1,4 +1,4 @@
-import header from "../headers.js";
+import header from "../data/headers.js";
 import Auth from "../index.js";
 
 export default async function profiles(user = "") {

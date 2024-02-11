@@ -17,21 +17,24 @@ export default class Auth {
   constructor(method, headers, endpoint, body = null) {
     this.method = method;
     this.headers = headers;
-    this.url = `${config.BASE_URL}${endpoint}`;
+    this.endpoint = endpoint;
     this.body = body;
-
-    console.log(this.body);
   }
 
   /**
    * Fetches data from the specified URL using the provided method, headers, and body.
-   * @returns {Promise<Response>} - The response from the fetch request.
+   * @param {string}  - The endpoint URL for the request (optional), will default to endpoint from the constructor if empty.
+   * @returns {Promise} - returns the requested data from the fetch.
    */
-  async fetch() {
+  async fetch(endpoint = this.endpoint) {
+    if (!endpoint) throw new Error("No endpoint provided.");
+
+    const url = config.BASE_URL + endpoint;
+
     this.body && (this.body = JSON.stringify(this.body));
 
     try {
-      const response = await fetch(this.url, {
+      const response = await fetch(url, {
         headers: this.headers,
         method: this.method,
         body: this.body,
@@ -45,8 +48,6 @@ export default class Auth {
           throw new Error("Something went wrong: " + response);
         }
       }
-      console.log(response);
-      console.log(data);
 
       if (!data) throw new Error("Promise returns no data.  ");
 

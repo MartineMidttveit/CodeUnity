@@ -6,6 +6,8 @@ import profileComponents from "../../components/profile/index.js";
 import postTemp from "../../components/post/thumbnail/index.js";
 import addTag from "../../api/handlers/eventListeners/addTag.js";
 import imagePreview from "../../utils/helpers/imagePreview.js";
+import endpoints from "../../api/auth/data/endpoints/index.js";
+import requests from "../../api/auth/requests/index.js";
 
 const postContainer = document.getElementById("profile-user-posts");
 const profileOwner = document.querySelector("#profileOwner");
@@ -17,6 +19,8 @@ export default async function pageSpecific() {
   let name = params.get("name");
   const user = storage.load("profile");
 
+  console.log(endpoints.profiles.byName(name));
+
   if (!name) {
     if (!user.name) window.location.href = "/";
     else window.location.href = `/profile/?name=${user.name}`;
@@ -25,27 +29,39 @@ export default async function pageSpecific() {
   data.profilePage = name;
   console.log(data);
 
-  const profile = await profiles(name);
-  const allProfiles = await profiles();
-  const profilePosts = await getPosts(`/profiles/${name}`);
-  const allPosts = await getPosts();
-  console.log(profilePosts);
-  console.log(profile);
-  console.log(allPosts);
+  // Get requests
+  const getRequest = await requests.get();
+
+  const { data: profile } = await getRequest.fetch(
+    endpoints.profiles.byName(name)
+  );
+  const { data: profilePosts } = await getRequest.fetch(
+    endpoints.posts.byProfile(name)
+  );
+
+  profilePosts.forEach((post) => postTemp(post, postContainer));
+
+  // const profile = await profiles(name);
+  // const allProfiles = await profiles();
+  // const profilePosts = await getPosts(`/profiles/${name}`);
+  // const allPosts = await getPosts();
+  // console.log(profilePosts);
+  // console.log(profile);
+  // console.log(allPosts);
 
   const isOwner = name === user.name ? true : false;
 
-  profileComponents(profile.data, isOwner, user.name);
+  profileComponents(profile, isOwner, user.name);
 
-  profileOwner.textContent = isOwner ? "Your Profile" : "@" + profile.data.name;
+  // profileOwner.textContent = isOwner ? "Your Profile" : "@" + profile.data.name;
 
-  profilePosts.data.forEach((post) => postTemp(post, postContainer));
+  // profilePosts.data.forEach((post) => postTemp(post, postContainer));
 
-  let tagsContainer = [];
-  addTag(tagsContainer);
+  // let tagsContainer = [];
+  // addTag(tagsContainer);
 
-  /* IMAGE PREVIEW */
-  imagePreview(imageInput, previewImg);
+  // /* IMAGE PREVIEW */
+  // imagePreview(imageInput, previewImg);
 
   return data;
 }

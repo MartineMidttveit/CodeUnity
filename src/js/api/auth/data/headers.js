@@ -1,5 +1,5 @@
-import config from "../config.js";
-import storage from "../../utils/storage.js";
+import config from "../../config.js";
+import storage from "../../../utils/storage.js";
 
 /**
  * Module for generating headers for API requests.

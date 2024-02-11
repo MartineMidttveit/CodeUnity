@@ -104,3 +104,6 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+header {
+  max-width: 1920px;
+}
