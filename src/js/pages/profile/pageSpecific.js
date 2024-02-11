@@ -19,15 +19,11 @@ export default async function pageSpecific() {
   let name = params.get("name");
   const user = storage.load("profile");
 
-  console.log(endpoints.profiles.byName(name));
-
   if (!name) {
     if (!user.name) window.location.href = "/";
     else window.location.href = `/profile/?name=${user.name}`;
   }
   const data = pageHandlers.enterPage();
-  data.profilePage = name;
-  console.log(data);
 
   // Get requests
   const getRequest = await requests.get();
@@ -41,27 +37,17 @@ export default async function pageSpecific() {
 
   profilePosts.forEach((post) => postTemp(post, postContainer));
 
-  // const profile = await profiles(name);
-  // const allProfiles = await profiles();
-  // const profilePosts = await getPosts(`/profiles/${name}`);
-  // const allPosts = await getPosts();
-  // console.log(profilePosts);
-  // console.log(profile);
-  // console.log(allPosts);
-
   const isOwner = name === user.name ? true : false;
 
   profileComponents(profile, isOwner, user.name);
 
-  // profileOwner.textContent = isOwner ? "Your Profile" : "@" + profile.data.name;
+  profileOwner.textContent = isOwner ? "Your Profile" : "@" + profile.data.name;
 
-  // profilePosts.data.forEach((post) => postTemp(post, postContainer));
+  let tagsContainer = [];
+  addTag(tagsContainer);
 
-  // let tagsContainer = [];
-  // addTag(tagsContainer);
-
-  // /* IMAGE PREVIEW */
-  // imagePreview(imageInput, previewImg);
+  /* IMAGE PREVIEW */
+  imagePreview(imageInput, previewImg);
 
   return data;
 }
