@@ -10,6 +10,9 @@ export default {
   // - change img of a specific profile by name
   changeImg: (name) => `/social/profiles/${name}`,
 
+  // - follow or unfollow a specific profile by name
+  toggleFollow: (name, followType) => `/social/profiles/${name}/${followType}`,
+
   // - search for profiles by their name or Bio
   search: (query) => `/social/profiles/search?q=${query}`,
 };

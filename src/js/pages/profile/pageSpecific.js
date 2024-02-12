@@ -1,7 +1,5 @@
 import pageHandlers from "../../api/handlers/pageHandlers.js";
 import storage from "../../utils/storage.js";
-import profiles from "../../api/auth/requests/profiles.js";
-import getPosts from "../../api/auth/requests/getPosts.js";
 import profileComponents from "../../components/profile/index.js";
 import postTemp from "../../components/post/thumbnail/index.js";
 import addTag from "../../api/handlers/eventListeners/addTag.js";
@@ -35,8 +33,10 @@ export default async function pageSpecific() {
     endpoints.posts.byProfile(name)
   );
 
+  const { data: allPosts } = await getRequest.fetch(endpoints.posts.all());
   profilePosts.forEach((post) => postTemp(post, postContainer));
 
+  console.log(allPosts);
   const isOwner = name === user.name ? true : false;
 
   profileComponents(profile, isOwner, user.name);

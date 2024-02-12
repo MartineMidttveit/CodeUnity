@@ -20,6 +20,8 @@ export default function likesAndComments(post) {
   const comments = document.createElement("div");
   comments.setAttribute("class", "flex items-center gap-x-3");
 
+  console.log(post);
+
   const commentsIcon = document.createElement("i");
   commentsIcon.setAttribute("class", "fa-regular fa-comment text-2xl");
 
