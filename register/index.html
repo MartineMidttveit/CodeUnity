@@ -15,9 +15,6 @@
     <script defer src="/register.js"></script>
   </head>
   <body>
-    <div class="flex py-4 lg:py-8 mx-auto">
-
-    <div></div>
 
     <section class="min-h-screen flex flex-col gap-10 items-center justify-center">
         <h1 class="text-4xl font-bold w-full">Register</h1>
@@ -39,10 +36,34 @@
             <label for="confirmPassword" class="text-lg">Repeat Password:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required class="py-1 px-3 rounded-sm border text-lg mt-1.5" />
           </div>
-          <button type="submit" class="bg-secondary py-2 mt-2 w-32 text-white rounded-md">Register</button>
+
+        <div class="flex flex-col">
+            <div class="flex font-medium text-gray-500 gap-4">
+                <span class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center">
+                    <i class="fa-solid fa-check text-white text-xs"></i> 
+                </span>
+                Must contain 8 characters.
+            </div>
+
+            <div class="flex font-medium text-gray-500 gap-4">
+                <span class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center">
+                    <i class="fa-solid fa-check text-white text-xs"></i> 
+                </span>
+                Only lower- and uppercase letters, and numbers.
+            </div>
+
+            <div class="flex font-medium text-gray-500 gap-4">
+                <span class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center">
+                    <i class="fa-solid fa-check text-white text-xs"></i> 
+                </span>
+                No special characters.
+            </div>
+        </div>
+
+            <button type="submit" class="bg-secondary py-2 mt-2 w-32 text-white rounded-md">Register</button>
         </form>
     </section>
 
-    </div>
+
   </body>
 </html>
