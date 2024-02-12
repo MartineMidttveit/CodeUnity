@@ -4,7 +4,7 @@ const passwordRequirements = document.querySelector("#passwordRequirements");
 const passwordLength = document.querySelector("#passwordLengthIcon");
 const passwordFormat = document.querySelector("#passwordFormatIcon");
 const incorrectPassword = document.querySelector("#incorrectPassword");
-const passwordSymbol = document.getElementById('passwordSymbol');
+const passwordSymbol = document.querySelector("passwordSymbol");
 
 passwordInput.addEventListener('focus', function () {
     passwordRequirements.style.display = 'flex';
