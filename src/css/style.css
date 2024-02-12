@@ -107,3 +107,7 @@ body {
 header {
   max-width: 1920px;
 }
+
+.text-10xl {
+  font-size: 10rem;
+}
