@@ -50,17 +50,25 @@
                     Must contain 8 characters.
                 </div>
 
-                <div id="passwordFormat" class="flex font-medium text-gray-500 gap-4 mt-1.5">
+                <div class="flex font-medium text-gray-500 gap-4 mt-1.5">
                     <span id="passwordFormatIcon"
                         class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center">
                         <i class="fa-solid fa-check text-white text-xs"></i>
                     </span>
                     Must contain lower- and uppercase letters, and numbers.
                 </div>
+
+                <div class="flex font-medium text-gray-500 gap-4 mt-1.5">
+                    <span id="passwordSymbol"
+                        class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center">
+                        <i class="fa-solid fa-check text-white text-xs"></i>
+                    </span>
+                    Must contain at least 1 special character.
+                </div>
             </div>
 
             <div class="hidden" id="incorrectPassword">
-                <p class="font-medium text-gray-500">The passwords do not match.</p>
+                <p class="font-bold text-gray-700">The passwords do not match.</p>
             </div>
 
             <button type="submit" class="bg-secondary py-2 mt-2 w-32 text-white rounded-md">Register</button>
