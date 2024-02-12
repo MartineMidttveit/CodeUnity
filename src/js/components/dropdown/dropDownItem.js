@@ -1,14 +1,16 @@
 export default function dropDownItem(item) {
   const choice = document.createElement("button");
+
+  !item.first && choice.classList.add("border-t");
   choice.classList.add(
     "block",
     "w-full",
     "text-left",
     "px-4",
-    "py-2",
+    "py-3",
     "text-sm",
     "text-gray-700",
-    "hover:bg-gray-100",
+    "hover:bg-light",
     "hover:text-gray-900"
   );
   const spanText = document.createElement("span");
@@ -26,6 +28,10 @@ export default function dropDownItem(item) {
   }
 
   choice.append(spanText);
+
+  choice.addEventListener("click", function (e) {
+    console.log("clicked " + e.target.textContent);
+  });
 
   return choice;
 }

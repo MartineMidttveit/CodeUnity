@@ -12,12 +12,16 @@
 
     <link rel="stylesheet" href="/dist/tailwind.css" />
     <link rel="stylesheet" href="/src/css/style.css" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon.png"
+    />
 
     <script defer src="/hamburger.js"></script>
     <script defer src="/editImage.js"></script>
     <script type="module" src="/src/js/pages/profile/index.js"></script>
-    <script defer src="/modal.js"></script>
   </head>
 
   <body class="font-gilroy">
@@ -222,8 +226,11 @@
 
           <section
             class="bg-white mx-auto modal w-full fixed z-10 hidden items-center left-0 top-0 h-full p-10 overflow-auto md:ml-12"
-            id="modalContainer">
-            <div class="max-w-3xl flex flex-col px-12 py-10 rounded-lg bg-white mx-auto border modal-content">
+            id="modalContainer"
+          >
+            <div
+              class="max-w-3xl flex flex-col px-12 py-10 rounded-lg bg-white mx-auto border modal-content"
+            >
               <div class="flex justify-between items-center mb-4">
                 <h2 class="text-2xl font-semibold">Create a new post</h2>
                 <i class="fa-solid fa-xmark text-xl"></i>
@@ -321,41 +328,85 @@
         id="profile-user-posts"
       ></section>
 
-      <section class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg modal">
+      <section
+        class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg modal"
+      >
         <div id="modal-content">
           <h2 class="text-2xl font-semibold mb-4">Edit post</h2>
-            <figure class="mt-2 mb-6"><!--Bildet de har i innlegget sitt om det går an-->
-                <img id="previewImage" src="/images/china.png" alt="" class="rounded-md">
-            </figure>
-        
-            <form action="" class="w-full">
-              <label for="title" class="text-lg">Title:</label>
-              <input type="text" id="title" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="Their current title on the post">
-              
-              <label for="description" class="text-lg">Description:</label>
-              <input type="text" id="description" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="The current text within the description.">
-              
-              <label for="tags" class="text-lg">Tags:</label>
-              
-              <div class="flex gap-4 flex-col">
-                  <div class="w-1/2 flex h-14 rounded my-2">
-                      <span class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold">#</span>
-                      <input type="text" id="tags" class="w-full border outline-none pl-3" minlength="2" maxlength="12" pattern="[a-zA-Z0-9]+" title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."> 
-                      <button id="addTag" type="button" class="px-5 bg-light text-2xl">+</button>
-                  </div>
-          
-                  <div id="tagContainer" class="flex gap-4"></div>
-                  <!--Få med taggene de har lagt til med mulighet for å fjerne dem-->
+          <figure class="mt-2 mb-6">
+            <!--Bildet de har i innlegget sitt om det går an-->
+            <img
+              id="previewImage"
+              src="/images/china.png"
+              alt=""
+              class="rounded-md"
+            />
+          </figure>
+
+          <form action="" class="w-full">
+            <label for="title" class="text-lg">Title:</label>
+            <input
+              type="text"
+              id="title"
+              class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+              placeholder="Their current title on the post"
+            />
+
+            <label for="description" class="text-lg">Description:</label>
+            <input
+              type="text"
+              id="description"
+              class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+              placeholder="The current text within the description."
+            />
+
+            <label for="tags" class="text-lg">Tags:</label>
+
+            <div class="flex gap-4 flex-col">
+              <div class="w-1/2 flex h-14 rounded my-2">
+                <span
+                  class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold"
+                  >#</span
+                >
+                <input
+                  type="text"
+                  id="tags"
+                  class="w-full border outline-none pl-3"
+                  minlength="2"
+                  maxlength="12"
+                  pattern="[a-zA-Z0-9]+"
+                  title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."
+                />
+                <button
+                  id="addTag"
+                  type="button"
+                  class="px-5 bg-light text-2xl"
+                >
+                  +
+                </button>
               </div>
-          
-              <div class="flex gap-4 mt-6 justify-end">
-                  <button type="button" class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md">Cancel</button>
-                  <button type="submit" class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg">Save changes</button>
-              </div>
+
+              <div id="tagContainer" class="flex gap-4"></div>
+              <!--Få med taggene de har lagt til med mulighet for å fjerne dem-->
+            </div>
+
+            <div class="flex gap-4 mt-6 justify-end">
+              <button
+                type="button"
+                class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg"
+              >
+                Save changes
+              </button>
+            </div>
           </form>
         </div>
-        
-    </section>
+      </section>
     </main>
 
     <!--Footer-->
