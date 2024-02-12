@@ -11,8 +11,8 @@ export default function dropDownItem(item) {
     "hover:bg-gray-100",
     "hover:text-gray-900"
   );
-
-  choice.textContent = item.text;
+  const spanText = document.createElement("span");
+  spanText.textContent = item.text;
   if (item.icon) {
     const icon = document.createElement("i");
     icon.classList.add(
@@ -24,6 +24,8 @@ export default function dropDownItem(item) {
     );
     choice.append(icon);
   }
+
+  choice.append(spanText);
 
   return choice;
 }

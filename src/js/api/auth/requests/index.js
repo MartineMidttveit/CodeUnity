@@ -3,8 +3,6 @@ import Auth from "../index.js";
 import loginSpecific from "./login.js";
 import endpoints from "../data/endpoints/index.js";
 
-console.log(endpoints.profiles);
-
 const request = (
   body,
   endpoint,
@@ -17,7 +15,7 @@ export default {
   default: request,
 
   // Login request
-  login: async function (body, endpoint = "/auth/login/") {
+  login: async function (body, endpoint = endpoints.login()) {
     const data = request(body, endpoint, headers.basic());
     loginSpecific(data);
   },
@@ -26,7 +24,7 @@ export default {
   profileMedia: async function (body, username) {
     const data = request(
       body,
-      "/social/profiles/" + username,
+      endpoints.profiles.changeImg(username),
       headers.withAuthToken(),
       "PUT"
     );
@@ -34,10 +32,15 @@ export default {
   },
 
   //standard get request. Can be used for any get request.
-  // returns an auth object with a fetch function.
   // Endpoint is optional in here, but if not provided, it needs to be provided when calling the fetch function.
   get: async function (endpoint = null) {
     const data = request(null, endpoint, headers.authWithoutContent(), "get");
     return data;
+  },
+
+  // create post
+  create: async function (body) {
+    const data = request(body, endpoints.posts.create());
+    data.fetch();
   },
 };

@@ -19,7 +19,7 @@ export default function userOptions(post) {
   const optionsDiv = document.createElement("div");
   optionsDiv.setAttribute(
     "class",
-    "options hidden absolute bg-white rounded shadow-xl border"
+    "options hidden absolute bg-white rounded shadow-xl border min-w-60"
   );
 
   options.appendChild(button);
@@ -29,8 +29,7 @@ export default function userOptions(post) {
 
   button.addEventListener("click", function () {
     toggleOptions();
-    optionsDiv.style.cssText =
-      "min-width: 300px; right: 0; overflow: hidden; padding: 1.5rem;";
+    // optionsDiv.style.cssText = "; right: 0; overflow: hidden; padding: 1.5rem;";
   });
 
   function toggleOptions() {
