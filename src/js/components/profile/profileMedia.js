@@ -1,3 +1,5 @@
+import dropdown from "../dropdown/index.js";
+
 export default function profileMedia(profile, isOwner) {
   const container = document.createElement("div");
   container.classList.add("relative", "flex", "items-center", "flex-col");
@@ -59,24 +61,34 @@ export default function profileMedia(profile, isOwner) {
     editText.classList.add("hidden", "md:flex");
     editText.textContent = "Edit profile image";
 
-    const imageOptions = document.createElement("div");
-    imageOptions.classList.add(
-      "imageOptions",
-      "absolute",
-      "bg-white",
-      "rounded",
-      "shadow-xl",
-      "border",
-      "right-40",
-      "z-10",
-      "mt-3"
-    );
+    // const imageOptions = document.createElement("div");
+    // imageOptions.classList.add(
+    //   "imageOptions",
+    //   "absolute",
+    //   "bg-white",
+    //   "rounded",
+    //   "shadow-xl",
+    //   "border",
+    //   "right-40",
+    //   "z-10",
+    //   "mt-3"
+    // );
 
     editBtn.append(editIcon, editText);
-    editProfileImage.append(editBtn, imageOptions);
+    editProfileImage.append(editBtn);
     container.append(editProfileImage);
 
-    editBtn.addEventListener("click", function () {});
+    const choice1 = {
+      text: "Change avatar image",
+      icon: ["fa-regular", "fa-image"],
+    };
+
+    const choice2 = {
+      text: "Change banner image",
+      icon: ["fa-solid", "fa-panorama"],
+    };
+
+    editProfileImage.appendChild(dropdown(editBtn, [choice1, choice2]));
   }
 
   return container;
