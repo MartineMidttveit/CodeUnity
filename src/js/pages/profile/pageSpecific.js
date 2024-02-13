@@ -33,10 +33,13 @@ export default async function pageSpecific() {
     endpoints.posts.byProfile(name)
   );
 
+  const allProfiles = await getRequest.fetch(endpoints.profiles.all());
+  console.log(allProfiles.data);
+
   const { data: allPosts } = await getRequest.fetch(endpoints.posts.all());
   profilePosts.forEach((post) => postTemp(post, postContainer));
 
-  console.log(allPosts);
+  console.log(profile);
   const isOwner = name === user.name ? true : false;
 
   profileComponents(profile, isOwner, user.name);
