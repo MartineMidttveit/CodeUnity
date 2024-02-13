@@ -12,10 +12,28 @@ export default function dropdown(ele, choices = []) {
     container.appendChild(dropDownItem(choice));
   });
 
-  ele.addEventListener("click", function () {
-    container.classList.toggle("hidden");
-    console.log("clicked");
-  });
+  // Original event listener function
+  function showContainer(event) {
+    event.stopPropagation(); // Add this line
+    container.classList.remove("hidden");
+    ele.removeEventListener("click", showContainer);
+
+    // New event listener function
+    function hideContainer(e) {
+      if (!container.contains(e.target)) {
+        container.classList.add("hidden");
+        document.removeEventListener("click", hideContainer);
+        ele.addEventListener("click", showContainer);
+      }
+    }
+
+    // Add the new event listener to the document
+    document.addEventListener("click", hideContainer);
+  }
+
+  // Add the original event listener to the element
+
+  ele.addEventListener("click", showContainer);
 
   return container;
 }

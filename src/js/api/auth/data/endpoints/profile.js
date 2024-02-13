@@ -1,4 +1,7 @@
-const profileFilter = "_following?=true&_followers?=true&_posts?=true";
+const profileFilter = "_following=true&_followers=true&_posts=true";
+
+("_followers=true&_following=true&_posts=true");
+("_following=true&_followers=true&_posts=true");
 
 export default {
   // - all profiles
