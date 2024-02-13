@@ -223,101 +223,6 @@
         New post
       </button>
     </div>-->
-
-          <section
-            class="bg-white mx-auto modal w-full fixed z-10 hidden items-center left-0 top-0 h-full p-10 overflow-auto md:ml-12"
-            id="modalContainer"
-          >
-            <div
-              class="max-w-3xl flex flex-col px-12 py-10 rounded-lg bg-white mx-auto border modal-content"
-            >
-              <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-semibold">Create a new post</h2>
-                <i class="fa-solid fa-xmark text-xl"></i>
-              </div>
-
-              <figure class="mt-2 mb-6">
-                <img
-                  id="previewImage"
-                  src="/images/image.png"
-                  alt=""
-                  class="rounded-md"
-                />
-              </figure>
-
-              <form action="" class="w-full" id="create-post">
-                <label for="image" class="text-lg">Image:</label>
-                <input
-                  type="url"
-                  id="create-post-image"
-                  class="w-full border rounded mb-4 h-14 mt-2 outline-none pl-3"
-                  name="media"
-                />
-
-                <label for="title" class="text-lg">Title:</label>
-                <input
-                  type="text"
-                  id="create-post-title"
-                  name="title"
-                  class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
-                />
-
-                <label for="description" class="text-lg">Description:</label>
-                <input
-                  type="text"
-                  id="create-post-body"
-                  name="body"
-                  class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
-                />
-
-                <label for="tags" class="text-lg">Tags:</label>
-
-                <div class="flex gap-4 flex-col">
-                  <div class="w-1/2 flex h-14 rounded my-2">
-                    <span
-                      class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold"
-                      >#</span
-                    >
-                    <input
-                      type="text"
-                      id="tags-input"
-                      class="w-full border outline-none pl-3"
-                      minlength="2"
-                      maxlength="12"
-                      pattern="[a-zA-Z0-9]+"
-                      name="tags"
-                      title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."
-                      required
-                    />
-                    <button
-                      id="addTag"
-                      type="button"
-                      class="px-5 bg-light text-2xl"
-                    >
-                      +
-                    </button>
-                  </div>
-
-                  <div id="tagContainer" class="flex gap-4"></div>
-                </div>
-
-                <div class="flex gap-4 mt-6 justify-end">
-                  <button
-                    type="button"
-                    class="rounded border flex items-center justify-center px-10 py-4"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white"
-                  >
-                    Publish
-                  </button>
-                </div>
-              </form>
-            </div>
-          </section>
         </div>
       </section>
 
@@ -407,6 +312,137 @@
           </form>
         </div>
       </section>
+
+      <!--MODAL START-->
+      <section
+        class="bg-white mx-auto modal w-full fixed z-10 hidden items-center left-0 top-0 h-full p-10 overflow-auto md:ml-12"
+        id="modalContainer"
+      >
+        <div
+          class="max-w-3xl flex flex-col px-12 py-10 rounded-lg bg-white mx-auto border modal-content"
+        >
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold">Create a new post</h2>
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </div>
+
+          <figure class="mt-2 mb-6">
+            <img
+              id="previewImage"
+              src="/images/image.png"
+              alt=""
+              class="rounded-md"
+            />
+          </figure>
+
+          <form action="" class="w-full" id="create-post">
+            <label for="image" class="text-lg">Image:</label>
+            <input
+              type="url"
+              id="create-post-image"
+              class="w-full border rounded mb-4 h-14 mt-2 outline-none pl-3"
+              name="media"
+            />
+
+            <label for="title" class="text-lg">Title:</label>
+            <input
+              type="text"
+              id="create-post-title"
+              name="title"
+              class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+            />
+
+            <label for="description" class="text-lg">Description:</label>
+            <input
+              type="text"
+              id="create-post-body"
+              name="body"
+              class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+            />
+
+            <label for="tags" class="text-lg">Tags:</label>
+
+            <div class="flex gap-4 flex-col">
+              <div class="w-1/2 flex h-14 rounded my-2">
+                <span
+                  class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold"
+                  >#</span
+                >
+                <input
+                  type="text"
+                  id="tags-input"
+                  class="w-full border outline-none pl-3"
+                  minlength="2"
+                  maxlength="12"
+                  pattern="[a-zA-Z0-9]+"
+                  name="tags"
+                  title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."
+                  required
+                />
+                <button
+                  id="addTag"
+                  type="button"
+                  class="px-5 bg-light text-2xl"
+                >
+                  +
+                </button>
+              </div>
+
+              <div id="tagContainer" class="flex gap-4"></div>
+            </div>
+
+            <div class="flex gap-4 mt-6 justify-end">
+              <button
+                type="button"
+                class="rounded border flex items-center justify-center px-10 py-4"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white"
+              >
+                Publish
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <!--MODAL END-->
+
+      <div
+        id="modal-container"
+        class="bg-white mx-auto modal min-w-3xl w-full fixed z-10 flex items-center left-0 top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12"
+      >
+        <div
+          class="max-w-3xl flex flex-col px-4 sm:px-12 py-10 rounded-lg bg-white mx-auto border modal-content w-full"
+        >
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold" id="modal-header">
+              Replace header
+            </h2>
+            <i class="fa-solid fa-xmark text-xl cursor-pointer"></i>
+          </div>
+          <div id="modal-body">
+            <div>test</div>
+          </div>
+
+          <div class="flex gap-4 mt-6 justify-center sm:justify-end">
+            <button
+              type="button"
+              class="rounded border flex items-center justify-center px-10 py-4 hover:bg-light duration-500"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:bg-light duration-00 hover:text-primary"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!--Footer-->

@@ -1,9 +1,10 @@
-import modalContainer from "./container";
+// import modalContainer from "./container";
 
-export default function (data, container) {
+export default function (data) {
+  const modal = document.getElementById("modal-container");
+  const modalBody = modal.getElementsById("modal-body");
+
   const types = data.elements;
-  const modal = modalContainer();
-
   if (types) types.forEach((type) => modal.appendChild(checkType(type)));
 
   container.appendChild(modal); // Append the modal to the container
