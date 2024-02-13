@@ -111,3 +111,11 @@ header {
 .text-10xl {
   font-size: 10rem;
 }
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}

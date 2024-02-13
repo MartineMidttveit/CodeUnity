@@ -4,7 +4,7 @@ const passwordRequirements = document.querySelector("#passwordRequirements");
 const passwordLength = document.querySelector("#passwordLengthIcon");
 const passwordFormat = document.querySelector("#passwordFormatIcon");
 const incorrectPassword = document.querySelector("#incorrectPassword");
-const passwordSymbol = document.querySelector("passwordSymbol");
+const passwordSymbol = document.querySelector("#passwordSymbol");
 
 passwordInput.addEventListener('focus', function () {
     passwordRequirements.style.display = 'flex';
@@ -34,6 +34,6 @@ confirmPasswordInput.addEventListener('blur', function () {
     if (password === '' && confirmPassword === "") {
         setTimeout(function () {
             incorrectPassword.style.display = "none";
-        }, 1000);
+        }, 500);
     }
 });
