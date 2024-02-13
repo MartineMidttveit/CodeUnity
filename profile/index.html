@@ -412,7 +412,7 @@
 
       <div
         id="modal-container"
-        class="bg-white mx-auto modal min-w-3xl w-full fixed z-10 flex items-center left-0 top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12"
+        class="bg-white mx-auto modal w-full fixed z-10 flex items-center left-0 top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12"
       >
         <div
           class="max-w-3xl flex flex-col px-4 sm:px-12 py-10 rounded-lg bg-white mx-auto border modal-content w-full"
@@ -423,9 +423,23 @@
             </h2>
             <i class="fa-solid fa-xmark text-xl cursor-pointer"></i>
           </div>
-          <div id="modal-body">
-            <div>test</div>
-          </div>
+          <form id="modal-body">
+            <figure class="mt-2 mb-6">
+              <img
+                id="previewImage"
+                src="/images/image.png"
+                alt=""
+                class="rounded-md"
+              />
+            </figure>
+            <label for="image" class="text-lg">Image:</label>
+            <input
+              type="url"
+              id="create-post-image"
+              class="w-full border rounded mb-4 h-14 mt-2 outline-none pl-3"
+              name="media"
+            />
+          </form>
 
           <div class="flex gap-4 mt-6 justify-center sm:justify-end">
             <button
