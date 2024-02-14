@@ -1,7 +1,7 @@
 import dropDownItem from "./dropDownItem.js";
 import toggleContainer from "./toggleContainer.js";
 
-export default function dropdown(ele, choices = []) {
+export default function dropdown(ele, choices, post) {
   const container = document.createElement("div");
   container.setAttribute(
     "class",
@@ -10,7 +10,7 @@ export default function dropdown(ele, choices = []) {
 
   choices.forEach((choice, i) => {
     i === 0 && (choice.first = true);
-    container.appendChild(dropDownItem(choice));
+    container.appendChild(dropDownItem(choice, post));
   });
 
   toggleContainer(ele, container);

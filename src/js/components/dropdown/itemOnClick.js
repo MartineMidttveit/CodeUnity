@@ -1,10 +1,10 @@
-export default function itemOnClick(ele, choice) {
-  if (choice.href) {
+export default function itemOnClick(item, post) {
+  if (item.href) {
     ele.addEventListener("click", function (e) {
       window.location.href = choice.action.href;
       return;
     });
-  } else if (choice.modal) {
-    choice.modal(choice);
+  } else if (item.modal) {
+    item.modal(post);
   }
 }

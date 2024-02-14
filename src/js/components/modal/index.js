@@ -1,22 +1,30 @@
 // import modalContainer from "./container";
+import figureMedia from "./elements/figureMedia.js";
+import createInput from "./elements/createInput.js";
+import modalToggle from "../../api/handlers/eventListeners/modalToggle.js";
 
 export default function (data) {
   const modal = document.getElementById("modal-container");
-  const modalBody = modal.getElementsById("modal-body");
+  document.getElementById("modal-header").textContent = data.title;
+
+  const modalBody = document.getElementById("modal-body");
+  modalBody.innerHTML = ""; // Clear the modal body
 
   const types = data.elements;
-  if (types) types.forEach((type) => modal.appendChild(checkType(type)));
+  if (types) types.forEach((ele) => modalBody.appendChild(checkType(ele)));
 
-  container.appendChild(modal); // Append the modal to the container
+  // container.appendChild(modal)
+
+  modalToggle();
 }
 
-function checkType(type) {
+function checkType(ele) {
   let data = null;
-  if (type.element === "button") data = createButton(type);
-  else if (type.element === "input") data = createInput(type);
-  else if (type.element === "select") data = createSelect(type);
-  else if (type.element === "textarea") data = createTextarea(type);
-  else if (type.element === "image") data = createImage(type);
+  if (ele.type === "button") data = createButton(ele);
+  else if (ele.type === "input") data = createInput(ele);
+  else if (ele.type === "select") data = createSelect(ele);
+  else if (ele.type === "textarea") data = createTextarea(ele);
+  else if (ele.type === "image") data = figureMedia(ele);
 
   return data;
 }

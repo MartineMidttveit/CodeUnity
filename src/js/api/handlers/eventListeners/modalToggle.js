@@ -1,17 +1,16 @@
 export default function modalToggle() {
-  const modal = document.querySelector(".modal-container");
-  const closeBtns = document.querySelectorAll(".close-modal");
+  const modal = document.getElementById("modal-container");
+  const closeBtns = document.querySelectorAll(".modal-close");
 
-  //
-  modalToggle.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-    modalBackground.classList.toggle("hidden");
-  });
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+
   closeBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       modal.classList.remove("flex");
       modal.classList.add("hidden");
+      const modalBody = document.getElementById("modal-body");
+      modalBody.innerHTML = ""; // Clear the modal body
     });
   });
 }

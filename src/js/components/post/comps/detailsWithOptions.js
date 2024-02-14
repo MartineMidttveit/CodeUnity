@@ -1,5 +1,6 @@
 import userDetails from "./userDetails.js";
 import dropDown from "../../dropdown/index.js";
+import editPost from "../../modal/specificModals/editPost.js";
 
 export default function userOptions(post) {
   const container = document.createElement("div");
@@ -25,13 +26,7 @@ export default function userOptions(post) {
   const choice1 = {
     text: "Edit post",
     icon: ["fa-regular", "fa-pen-to-square"],
-    post: {
-      title: post.title,
-      body: post.body,
-      id: post.id,
-      author: post.author,
-      media: post.media,
-    },
+    modal: editPost,
   };
 
   const choice2 = {
@@ -40,7 +35,7 @@ export default function userOptions(post) {
     post: { id: post.id },
   };
 
-  const drop = dropDown(button, [choice1, choice2]);
+  const drop = dropDown(button, [choice1, choice2], post);
   options.appendChild(drop);
 
   return container;

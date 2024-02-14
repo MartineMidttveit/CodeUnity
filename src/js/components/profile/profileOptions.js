@@ -1,6 +1,6 @@
 import followUser from "../../api/handlers/eventListeners/followUser.js";
 
-const modalContainer = document.querySelector("#modalContainer");
+const modalContainer = document.querySelector("#create-post-modal");
 
 function openModal() {
   modalContainer.style.display = "flex";
@@ -61,6 +61,8 @@ export default function profileOptions(profile, isOwner, user) {
       ? "Unfollow"
       : "Follow";
 
+    followButton.textContent = ifFollowing;
+
     let icon = "plus";
 
     if (ifFollowing === "Unfollow") {
@@ -83,8 +85,6 @@ export default function profileOptions(profile, isOwner, user) {
       "duration-500",
       "w-32"
     );
-
-    followButton.textContent = ifFollowing;
 
     const followIcon = document.createElement("i");
     followIcon.classList.add("text-xl", "fa-solid", `fa-user-${icon}`);

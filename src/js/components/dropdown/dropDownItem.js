@@ -1,4 +1,6 @@
-export default function dropDownItem(item) {
+import itemOnClick from "./itemOnClick.js";
+
+export default function dropDownItem(item, post) {
   const choice = document.createElement("button");
 
   !item.first && choice.classList.add("border-t");
@@ -31,6 +33,8 @@ export default function dropDownItem(item) {
 
   choice.addEventListener("click", function (e) {
     console.log("clicked " + e.target.textContent);
+    itemOnClick(item, post);
+    console.log(e.target.parentElement.parentElement.parentElement);
   });
 
   return choice;
