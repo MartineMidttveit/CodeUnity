@@ -7,8 +7,8 @@ export default {
   // - all profiles
   all: () => `/social/profiles?${profileFilter}`,
 
-  // - specific profile by name
-  byName: (name) => `/social/profiles/${name}?${profileFilter}`,
+  // - specific profile by name - if not name is provided, it will return null
+  byName: (name) => (name ? `/social/profiles/${name}?${profileFilter}` : null),
 
   // - change img of a specific profile by name
   changeImg: (name) => `/social/profiles/${name}`,

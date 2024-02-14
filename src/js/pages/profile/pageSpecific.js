@@ -21,30 +21,40 @@ export default async function pageSpecific() {
     if (!user.name) window.location.href = "/";
     else window.location.href = `/profile/?name=${user.name}`;
   }
+
   const data = pageHandlers.enterPage();
 
   // Get requests
   const getRequest = await requests.get();
 
+  const allProfiles = await getRequest.fetch(endpoints.profiles.all());
+  console.log(allProfiles);
+
+  const findProfile = await getRequest.fetch(endpoints.profiles.search(name));
+
+  const checkProfile = findProfile.data.find(
+    (profile) => profile.name === name
+  );
+
+  if (!checkProfile) window.location.href = `/profile/?name=${user.name}`;
+
   const { data: profile } = await getRequest.fetch(
     endpoints.profiles.byName(name)
   );
+  console.log(profile);
+
   const { data: profilePosts } = await getRequest.fetch(
     endpoints.posts.byProfile(name)
   );
 
-  const allProfiles = await getRequest.fetch(endpoints.profiles.all());
-  console.log(allProfiles.data);
-
   const { data: allPosts } = await getRequest.fetch(endpoints.posts.all());
   profilePosts.forEach((post) => postTemp(post, postContainer));
 
-  console.log(profile);
   const isOwner = name === user.name ? true : false;
 
   profileComponents(profile, isOwner, user.name);
 
-  profileOwner.textContent = isOwner ? "Your Profile" : "@" + profile.data.name;
+  profileOwner.textContent = isOwner ? "Your Profile" : "@" + name;
 
   let tagsContainer = [];
   addTag(tagsContainer);

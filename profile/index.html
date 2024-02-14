@@ -412,7 +412,7 @@
 
       <div
         id="modal-container"
-        class="hidden bg-white mx-auto modal w-full fixed z-10 flex items-center left-0 top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12"
+        class="hidden bg-white mx-auto modal w-full fixed z-10 items-center left-0 top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12"
       >
         <div
           class="max-w-3xl flex flex-col px-4 sm:px-12 py-10 rounded-lg bg-white mx-auto border modal-content w-full"
@@ -421,7 +421,7 @@
             <h2 class="text-2xl font-semibold" id="modal-header">
               Replace header
             </h2>
-            <i class="fa-solid fa-xmark text-xl cursor-pointer"></i>
+            <i class="fa-solid fa-xmark text-xl cursor-pointer modal-close"></i>
           </div>
           <form id="modal-body">
             <figure class="mt-2 mb-6">
@@ -444,7 +444,7 @@
           <div class="flex gap-4 mt-6 justify-center sm:justify-end">
             <button
               type="button"
-              class="rounded border flex items-center justify-center px-10 py-4 hover:bg-light duration-500"
+              class="rounded border flex items-center justify-center px-10 py-4 hover:bg-light duration-500 modal-close"
             >
               Cancel
             </button>
