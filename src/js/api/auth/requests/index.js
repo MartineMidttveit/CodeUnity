@@ -2,11 +2,11 @@ import headers from "../data/headers.js";
 import Auth from "../index.js";
 import loginSpecific from "./login.js";
 import endpoints from "../data/endpoints/index.js";
+import storage from '../../../utils/storage.js'
 
 const request = (
   body,
   endpoint,
-
   header = headers.withAuthToken(),
   method = "post"
 ) => new Auth(method, header, endpoint, body);
@@ -23,6 +23,11 @@ export default {
   register: async function (body, endpoint = endpoints.register()) {
     const data = request(body, endpoint, headers.basic());
     data.fetch();
+  },
+
+  logout: async function () {
+    storage.remove("token");
+    window.location.href = '/index.html';
   },
 
   // Change profile media request (works with either banner or avatar)
