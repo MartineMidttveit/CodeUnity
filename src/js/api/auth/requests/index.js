@@ -26,8 +26,8 @@ export default {
   },
 
   logout: async function () {
-    storage.remove("token");
-    window.location.href = '/index.html';
+    storage.clear(); 
+    window.location.href = '/'; 
   },
 
   // Change profile media request (works with either banner or avatar)
