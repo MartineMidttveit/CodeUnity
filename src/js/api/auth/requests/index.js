@@ -22,6 +22,7 @@ export default {
 
   register: async function (body, endpoint = endpoints.register()) {
     const data = request(body, endpoint, headers.basic());
+    data.fetch();
   },
 
   // Change profile media request (works with either banner or avatar)
