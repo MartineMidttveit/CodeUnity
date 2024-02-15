@@ -20,6 +20,10 @@ export default {
     loginSpecific(data);
   },
 
+  register: async function (body, endpoint = endpoints.register()) {
+    const data = request(body, endpoint, headers.basic());
+  },
+
   // Change profile media request (works with either banner or avatar)
   profileMedia: async function (body, username) {
     const data = request(

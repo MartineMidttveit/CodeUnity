@@ -24,7 +24,6 @@ export default async function pageSpecific() {
 
   const data = pageHandlers.enterPage();
 
-  // Get requests
   const getRequest = await requests.get();
 
   const allProfiles = await getRequest.fetch(endpoints.profiles.all());
@@ -59,8 +58,8 @@ export default async function pageSpecific() {
   let tagsContainer = [];
   addTag(tagsContainer);
 
-  /* IMAGE PREVIEW */
   imagePreview(imageInput, previewImg);
 
   return data;
 }
+

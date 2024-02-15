@@ -37,3 +37,4 @@ confirmPasswordInput.addEventListener('blur', function () {
         }, 500);
     }
 });
+

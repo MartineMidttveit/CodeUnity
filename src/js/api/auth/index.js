@@ -49,6 +49,8 @@ export default class Auth {
         }
       }
 
+      console.log(response);
+      console.log(data);
       if (!data) throw new Error("Promise returns no data.  ");
 
       return data;
