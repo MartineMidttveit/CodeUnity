@@ -16,9 +16,6 @@
 
     <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
 
-    <script defer src="/register.js"></script>
-    <script defer src="/changeWord.js"></script>
-    <script type="module" src="/src/js/pages/register/index.js"></script>
   </head>
   <body>
 
@@ -44,27 +41,27 @@
                 profile image, banner image, and writing a bio to introduce yourself to the community.
             </p>
 
-
-
             <form id="registrationForm" class="w-full flex flex-col gap-5" method="post">
                 <div class="flex flex-col">
-                    <label for="name" class="text-lg text-gray-700">Name:</label>
-                    <input type="text" id="name" name="name" required
-                        class="py-1 px-3 rounded-sm border text-lg mt-1.5" />
+                    <label for="profileImage" class="text-lg text-gray-700">Select a profile image:</label>
+                    <figure class="my-6">
+                        <img src="/images/image.png" alt="">
+                    </figure>
+                    <input type="text" id="profileImage" name="profileImage" 
+                        class="py-1 px-3 rounded-sm border text-lg mt-1.5">
                 </div>
+
                 <div class="flex flex-col">
-                    <label for="email" class="text-lg text-gray-700">E-mail:</label>
-                    <input type="email" id="email" name="email" required class="py-1 px-3 rounded-sm border text-lg mt-1.5" />
+                    <label for="profileBanner" class="text-lg text-gray-700">Select a banner:</label>
+                    <figure class="my-6">
+                        <img src="/images/banner.png" alt="">
+                    </figure>
+                    <input type="text" id="profileBanner" name="profileBanner" required class="py-1 px-3 rounded-sm border text-lg mt-1.5" />
                 </div>
+
                 <div class="flex flex-col">
-                    <label for="password" class="text-lg text-gray-700">Password:</label>
-                    <input type="password" name="password" required class="py-1 px-3 rounded-sm border text-lg mt-1.5 password" />
-                    <div class="password-strength"></div>
-                </div>
-                <div class="flex flex-col">
-                    <label for="confirmPassword" class="text-lg text-gray-700">Repeat Password:</label>
-                    <input type="password" id="confirmPassword" class="py-1 px-3 rounded-sm border text-lg mt-1.5 password" name="confirmPassword" required
-                        class="py-1 px-3 rounded-sm border text-lg mt-1.5" />
+                    <label for="biography" class="text-lg text-gray-700">Biography:</label>
+                    <textarea name="biography" id="biography" class="resize-none py-1 px-3 rounded-sm border text-lg mt-1.5"></textarea>
                 </div>
 
                 <div class="flex-col mt-4" id="passwordRequirements" style="display: none;">
@@ -97,11 +94,9 @@
                 <div class="hidden" id="incorrectPassword">
                     <p class="font-bold text-gray-700">The passwords do not match.</p>
                 </div>
-
-                <button type="submit" class="bg-secondary py-2 mt-2 w-32 text-white rounded-md">Register</button>
             </form>
 
-            <div class="text-lg flex gap-2 mt-10 text-gray-700">Already have a user?<a href="/index.html" class="font-medium underline text-secondary">Log in.</a></div>
+            <a href="/index.html" class="text-lg flex gap-5 mt-10 text-secondary items-center">Skip this step <i class="fa-solid fa-arrow-right"></i></a></div>
         </div>
     </section>
     </main>
