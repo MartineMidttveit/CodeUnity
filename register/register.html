@@ -17,6 +17,8 @@
     <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
 
     <script defer src="/register.js"></script>
+    <script defer src="/changeWord.js"></script>
+    <script type="module" src="/src/js/pages/register/index.js"></script>
   </head>
   <body>
 
@@ -24,23 +26,26 @@
 
     <div class="w-1/2 bg-red-400 min-h-screen">
         <div class="w-full">
-           <img src="/images/register.png" alt="" class="object-cover w-full min-h-screen"> 
+           <img src="/images/register2.png" alt="" class="object-cover w-full min-h-screen"> 
         </div>
     </div>  
 
     <section class="min-h-screen flex flex-col gap-10 w-1/2 justify-center">
         <div class="max-w-2xl">
             <div class="flex items-center mb-12">
-                <span class="h-10 w-10 rounded-full bg-secondary flex items-center justify-center text-white">1</span>
+                <span class="h-10 w-10 rounded-full bg-light flex items-center justify-center">1</span>
                 <span class="border-b-2 border-secondary w-12"></span>
-                <span class="h-10 w-10 rounded-full bg-light flex items-center justify-center">2</span>
+                <span class="h-10 w-10 rounded-full bg-secondary flex items-center justify-center text-white">2</span>
             </div>
-            <h1 class="text-4xl font-bold">Sign up.</h1>
+
+            <h1 class="text-4xl font-bold">Customize profile.</h1>
             <p class="text-lg my-6">
-                Welcome to CodeUnity, a vibrant community tailored for coders of all skill levels. 
-                Whether you're a seasoned programmer or just starting your coding journey, you've 
-                come to the right place. 
+                Welcome to the second step of your registration process! In this step, you'll set up your profile by selecting a 
+                profile image, banner image, and writing a bio to introduce yourself to the community.
             </p>
+
+
+
             <form id="registrationForm" class="w-full flex flex-col gap-5" method="post">
                 <div class="flex flex-col">
                     <label for="name" class="text-lg text-gray-700">Name:</label>
@@ -93,7 +98,7 @@
                     <p class="font-bold text-gray-700">The passwords do not match.</p>
                 </div>
 
-                <a href="/register/register.html" class="bg-secondary py-2 mt-6 w-32 text-white rounded-md flex items-center justify-center">Next</a>
+                <button type="submit" class="bg-secondary py-2 mt-2 w-32 text-white rounded-md">Register</button>
             </form>
 
             <div class="text-lg flex gap-2 mt-10 text-gray-700">Already have a user?<a href="/index.html" class="font-medium underline text-secondary">Log in.</a></div>
@@ -101,83 +106,82 @@
     </section>
     </main>
     
-    <!--Footer-->
+<!--Footer-->
 
-    <footer class="bg-primary text-white py-10">
-        <div
-          class="md:ml-24 flex justify-between flex-col lg:flex-row px-3 sm:px-8 md:px-12 lg:px-32"
-        >
-          <div>
-            <h2 class="text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">CodeUnity</h2>
-          </div>
-  
-          <div
-            class="flex flex-col sm:flex-row justify-between lg:w-3/4 xl:w-1/2"
-          >
-            <div class="lg:ml-8 my-5 sm:my-0">
-              <h3 class="text-lg font-semibold">Support</h3>
-              <ul class="mt-2 space-y-2">
-                <li>
-                  <a href="#" class="text-gray-300 hover:text-white">FAQ</a>
-                </li>
-                <li>
-                  <a href="#" class="text-gray-300 hover:text-white"
-                    >Online support</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray-300 hover:text-white"
-                    >Contact us</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray-300 hover:text-white"
-                    >Account settings</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray-300 hover:text-white"
-                    >Terms of use</a
-                  >
-                </li>
-              </ul>
-            </div>
-  
-            <div class="lg:ml-8 my-5 sm:my-0">
-              <h3 class="text-lg font-semibold">About</h3>
-              <ul class="mt-2 space-y-2">
-                <li>
-                  <a href="#" class="text-gray-300 hover:text-white">About us</a>
-                </li>
-              </ul>
-            </div>
-  
-            <div class="lg:ml-8 my-5 sm:my-0">
-              <h3 class="text-lg font-semibold">Privacy</h3>
-              <ul class="mt-2 space-y-2">
-                <li>
-                  <a href="#" class="text-gray-300 hover:text-white"
-                    >Privacy Settings</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray-300 hover:text-white"
-                    >Guidelines</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-  
-        <div class="border-t bg-light mt-12 my-8"></div>
-  
-        <div class="flex justify-between wrapper">
-          <p>Copyright CodeUnity © 2023</p>
-          <p>All rights reserved.</p>
-        </div>
-      </footer>
+<footer class="bg-primary text-white py-10">
+    <div
+      class="md:ml-24 flex justify-between flex-col lg:flex-row px-3 sm:px-8 md:px-12 lg:px-32"
+    >
+      <div>
+        <h2 class="text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">CodeUnity</h2>
+      </div>
 
+      <div
+        class="flex flex-col sm:flex-row justify-between lg:w-3/4 xl:w-1/2"
+      >
+        <div class="lg:ml-8 my-5 sm:my-0">
+          <h3 class="text-lg font-semibold">Support</h3>
+          <ul class="mt-2 space-y-2">
+            <li>
+              <a href="#" class="text-gray-300 hover:text-white">FAQ</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-300 hover:text-white"
+                >Online support</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-300 hover:text-white"
+                >Contact us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-300 hover:text-white"
+                >Account settings</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-300 hover:text-white"
+                >Terms of use</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:ml-8 my-5 sm:my-0">
+          <h3 class="text-lg font-semibold">About</h3>
+          <ul class="mt-2 space-y-2">
+            <li>
+              <a href="#" class="text-gray-300 hover:text-white">About us</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:ml-8 my-5 sm:my-0">
+          <h3 class="text-lg font-semibold">Privacy</h3>
+          <ul class="mt-2 space-y-2">
+            <li>
+              <a href="#" class="text-gray-300 hover:text-white"
+                >Privacy Settings</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-300 hover:text-white"
+                >Guidelines</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t bg-light mt-12 my-8"></div>
+
+    <div class="flex justify-between wrapper">
+      <p>Copyright CodeUnity © 2023</p>
+      <p>All rights reserved.</p>
+    </div>
+  </footer>
 
   </body>
 </html>
