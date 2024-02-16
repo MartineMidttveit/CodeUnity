@@ -32,9 +32,9 @@ export default function dropDownItem(item, post) {
   choice.append(spanText);
 
   choice.addEventListener("click", function (e) {
+    console.log(item);
     console.log("clicked " + e.target.textContent);
     itemOnClick(item, post);
-    console.log(e.target.parentElement.parentElement.parentElement);
   });
 
   return choice;

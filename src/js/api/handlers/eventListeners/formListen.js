@@ -31,5 +31,8 @@ export default {
 
   register: formListener("registrationForm", authRequest.register),
 
-  createPost: (tags) => formListener("create-post", authRequest.create, tags),
+  createPost: (tags) => {
+    const data = formListener("create-post", authRequest.create, tags);
+    data.auth(authRequest.create, tags);
+  },
 };

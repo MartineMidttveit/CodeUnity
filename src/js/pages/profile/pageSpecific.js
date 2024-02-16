@@ -62,6 +62,6 @@ export default async function pageSpecific() {
   imagePreview(imageInput, previewImg);
 
   const newPost = listener.createPost(tags);
-  newPost.auth();
+
   return data;
 }

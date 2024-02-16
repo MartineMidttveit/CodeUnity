@@ -50,7 +50,8 @@ export default class EventListener {
    * @param {Function}  - The callback function to be executed when the form is submitted (usually an auth request).
    * set to this.callback by default. but can be overridden.
    */
-  submitForm(authRequest = this.callback) {
+  submitForm(authRequest = this.callback, tags = this.tags) {
+    console.log(tags);
     /**
      * Callback function for form submission.
      * @param {Event} e - The submit event object.
@@ -76,10 +77,8 @@ export default class EventListener {
           data.banner = { url: data.banner, alt: "user banner" };
         } else delete data.banner;
 
-        if (data.tags) {
-          data.tags = [...this.tags];
-        }
-        console.log(data);
+        tags !== null && (data.tags = tags);
+
         authRequest(data);
         form.reset();
       } catch (error) {
