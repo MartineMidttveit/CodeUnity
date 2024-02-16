@@ -10,7 +10,7 @@ export default function modalToggle() {
       modal.classList.remove("flex");
       modal.classList.add("hidden");
       const modalBody = document.getElementById("modal-body");
-      modalBody.innerHTML = ""; // Clear the modal body
+      modalBody.innerHTML = ""; 
     });
   });
 }
