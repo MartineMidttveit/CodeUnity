@@ -1,122 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeUnity | Post-title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeUnity | Your profile</title>
+
+    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/dist/tailwind.css">
     <link rel="stylesheet" href="/src/css/style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
 
-    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
-
-    <script defer src="/tags.js"></script>
-    <script defer src="/test.js"></script>
+    <script defer src="/hamburger.js"></script>
+    <script type="module" src="/src/js/pages/profile/index.js"></script>
+    <script type="module" src="/src/js/api/auth/requests/logout.js"></script>
   </head>
 
-  <body class="bg-gray-50">
-    <section class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg">
-      <h2 class="text-2xl font-semibold mb-4">Edit post</h2>
-      <figure class="mt-2 mb-6"><!--Bildet de har i innlegget sitt om det går an-->
-          <img id="previewImage" src="/images/china.png" alt="" class="rounded-md">
-      </figure>
-  
-      <form action="" class="w-full">
-        <label for="title" class="text-lg">Title:</label>
-        <input type="text" id="title" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="Their current title on the post">
-        
-        <label for="description" class="text-lg">Description:</label>
-        <input type="text" id="description" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="The current text within the description.">
-        
-        <label for="tags" class="text-lg">Tags:</label>
-        
-        <div class="flex gap-4 flex-col">
-            <div class="w-1/2 flex h-14 rounded my-2">
-                <span class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold">#</span>
-                <input type="text" id="tags" class="w-full border outline-none pl-3" minlength="2" maxlength="12" pattern="[a-zA-Z0-9]+" title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."> 
-                <button id="addTag" type="button" class="px-5 bg-light text-2xl">+</button>
-            </div>
-    
-            <div id="tagContainer" class="flex gap-4"></div>
-            <!--Få med taggene de har lagt til med mulighet for å fjerne dem-->
+  <body class="font-gilroy">
+
+<!--Sidebar-->
+    <div class="w-full z-30 bg-primary md:w-24 md:h-screen fixed md:flex md:justify-center md:items-start sidebar bottom-0">
+      <div class="sidebar-content">
+        <button class="hamburger md:mt-12 hidden md:inline-block" id="hamburgerBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"></path>
+          </svg>
+        </button>
+
+        <div class="sidebar-image hidden flex-col items-center justify-center" id="sidebarContainer"></div>
+
+        <nav>
+          <div class="flex justify-between md:flex-col py-4 px-10 md:px-0 md:space-y-16 md:mt-28">
+            <a href="/feed/index.html" class="flex justify-center items-center home navLink gap-x-6">
+              <i class="fa-solid fa-house text-2xl w-8"></i>
+              <span class="hidden navOption">Home</span>
+            </a>
+
+            <a href="/profile/index.html" class="flex justify-center items-center profile navLink md:gap-x-6" id="sidebarProfileLink">
+              <i class="fa-solid fa-user text-2xl w-8"></i>
+              <span class="hidden navOption">Profile</span>
+            </a>
+
+            <a href="" class="flex justify-center items-center groups navLink md:gap-x-6">
+              <i class="fa-solid fa-globe text-2xl w-8"></i>
+              <span class="hidden navOption">Explore</span>
+            </a>
+
+            <a href="" class="flex justify-center items-center settings navLink gap-x-6">
+              <i class="fa-solid fa-gear text-2xl w-8"></i>
+              <span class="hidden navOption">Settings</span>
+            </a>
+
+            <a href="" class="flex justify-center items-center inbox navLink gap-x-6">
+              <i class="fa-solid fa-envelope text-2xl w-8"></i>
+              <span class="hidden navOption">Inbox</span>
+            </a>
+          </div>
+
+          <button class="text-white" id="logoutButton">Log out</button>
+        </nav>
+      </div>
+    </div>
+
+    <!--Header-->
+
+    <header class="md:pl-24 py-4 lg:py-8 mx-auto">
+      <div class="secondary-light px-4 sm:px-10 md:px-12 lg:px-16 xl:px-32 flex justify-between items-center">
+        <div class="logo flex items-end gap-x-2 sm:gap-x-5">
+          <strong class="text-2xl lg:text-3xl">CodeUnity</strong>
+          <strong class="hidden md:flex md:text-xl">/</strong>
+          <span class="muted hidden md:flex md:text-xl" id="profileOwner"></span>
         </div>
-    
-        <div class="flex gap-4 mt-6 justify-end">
-            <button type="button" class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md">Cancel</button>
-            <button type="submit" class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg">Save changes</button>
+
+        <div class="flex justify-between items-center xl:w-1/2 gap-4">
+          <form action="search" class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:min-w-72 xl:w-2/3 border relative mr-2 lg:mr-0">
+            <input type="search" placeholder="Search..." class="hidden border-none outline-none flex-grow px-4 lg:w-full lg:flex" id="search-input" autocomplete="off">
+            <button class="px-4 py-2 rounded-md" id="search-button">
+              <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
+              <div class="hidden absolute w-full bg-white z-30 left-0 top-14 py-2" id="search-result-container">
+                <a class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8">
+                  <div>title</div>
+                  <div>by <span>username</span></div>
+                </a>
+                <a class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8">
+                  <div>title</div>
+                  <div>by <span>username</span></div>
+                </a>
+                <a class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8">
+                  <div>title</div>
+                  <div>by <span>username</span></div>
+                </a>
+              </div>
+            </button>
+          </form>
+
+          <div class="flex items-center">
+            <button class="notifications flex items-center justify-center bg-white rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border mr-2 lg-mr-0">
+              <i class="fa-regular fa-bell text-lg lg:text-xl"></i>
+            </button>
+
+            <a href="#" class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" id="headerProfile"></a>
+          </div>
         </div>
-    </form>
-  </section>
-
-  <!--Hvis de trykker delete post-->
-
-  <section class="deletePost bg-white mx-auto max-w-3xl flex flex-col p-12 shadow-sm mt-10 rounded-lg items-center">
-    <h2 class="text-2xl font-semibold mb-4">Are you sure you want to delete post?</h2>
-    <p class="px-8 py-1 text-center text-lg">This action cannot be undone. The post and all associated data will be permanently removed from the system. Please consider carefully before proceeding.</p>
-
-    <div class="flex gap-4 mt-6">
-      <button type="button" class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md">Cancel</button>
-      <button type="submit" class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg">Delete post</button>
-    </div>
-  </section>
-
-  <div class="mb-40"></div>
-
-  <!--Etter at de har trykket delete. Tanken var at når de har trykket på delete knappen, så kommer denne inn og ut med opacity 0-100-->
-
-  <section class="alert flex max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light">
-    <span class="h-12 w-12 rounded-full bg-white flex items-center justify-center">
-      <i class="fa-solid fa-check"></i>
-    </span>
-    
-    <h3 class="text-lg text-primary">Post successfully deleted!</h3>
-  </section>
-
-  <div class="container" id="container">
-    <div class="image-container">
-      <img id="background-image" src="/images/test.webp" alt="Profile Image">
-    </div>
-    <div class="blurred"></div> <!-- Use a separate element for blurring -->
-  </div>
-
-<!--EDIT PROFILE-->
-<section class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg">
-  <h2 class="text-2xl font-semibold mb-4">Edit profile</h2>
-  <div class="banner relative flex flex-col items-center">
-    <img src="/images/china.png" alt="" class="h-52 w-full object-cover">
-    <img src="/images/profile.png" alt="" class="absolute top-10 rounded-full h-52 max-w-52 object-cover border-2">
-  </div>
-
-  <form class="w-full mt-10">
-    <label for="profileImage" class="text-lg">Profile image</label>
-    <input type="text" id="profileImage" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="Their current URL to the profile image.">
-   
-    <div class="flex gap-x-3 mb-5 items-center">
-      <input type="checkbox" id="defaultProfileImage" class="h-4 w-4">
-      <label for="defaultProfileImage" class="text-gray-600">Use default profile image</label>
-    </div>
-    
-    <label for="imageCaption" class="text-lg">Profile image caption</label>
-    <input type="text" id="imageCaption" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="The current image caption.">
-    
-    <label for="bannerImage" class="text-lg">Banner image</label>
-    <input type="text" id="bannerImage" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="The current URL to the banner image.">
-
-    <div class="flex gap-x-3 mb-5 items-center">
-      <input type="checkbox" id="defaultBannerImage" class="h-4 w-4">
-      <label for="defaultBannerImage" class="text-gray-600">Use default banner image</label>
-    </div>
-
-    <label for="biography" class="text-lg">Biography</label>
-    <textarea name="biography" id="biography" class="resize-none h-32 w-full border mt-2 outline-none pl-3 pt-3" placeholder="Their current biography."></textarea>
-
-    <div class="flex gap-4 mt-6 justify-end">
-        <button type="button" class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md">Cancel</button>
-        <button type="submit" class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg">Save changes</button>
-    </div>
-</form>
-</section>
-
+      </div>
+    </header>
   </body>
 </html>
