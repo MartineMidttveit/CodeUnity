@@ -56,7 +56,9 @@ export default function optionsButton(ele) {
       e.preventDefault();
       modal.close();
       await ele.optionTwo.request(ele.id);
-      update.refreshPosts("profile");
+      console.log("test");
+
+      update.profilePosts();
     });
   }
 

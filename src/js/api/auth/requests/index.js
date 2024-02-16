@@ -63,6 +63,6 @@ export default {
       headers.authWithoutContent(),
       "delete"
     );
-    data.fetch();
+    await data.fetch();
   },
 };

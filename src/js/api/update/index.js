@@ -1,20 +1,25 @@
 import requests from "../auth/requests/index.js";
 import endpoints from "../auth/data/endpoints/index.js";
+import storage from "../../utils/storage.js";
+import postTemp from "../../components/post/thumbnail/index.js";
 
-const getRequest = requests.get();
+const getRequest = await requests.get();
 export default {
-  refreshPosts: async function (endpoint = endpoints.posts.all(), container) {
-    console.log("test");
-    if (endpoint === "profile") {
-      const user = storage.load("profile");
-      endpoint = endpoints.posts.byProfile(user.name);
-    }
-    container = container ? container : document.getElementById("posts");
-    const data = getRequest(endpoint);
-    console.log(data);
-    const posts = await data.fetch();
-    console.log(posts);
-    container.innerHTML = "";
-    posts.forEach((post) => container.appendChild(post));
+  profilePosts: async function () {
+    console.log("test profilePosts");
+
+    const profile = storage.load("profile");
+    const { data: profilePosts } = await getRequest.fetch(
+      endpoints.posts.byProfile(profile.name)
+    );
+
+    console.log(profilePosts.data);
+
+    const postContainer = document.getElementById("posts-container");
+    postContainer.innerHTML = "";
+    console.log(profilePosts);
+
+    profilePosts.forEach((post) => postTemp(post, postContainer));
+    console.log(profilePosts);
   },
 };
