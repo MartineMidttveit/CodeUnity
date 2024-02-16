@@ -251,35 +251,42 @@
               required
             />
 
-            <label for="tags" class="text-lg">Tags:</label>
+            <div>
+              <label for="tags" class="text-lg">Tags:</label>
+              
+              <div class="flex gap-4 flex-col">
 
-            <div class="flex gap-4 flex-col">
-              <div class="w-1/2 flex h-14 rounded my-2">
-                <span
-                  class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold"
-                  >#</span
-                >
-                <input
-                  type="text"
-                  id="tags-input"
-                  class="w-full border outline-none pl-3"
-                  minlength="2"
-                  maxlength="12"
-                  pattern="[a-zA-Z0-9]+"
-                  name="tags"
-                  title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."
-                />
-                <button
-                  id="addTag"
-                  type="button"
-                  class="px-5 bg-light text-2xl"
-                >
-                  +
-                </button>
+                <div class="w-1/2 flex h-14 rounded my-2">
+                  <span
+                    class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold"
+                    >#</span
+                  >
+                  <input
+                    type="text"
+                    id="tags-input"
+                    class="w-full border outline-none pl-3"
+                    minlength="2"
+                    maxlength="12"
+                    pattern="[a-zA-Z0-9]+"
+                    name="tags"
+                    title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."
+                  />
+                  <button
+                    id="addTag"
+                    type="button"
+                    class="px-5 bg-light text-2xl"
+                  >
+                    +
+                  </button>
+                </div>                
+                 
+                <div id="tagContainer" class="flex gap-4"></div>
               </div>
-
-              <div id="tagContainer" class="flex gap-4"></div>
             </div>
+          
+
+              
+            
 
             <div class="flex gap-4 mt-6 justify-end">
               <button
@@ -293,7 +300,7 @@
                 class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white"
               >
                 Publish
-              </button>
+              </button></div>
             </div>
           </form>
         </div>

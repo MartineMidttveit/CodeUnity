@@ -1,14 +1,14 @@
 import modal from "../index.js";
 
-export default function editPost(post) {
-  const title = "Edit post";
+export default function createNewPost(post) {
+  const title = "Create new post";
   const elements = [];
   const element1 = {
     type: "image",
     media: post.media,
     value: post.media?.url,
     input: true,
-    text: "Image (url)",
+    text: "Image",
   };
   const element2 = { type: "input", text: "Title", value: post.title };
   const element3 = {
@@ -27,9 +27,6 @@ export default function editPost(post) {
 
   const data = { title, elements };
   data.id = post.id;
-
-  console.log(data);
-  console.log(post);
 
   modal(data, post);
 }
