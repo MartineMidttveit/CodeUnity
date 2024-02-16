@@ -1,20 +1,30 @@
-export default function confirmation() {
-    const confirmation = document.createElement("div");
-    confirmation.setAttribute("class", "alert flex max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light");
+export default function confirmation(ele) {
+  const confirmText = ele.confirmText
+    ? ele.confirmText
+    : "Post successfully deleted!";
 
-    const confirmationBox = document.createElement("span");
-    confirmationBox.setAttribute("class", "h-12 w-12 rounded-full bg-white flex items-center justify-center");
-    
-    const confirmationIcon = document.createElement("i");
-    confirmationIcon.setAttribute("class", "fa-solid fa-check");
+  const confirmation = document.createElement("div");
+  confirmation.setAttribute(
+    "class",
+    "alert flex max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light"
+  );
 
-    confirmationBox.append(confirmationIcon);
+  const confirmationBox = document.createElement("span");
+  confirmationBox.setAttribute(
+    "class",
+    "h-12 w-12 rounded-full bg-white flex items-center justify-center"
+  );
 
-    const confirmationText = document.createElement("h3");
-    confirmationText.setAttribute("class", "text-lg text-primary");
-    confirmationText.textContent = "Post successfully deleted!";
+  const confirmationIcon = document.createElement("i");
+  confirmationIcon.setAttribute("class", "fa-solid fa-check");
 
-    confirmation.append(confirmation, confirmationText)
+  confirmationBox.append(confirmationIcon);
+
+  const confirmationText = document.createElement("h3");
+  confirmationText.setAttribute("class", "text-lg text-primary");
+  confirmationText.textContent = confirmText;
+
+  confirmation.append(confirmation, confirmationText);
+
+  return confirmation;
 }
-
-

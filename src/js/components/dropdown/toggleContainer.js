@@ -7,11 +7,9 @@ export default function (ele, container) {
     ele.removeEventListener("click", showContainer);
 
     function hideContainer(e) {
-      if (!container.contains(e.target)) {
-        container.classList.add("hidden");
-        document.removeEventListener("click", hideContainer);
-        ele.addEventListener("click", showContainer);
-      }
+      container.classList.add("hidden");
+      document.removeEventListener("click", hideContainer);
+      ele.addEventListener("click", showContainer);
     }
 
     document.addEventListener("click", hideContainer);

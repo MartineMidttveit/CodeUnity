@@ -1,11 +1,11 @@
 import modal from "../index.js";
+import request from "../../../api/auth/requests/index.js";
 
 export default function deleteOptions(post) {
-  console.log(post);
   const ele1 = { type: "deleteText" };
   const ele2 = {
     type: "buttons",
-    optionTwo: { text: "Delete", request: "" },
+    optionTwo: { text: "Delete", request: request.delete },
     id: post.id,
   };
 

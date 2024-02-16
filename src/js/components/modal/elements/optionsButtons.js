@@ -48,5 +48,12 @@ export default function optionsButton(ele) {
   buttonsContainer.appendChild(firstButton);
   buttonsContainer.appendChild(secondButton);
 
+  if (optionTwo == "Delete") {
+    secondButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      ele.optionTwo.request(ele.id);
+    });
+  }
+
   return buttonsContainer;
 }

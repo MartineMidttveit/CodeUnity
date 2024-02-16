@@ -18,7 +18,12 @@ export default function editPost(post) {
     name: "body",
   };
 
-  elements.push(element1, element2, element3);
+  const element4 = {
+    type: "buttons",
+    id: post.id,
+  };
+
+  elements.push(element1, element2, element3, element4);
 
   const data = { title, elements };
   data.id = post.id;

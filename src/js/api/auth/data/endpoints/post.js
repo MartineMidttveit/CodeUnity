@@ -8,8 +8,14 @@ export default {
   // - all posts by a specific tag (default tag is "CodeUnity")
   byTag: (tag = "CodeUnity") => `/social/posts?tag=${tag}&${postFilter}`,
 
-  //  - specific post by id / (can get, update or delete a specific post by id)
-  byId: (id) => `/social/posts/${id}?${postFilter}`,
+  //  -get  specific post by id
+  byId: (id) => `/social/posts/${id}`,
+
+  // - delete a specific post by id
+  delete: (id) => `/social/posts/${id}`,
+
+  // - update a specific post by id
+  update: (id) => `/social/posts/${id}`,
 
   // - all posts made by profiles that the current user is following
   byFollowing: () => `/social/posts/following?${postFilter}`,

@@ -54,4 +54,15 @@ export default {
     const data = request(body, endpoints.posts.create());
     data.fetch();
   },
+
+  // Delete post
+  delete: async function (id) {
+    const data = request(
+      null,
+      endpoints.posts.delete(id),
+      headers.authWithoutContent(),
+      "delete"
+    );
+    data.fetch();
+  },
 };

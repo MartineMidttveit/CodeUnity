@@ -39,6 +39,10 @@ export default class Auth {
         method: this.method,
         body: this.body,
       });
+      if (response.status === 204) {
+        console.log("Request successful, no content.");
+        return null;
+      }
 
       const data = await response.json();
       if (!response.ok) {
