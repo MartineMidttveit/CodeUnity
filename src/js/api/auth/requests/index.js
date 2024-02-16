@@ -50,6 +50,7 @@ export default {
 
   // create post
   create: async function (body) {
+    console.log(body);
     const data = request(body, endpoints.posts.create());
     data.fetch();
   },

@@ -32,7 +32,7 @@ export default function userOptions(post) {
   const choice2 = {
     text: "Delete post",
     icon: ["fa-solid", "fa-trash"],
-    post: { id: post.id },
+    request: "delete",
   };
 
   const drop = dropDown(button, [choice1, choice2], post);
