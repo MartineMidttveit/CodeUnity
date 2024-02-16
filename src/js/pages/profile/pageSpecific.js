@@ -8,7 +8,7 @@ import endpoints from "../../api/auth/data/endpoints/index.js";
 import requests from "../../api/auth/requests/index.js";
 import listener from "../../api/handlers/eventListeners/formListen.js";
 
-const postContainer = document.getElementById("profile-user-posts");
+const postContainer = document.getElementById("posts-container");
 const profileOwner = document.querySelector("#profileOwner");
 const imageInput = document.querySelector("#create-post-image");
 const previewImg = document.querySelector("#previewImage");
@@ -61,7 +61,7 @@ export default async function pageSpecific() {
 
   imagePreview(imageInput, previewImg);
 
-  const newPost = listener.createPost(tags);
+  listener.createPost(tags);
 
   return data;
 }

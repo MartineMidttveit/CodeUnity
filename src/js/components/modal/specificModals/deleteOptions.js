@@ -10,6 +10,6 @@ export default function deleteOptions(post) {
   };
 
   const data = { elements: [ele1, ele2] };
-  console.log(data);
+
   modal(data);
 }

@@ -1,6 +1,6 @@
 import figureMedia from "./elements/figureMedia.js";
 import createInput from "./elements/createInput.js";
-import modalToggle from "../../api/handlers/eventListeners/modalToggle.js";
+import modal from "../../api/handlers/eventListeners/modalToggle.js";
 import createTextArea from "./elements/createTextArea.js";
 import deleteText from "./elements/deleteText.js";
 import optionsButtons from "./elements/optionsButtons.js";
@@ -16,7 +16,7 @@ export default function (data) {
   const types = data.elements;
   if (types) types.forEach((ele) => modalBody.appendChild(checkType(ele)));
 
-  modalToggle();
+  modal.toggle();
 }
 
 function checkType(ele) {

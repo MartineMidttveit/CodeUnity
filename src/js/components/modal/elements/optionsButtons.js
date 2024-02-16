@@ -1,3 +1,6 @@
+import modal from "../../../api/handlers/eventListeners/modalToggle.js";
+import update from "../../../api/update/index.js";
+
 export default function optionsButton(ele) {
   const optionOne = ele.optionOne ? ele.optionOne.text : "Cancel";
   const optionTwo = ele.optionTwo ? ele.optionTwo.text : "Save";
@@ -49,9 +52,11 @@ export default function optionsButton(ele) {
   buttonsContainer.appendChild(secondButton);
 
   if (optionTwo == "Delete") {
-    secondButton.addEventListener("click", function (e) {
+    secondButton.addEventListener("click", async function (e) {
       e.preventDefault();
-      ele.optionTwo.request(ele.id);
+      modal.close();
+      await ele.optionTwo.request(ele.id);
+      update.refreshPosts("profile");
     });
   }
 
