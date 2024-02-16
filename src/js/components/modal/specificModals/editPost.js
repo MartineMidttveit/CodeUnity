@@ -8,12 +8,12 @@ export default function editPost(post) {
     media: post.media,
     value: post.media?.url,
     input: true,
-    text: "Image (url)",
+    text: "Image:",
   };
-  const element2 = { type: "input", text: "Title", value: post.title };
+  const element2 = { type: "input", text: "Title:", value: post.title };
   const element3 = {
     type: "textarea",
-    text: "Description",
+    text: "Description:",
     value: post.body,
     name: "body",
   };
