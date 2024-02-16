@@ -2,7 +2,7 @@ import headers from "../data/headers.js";
 import Auth from "../index.js";
 import loginSpecific from "./login.js";
 import endpoints from "../data/endpoints/index.js";
-import storage from '../../../utils/storage.js'
+import storage from "../../../utils/storage.js";
 
 const request = (
   body,
@@ -26,8 +26,8 @@ export default {
   },
 
   logout: async function () {
-    storage.clear(); 
-    window.location.href = '/'; 
+    storage.clear();
+    window.location.href = "/";
   },
 
   // Change profile media request (works with either banner or avatar)

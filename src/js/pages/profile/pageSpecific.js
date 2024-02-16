@@ -6,6 +6,7 @@ import addTag from "../../api/handlers/eventListeners/addTag.js";
 import imagePreview from "../../utils/helpers/imagePreview.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
 import requests from "../../api/auth/requests/index.js";
+import listener from "../../api/handlers/eventListeners/formListen.js";
 
 const postContainer = document.getElementById("profile-user-posts");
 const profileOwner = document.querySelector("#profileOwner");
@@ -55,11 +56,12 @@ export default async function pageSpecific() {
 
   profileOwner.textContent = isOwner ? "Your Profile" : "@" + name;
 
-  let tagsContainer = [];
-  addTag(tagsContainer);
+  let tags = [];
+  addTag(tags);
 
   imagePreview(imageInput, previewImg);
 
+  const newPost = listener.createPost(tags);
+  newPost.auth();
   return data;
 }
-

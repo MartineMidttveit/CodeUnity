@@ -26,9 +26,14 @@
 
   <body class="font-gilroy">
     <!--Sidebar-->
-    <div class="w-full z-30 bg-primary md:w-24 md:h-screen fixed md:flex md:justify-center md:items-start sidebar bottom-0">
+    <div
+      class="w-full z-30 bg-primary md:w-24 md:h-screen fixed md:flex md:justify-center md:items-start sidebar bottom-0"
+    >
       <div class="sidebar-content">
-        <button class="hamburger md:mt-12 hidden md:inline-block" id="hamburgerBtn">
+        <button
+          class="hamburger md:mt-12 hidden md:inline-block"
+          id="hamburgerBtn"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -44,21 +49,33 @@
             ></path>
           </svg>
         </button>
-    
-        <div class="sidebar-image hidden flex-col items-center justify-center" id="sidebarContainer"></div>
-    
+
+        <div
+          class="sidebar-image hidden flex-col items-center justify-center"
+          id="sidebarContainer"
+        ></div>
+
         <nav>
-          <div class="flex justify-between md:flex-col py-4 px-10 md:px-0 md:space-y-16 md:mt-28">
-            <a href="/feed/index.html" class="flex justify-center items-center home navLink gap-x-6">
+          <div
+            class="flex justify-between md:flex-col py-4 px-10 md:px-0 md:space-y-16 md:mt-28"
+          >
+            <a
+              href="/feed/index.html"
+              class="flex justify-center items-center home navLink gap-x-6"
+            >
               <i class="fa-solid fa-house text-2xl w-8"></i>
               <span class="hidden navOption">Home</span>
             </a>
-    
-            <a href="" class="flex justify-center items-center profile navLink md:gap-x-6" id="sidebarProfileLink">
+
+            <a
+              href=""
+              class="flex justify-center items-center profile navLink md:gap-x-6"
+              id="sidebarProfileLink"
+            >
               <i class="fa-solid fa-user text-2xl w-8"></i>
               <span class="hidden navOption">Profile</span>
             </a>
-    
+
             <a
               href=""
               class="flex justify-center items-center groups navLink md:gap-x-6"
@@ -66,7 +83,7 @@
               <i class="fa-solid fa-globe text-2xl w-8"></i>
               <span class="hidden navOption">Explore</span>
             </a>
-    
+
             <a
               href=""
               class="flex justify-center items-center settings navLink gap-x-6"
@@ -74,7 +91,7 @@
               <i class="fa-solid fa-gear text-2xl w-8"></i>
               <span class="hidden navOption">Settings</span>
             </a>
-    
+
             <a
               href=""
               class="flex justify-center items-center inbox navLink gap-x-6"
@@ -83,7 +100,7 @@
               <span class="hidden navOption">Inbox</span>
             </a>
           </div>
-          
+
           <button class="text-white" id="logoutButton">Log out</button>
         </nav>
       </div>
@@ -167,24 +184,43 @@
     <main class="px-3 sm:px-8 md:px-12 lg:px-32">
       <!--Profile information-->
 
-      <section class="max-w-6xl mt-20 sm:mt-24 lg:mt-20 flex flex-col mx-auto md:pl-24" id="profileContainer">
-        <div class="flex items-center justify-between flex-wrap gap-6 pt-3 sm:pt-8" id="profileSubContainer"></div>
+      <section
+        class="max-w-6xl mt-20 sm:mt-24 lg:mt-20 flex flex-col mx-auto md:pl-24"
+        id="profileContainer"
+      >
+        <div
+          class="flex items-center justify-between flex-wrap gap-6 pt-3 sm:pt-8"
+          id="profileSubContainer"
+        ></div>
       </section>
 
       <!--Posts-->
 
-      <section class="posts max-w-6xl md:pl-24 mt-16 mx-auto" id="profile-user-posts"></section>
+      <section
+        class="posts max-w-6xl md:pl-24 mt-16 mx-auto"
+        id="profile-user-posts"
+      ></section>
 
       <!--MODAL START-->
-      <section class="bg-white mx-auto modal w-full fixed z-10 hidden items-center left-0 top-0 h-full p-10 overflow-auto md:ml-12" id="create-post-modal" >
-        <div class="max-w-3xl flex flex-col px-12 py-10 rounded-lg bg-white mx-auto border modal-content">
+      <section
+        class="bg-white mx-auto modal w-full fixed z-10 hidden items-center left-0 top-0 h-full p-10 overflow-auto md:ml-12"
+        id="create-post-modal"
+      >
+        <div
+          class="max-w-3xl flex flex-col px-12 py-10 rounded-lg bg-white mx-auto border modal-content"
+        >
           <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-semibold">Create a new post</h2>
             <i class="fa-solid fa-xmark text-xl"></i>
           </div>
 
           <figure class="mt-2 mb-6">
-            <img id="previewImage" src="/images/image.png" alt="" class="rounded-md">
+            <img
+              id="previewImage"
+              src="/images/image.png"
+              alt=""
+              class="rounded-md"
+            />
           </figure>
 
           <form action="" class="w-full" id="create-post">
@@ -232,7 +268,6 @@
                   pattern="[a-zA-Z0-9]+"
                   name="tags"
                   title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."
-                  required
                 />
                 <button
                   id="addTag"

@@ -6,6 +6,7 @@ const tagContainer = document.querySelector("#tagContainer");
 
 export default function addTag(allTags) {
   allTags.push("codeUnity");
+  console.log(allTags);
 
   addTagBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ export default function addTag(allTags) {
         "pl-2",
         "pr-6",
         "py-2",
-        "font-semibold"
+        "text-secondary"
       );
 
       newTag.textContent = `#${tagsInput.value}`;
@@ -53,7 +54,7 @@ export default function addTag(allTags) {
       newTag.prepend(icon);
       const tagValue = tagsInput.value;
 
-      icon.addEventListener("click", function (e) {
+      icon.addEventListener("click", function () {
         allTags = allTags.filter((tag) => tag !== tagValue);
         newTag.remove();
       });

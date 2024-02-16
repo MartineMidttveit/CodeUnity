@@ -11,10 +11,13 @@ export default class EventListener {
    * @param {string} type - The type of event to listen for. (click by default)
    * @param {Function} callback - The callback function to be executed when the event is triggered. (null by default)
    */
-  constructor(element, type = "click", callback = null) {
+  constructor(element, type = "click", callback = null, tags = null) {
     this.element = element;
     this.type = type;
     this.callback = callback;
+    this.tags = tags;
+
+    console.log(this.tags);
   }
 
   /**
@@ -73,6 +76,10 @@ export default class EventListener {
           data.banner = { url: data.banner, alt: "user banner" };
         } else delete data.banner;
 
+        if (data.tags) {
+          data.tags = [...this.tags];
+        }
+        console.log(data);
         authRequest(data);
         form.reset();
       } catch (error) {
