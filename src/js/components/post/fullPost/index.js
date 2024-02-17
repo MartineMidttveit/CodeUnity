@@ -10,10 +10,8 @@ export default function (post, isOwner) {
   container.append(isOwner ? detailsWithOptions(post) : userDetails(post));
 
   container.appendChild(postBody(post));
-
+  post.tags.length > 0 && container.appendChild(tags(post.tags));
   container.appendChild(likesAndComments(post));
 
   container.appendChild(commentInput(post));
-
-  post.tags.length > 0 && container.appendChild(tags(post.tags));
 }
