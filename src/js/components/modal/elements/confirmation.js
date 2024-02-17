@@ -1,12 +1,10 @@
-export default function confirmation(ele) {
-  const confirmText = ele.confirmText
-    ? ele.confirmText
-    : "Post successfully deleted!";
+export default function confirmation(text = false) {
+  text = text ? text : "Post successfully deleted!";
 
   const confirmation = document.createElement("div");
   confirmation.setAttribute(
     "class",
-    "alert flex max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light"
+    "alert flex max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light confirmation-alert"
   );
 
   const confirmationBox = document.createElement("span");
@@ -22,9 +20,9 @@ export default function confirmation(ele) {
 
   const confirmationText = document.createElement("h3");
   confirmationText.setAttribute("class", "text-lg text-primary");
-  confirmationText.textContent = confirmText;
+  confirmationText.textContent = text;
 
-  confirmation.append(confirmation, confirmationText);
+  confirmation.append(confirmationBox, confirmationText);
 
   return confirmation;
 }

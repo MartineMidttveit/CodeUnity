@@ -55,10 +55,13 @@ export default function optionsButton(ele) {
     secondButton.addEventListener("click", async function (e) {
       e.preventDefault();
       modal.close();
-      await ele.optionTwo.request(ele.id);
-      console.log("test");
-
-      update.profilePosts();
+      try {
+        await ele.optionTwo.request(ele.id);
+        modal.confirmAction();
+        update.profilePosts();
+      } catch (error) {
+        console.error(error);
+      }
     });
   }
 

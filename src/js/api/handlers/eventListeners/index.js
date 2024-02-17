@@ -16,8 +16,6 @@ export default class EventListener {
     this.type = type;
     this.callback = callback;
     this.tags = tags;
-
-    console.log(this.tags);
   }
 
   /**

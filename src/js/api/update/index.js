@@ -13,8 +13,6 @@ export default {
       endpoints.posts.byProfile(profile.name)
     );
 
-    console.log(profilePosts.data);
-
     const postContainer = document.getElementById("posts-container");
     postContainer.innerHTML = "";
     console.log(profilePosts);

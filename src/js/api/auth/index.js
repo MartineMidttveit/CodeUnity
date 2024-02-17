@@ -40,8 +40,8 @@ export default class Auth {
         body: this.body,
       });
       if (response.status === 204) {
-        console.log("Request successful, no content.");
-        return null;
+        console.log("Request successful, no content. ");
+        return "deleted";
       }
 
       const data = await response.json();
@@ -53,8 +53,6 @@ export default class Auth {
         }
       }
 
-      console.log(response);
-      console.log(data);
       if (!data) throw new Error("Promise returns no data.  ");
 
       return data;

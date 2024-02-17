@@ -27,9 +27,6 @@ export default async function pageSpecific() {
 
   const getRequest = await requests.get();
 
-  const allProfiles = await getRequest.fetch(endpoints.profiles.all());
-  console.log(allProfiles);
-
   const findProfile = await getRequest.fetch(endpoints.profiles.search(name));
 
   const checkProfile = findProfile.data.find(
@@ -41,7 +38,6 @@ export default async function pageSpecific() {
   const { data: profile } = await getRequest.fetch(
     endpoints.profiles.byName(name)
   );
-  console.log(profile);
 
   const { data: profilePosts } = await getRequest.fetch(
     endpoints.posts.byProfile(name)

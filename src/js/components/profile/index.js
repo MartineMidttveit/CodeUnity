@@ -15,8 +15,6 @@ export default function (profile, isOwner, user) {
   const stats = profileStats(profile);
   const options = profileOptions(profile, isOwner, user);
 
-  console.log(stats);
-
   const statsAndOptions = document.createElement("div");
 
   statsAndOptions.setAttribute(
