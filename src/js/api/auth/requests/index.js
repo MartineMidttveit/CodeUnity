@@ -79,4 +79,16 @@ export default {
     );
     await data.fetch();
   },
+
+  // react to post
+  react: async function (id) {
+    const data = request(
+      null,
+      endpoints.posts.react(id),
+      headers.authWithoutContent(),
+      "put"
+    );
+    const response = await data.fetch();
+    console.log(response);
+  },
 };

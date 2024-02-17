@@ -1,3 +1,6 @@
+import request from "../../../api/auth/requests/index.js";
+import endpoints from "../../../api/auth/data/endpoints/index.js";
+
 export default function likesAndComments(post) {
   const container = document.createElement("div");
   container.setAttribute("class", "flex gap-x-8 ");
@@ -6,10 +9,21 @@ export default function likesAndComments(post) {
   likes.setAttribute("class", "flex items-center gap-x-3");
 
   const likesIcon = document.createElement("i");
-  likesIcon.setAttribute("class", "fa-regular fa-heart text-2xl");
+  likesIcon.setAttribute(
+    "class",
+    "fa-regular fa-heart text-2xl cursor-pointer"
+  );
 
   const likesCount = document.createElement("span");
   likesCount.textContent = post._count.reactions;
+
+  likesIcon.addEventListener("click", async () => {
+    await request.react(post.id);
+    const get = await request.get();
+
+    const newPost = await get.fetch(endpoints.posts.byId(post.id));
+    likesCount.textContent = newPost.data._count.reactions;
+  });
 
   const likesText = document.createTextNode(" Likes");
 
