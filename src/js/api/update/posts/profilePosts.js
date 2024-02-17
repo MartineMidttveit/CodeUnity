@@ -10,11 +10,9 @@ export default async function profilePosts() {
   const { data: profilePosts } = await getRequest.fetch(
     endpoints.posts.byProfile(profile.name)
   );
-
+  document.getElementById("posts-count").textContent = profilePosts.length;
   const postContainer = document.getElementById("posts-container");
   postContainer.innerHTML = "";
-  console.log(profilePosts);
 
   profilePosts.forEach((post) => postTemp(post, postContainer));
-  console.log(profilePosts);
 }

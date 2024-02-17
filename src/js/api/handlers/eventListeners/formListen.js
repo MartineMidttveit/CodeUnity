@@ -3,7 +3,6 @@ import authRequest from "../../auth/requests/index.js";
 
 function formListener(formId, callback, tags = null) {
   const form = document.getElementById(formId);
-  console.log(form);
   const listener = new EventListener(form, "submit", null, tags);
 
   return {

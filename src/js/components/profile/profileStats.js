@@ -1,69 +1,51 @@
 export default function profileStats(profile) {
-    const container = document.createElement("div");
-    container.classList.add(
-        "flex", 
-        "gap-x-14", 
-        "sm:gap-x-20"
-    );
-    
-    // Posts
-    const posts = document.createElement("div");
-    posts.classList.add(
-        "text-center", 
-        "text-primary", 
-        "flex", 
-        "flex-col"
-    );
+  const container = document.createElement("div");
+  container.classList.add("flex", "gap-x-14", "sm:gap-x-20");
 
-    const xPosts = document.createElement("strong");
-    xPosts.classList.add("text-lg");
-    xPosts.textContent = profile._count.posts;
+  // Posts
+  const posts = document.createElement("div");
+  posts.classList.add("text-center", "text-primary", "flex", "flex-col");
 
-    const xPostsText = document.createElement("span");
-    xPostsText.classList.add("text-lg");
-    xPostsText.textContent = "Posts";
+  const xPosts = document.createElement("strong");
+  xPosts.classList.add("text-lg");
+  xPosts.textContent = profile._count.posts;
+  xPosts.setAttribute("id", "posts-count");
 
-    posts.append(xPosts, xPostsText);
+  const xPostsText = document.createElement("span");
+  xPostsText.classList.add("text-lg");
+  xPostsText.textContent = "Posts";
 
-    // Followers
-    const followers = document.createElement("div");
-    followers.classList.add(
-        "text-center", 
-        "text-primary", 
-        "flex", 
-        "flex-col"
-    );
+  posts.append(xPosts, xPostsText);
 
-    const xFollowers = document.createElement("strong");
-    xFollowers.classList.add("text-lg");
-    xFollowers.textContent = profile._count.followers;
+  // Followers
+  const followers = document.createElement("div");
+  followers.classList.add("text-center", "text-primary", "flex", "flex-col");
 
-    const xFollowersText = document.createElement("span");
-    xFollowersText.classList.add("text-lg");
-    xFollowersText.textContent = "Followers";
+  const xFollowers = document.createElement("strong");
+  xFollowers.classList.add("text-lg");
+  xFollowers.textContent = profile._count.followers;
 
-    followers.append(xFollowers, xFollowersText);
+  const xFollowersText = document.createElement("span");
+  xFollowersText.classList.add("text-lg");
+  xFollowersText.textContent = "Followers";
 
-    // Following
-    const following = document.createElement("div");
-    following.classList.add(
-        "text-center", 
-        "text-primary", 
-        "flex", 
-        "flex-col"
-    );
+  followers.append(xFollowers, xFollowersText);
 
-    const xFollowing = document.createElement("strong");
-    xFollowing.classList.add("text-lg");
-    xFollowing.textContent = profile._count.following;
+  // Following
+  const following = document.createElement("div");
+  following.classList.add("text-center", "text-primary", "flex", "flex-col");
 
-    const xFollowingText = document.createElement("span");
-    xFollowingText.classList.add("text-lg");
-    xFollowingText.textContent = "Following";
+  const xFollowing = document.createElement("strong");
+  xFollowing.classList.add("text-lg");
+  xFollowing.textContent = profile._count.following;
 
-    following.append(xFollowing, xFollowingText);
+  const xFollowingText = document.createElement("span");
+  xFollowingText.classList.add("text-lg");
+  xFollowingText.textContent = "Following";
 
-    container.append(posts, followers, following);
+  following.append(xFollowing, xFollowingText);
 
-    return container;
+  container.append(posts, followers, following);
+
+  return container;
 }

@@ -34,7 +34,6 @@ export default class Auth {
     const url = config.BASE_URL + endpoint;
 
     this.body && (this.body = JSON.stringify(this.body));
-    console.log(this.body);
     try {
       const response = await fetch(url, {
         headers: this.headers,
@@ -46,10 +45,9 @@ export default class Auth {
         if (this.confirmMessage) confirmation(this.confirmMessage);
         return "deleted";
       }
-      console.log(response);
 
       const data = await response.json();
-      console.log(data);
+
       if (!response.ok) {
         if (data.errors) {
           throw new Error(data.errors[0].message);

@@ -38,7 +38,7 @@ export default async function pageSpecific() {
   const { data: profile } = await getRequest.fetch(
     endpoints.profiles.byName(name)
   );
-  console.log(profile);
+
   const { data: profilePosts } = await getRequest.fetch(
     endpoints.posts.byProfile(name)
   );
