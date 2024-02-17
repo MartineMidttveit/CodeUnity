@@ -9,7 +9,7 @@ export default {
   byTag: (tag = "CodeUnity") => `/social/posts?tag=${tag}&${postFilter}`,
 
   //  -get  specific post by id
-  byId: (id) => `/social/posts/${id}`,
+  byId: (id) => `/social/posts/${id}?${postFilter}`,
 
   // - delete a specific post by id
   delete: (id) => `/social/posts/${id}`,
