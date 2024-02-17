@@ -4,6 +4,7 @@ export default function input(ele) {
 
   label.classList.add("text-lg");
   const input = document.createElement("input");
+  ele.name && (input.name = ele.name);
   ele.text && (label.textContent = ele.text);
   input.setAttribute(
     "class",

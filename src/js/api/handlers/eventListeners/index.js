@@ -11,11 +11,10 @@ export default class EventListener {
    * @param {string} type - The type of event to listen for. (click by default)
    * @param {Function} callback - The callback function to be executed when the event is triggered. (null by default)
    */
-  constructor(element, type = "click", callback = null, tags = null) {
+  constructor(element, type = "click", callback = null) {
     this.element = element;
     this.type = type;
     this.callback = callback;
-    this.tags = tags;
   }
 
   /**
@@ -48,7 +47,7 @@ export default class EventListener {
    * @param {Function}  - The callback function to be executed when the form is submitted (usually an auth request).
    * set to this.callback by default. but can be overridden.
    */
-  submitForm(authRequest = this.callback, tags = this.tags) {
+  submitForm(authRequest = this.callback, tags = null, confirmMessage = null) {
     console.log(tags);
     /**
      * Callback function for form submission.
@@ -77,7 +76,8 @@ export default class EventListener {
 
         tags !== null && (data.tags = tags);
 
-        authRequest(data);
+        console.log(data);
+        authRequest(data, confirmMessage);
         form.reset();
       } catch (error) {
         console.error(error.message);

@@ -52,12 +52,12 @@ export default async function pageSpecific() {
 
   profileOwner.textContent = isOwner ? "Your Profile" : "@" + name;
 
-  let tags = [];
-  addTag(tags);
+  // let tags = [];
+  // addTag(tags);
 
-  imagePreview(imageInput, previewImg);
+  // imagePreview(imageInput, previewImg);
 
-  listener.createPost(tags);
+  // listener.createPost(tags);
 
   return data;
 }

@@ -1,4 +1,4 @@
-export default function confirmation(text = false, time = 5000) {
+export default function confirmation(text, time = 5000) {
   text = text ? text : "Post successfully deleted!";
 
   const confirmation = document.createElement("div");
@@ -27,5 +27,4 @@ export default function confirmation(text = false, time = 5000) {
 
   //Removes the confirmation alert after a set time
   setTimeout(() => confirmation.remove(), time);
-  return confirmation;
 }

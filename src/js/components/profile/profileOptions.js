@@ -1,23 +1,23 @@
 import followUser from "../../api/handlers/eventListeners/followUser.js";
 import createPost from "../modal/specificModals/createNewPost.js";
 
-const modalContainer = document.querySelector("#create-post-modal");
+// const modalContainer = document.querySelector("#create-post-modal");
 
-function openModal() {
-  modalContainer.style.display = "flex";
-}
-function closeModal() {
-  modalContainer.style.display = "none";
-}
+// function openModal() {
+//   modalContainer.style.display = "flex";
+// }
+// function closeModal() {
+//   modalContainer.style.display = "none";
+// }
 
-const xmarkIcon = document.querySelector(".fa-xmark");
-xmarkIcon.addEventListener("click", closeModal);
+// const xmarkIcon = document.querySelector(".fa-xmark");
+// xmarkIcon.addEventListener("click", closeModal);
 
-modalContainer.addEventListener("click", function (event) {
-  if (event.target === modalContainer) {
-    closeModal();
-  }
-});
+// modalContainer.addEventListener("click", function (event) {
+//   if (event.target === modalContainer) {
+//     closeModal();
+//   }
+// });
 
 export default function profileOptions(profile, isOwner, user) {
   const container = document.createElement("div");

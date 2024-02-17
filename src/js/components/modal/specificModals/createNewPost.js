@@ -1,5 +1,4 @@
 import modal from "../index.js";
-import request from "../../../api/auth/requests/index.js";
 import listener from "../../../api/handlers/eventListeners/formListen.js";
 
 export default function createNewPost(post) {
@@ -14,8 +13,9 @@ export default function createNewPost(post) {
     value: post.media?.url,
     input: true,
     text: "Image",
+    name: "media",
   };
-  const element2 = { type: "input", text: "Title" };
+  const element2 = { type: "input", text: "Title", name: "title" };
   const element3 = {
     type: "textarea",
     text: "Description",

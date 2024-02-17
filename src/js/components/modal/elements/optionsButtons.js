@@ -57,7 +57,6 @@ export default function optionsButton(ele) {
       modal.close();
       try {
         await ele.optionTwo.request(ele.id);
-        modal.confirmAction();
         update.profilePosts();
       } catch (error) {
         console.error(error);
@@ -65,12 +64,7 @@ export default function optionsButton(ele) {
     });
   } else if (optionTwo == "Publish") {
     try {
-      ele.optionTwo.listen(secondButton, ele.tags);
-      console.dir(ele.optionTwo.listen);
-      console.log("test");
-      secondButton.addEventListener("click", (e) => {
-        modal.close();
-      });
+      ele.optionTwo.listen(ele.tags);
     } catch (error) {
       console.error(error);
     }

@@ -3,20 +3,23 @@ import Auth from "../index.js";
 import loginSpecific from "./login.js";
 import endpoints from "../data/endpoints/index.js";
 import storage from "../../../utils/storage.js";
+import update from "../../update/index.js";
+import modal from "../../handlers/eventListeners/modalToggle.js";
 
 const request = (
   body,
   endpoint,
   header = headers.withAuthToken(),
-  method = "post"
-) => new Auth(method, header, endpoint, body);
+  method = "post",
+  confirmMessage = null
+) => new Auth(method, header, endpoint, body, confirmMessage);
 
 export default {
   default: request,
 
   // Login request
-  login: async function (body, endpoint = endpoints.login()) {
-    const data = request(body, endpoint, headers.basic());
+  login: async function (body) {
+    const data = request(body, endpoints.login(), headers.basic());
     loginSpecific(data);
   },
 
@@ -49,20 +52,30 @@ export default {
   },
 
   // create post
-  create: async function (body) {
-    console.log(body);
-    console.log("test");
-    const data = request(body, endpoints.posts.create());
-    data.fetch();
+  create: async function (body, message = null) {
+    const data = request(
+      body,
+      endpoints.posts.create(),
+      headers.withAuthToken(),
+      "post",
+      message
+    );
+    const createdPost = await data.fetch();
+
+    if (createdPost.data) {
+      modal.close();
+      update.profilePosts();
+    }
   },
 
   // Delete post
-  delete: async function (id) {
+  delete: async function (id, message = "Post deleted") {
     const data = request(
       null,
       endpoints.posts.delete(id),
       headers.authWithoutContent(),
-      "delete"
+      "delete",
+      message
     );
     await data.fetch();
   },

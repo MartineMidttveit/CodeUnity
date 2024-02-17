@@ -1,4 +1,5 @@
 import config from "../config.js";
+import confirmation from "../../utils/helpers/confirmAction.js";
 
 /**
  * Represents an API authentication class.
@@ -14,11 +15,12 @@ export default class Auth {
     * @param {string} endpoint - The endpoint URL for the request.
     * @param {Object|null} body - The request body (optional).
     */
-  constructor(method, headers, endpoint, body = null) {
+  constructor(method, headers, endpoint, body = null, confirmMessage = null) {
     this.method = method;
     this.headers = headers;
     this.endpoint = endpoint;
     this.body = body;
+    this.confirmMessage = confirmMessage;
   }
 
   /**
@@ -32,7 +34,7 @@ export default class Auth {
     const url = config.BASE_URL + endpoint;
 
     this.body && (this.body = JSON.stringify(this.body));
-
+    console.log(this.body);
     try {
       const response = await fetch(url, {
         headers: this.headers,
@@ -41,10 +43,13 @@ export default class Auth {
       });
       if (response.status === 204) {
         console.log("Request successful, no content. ");
+        if (this.confirmMessage) confirmation(this.confirmMessage);
         return "deleted";
       }
+      console.log(response);
 
       const data = await response.json();
+      console.log(data);
       if (!response.ok) {
         if (data.errors) {
           throw new Error(data.errors[0].message);
@@ -55,6 +60,7 @@ export default class Auth {
 
       if (!data) throw new Error("Promise returns no data.  ");
 
+      if (this.confirmMessage) confirmation(this.confirmMessage);
       return data;
     } catch (error) {
       console.error(error);

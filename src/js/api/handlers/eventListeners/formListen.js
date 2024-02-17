@@ -3,13 +3,14 @@ import authRequest from "../../auth/requests/index.js";
 
 function formListener(formId, callback, tags = null) {
   const form = document.getElementById(formId);
+  console.log(form);
   const listener = new EventListener(form, "submit", null, tags);
 
   return {
     form,
     listener,
-    auth() {
-      this.listener.submitForm(callback);
+    auth(tags = null, confirmMessage = null) {
+      this.listener.submitForm(callback, tags, confirmMessage);
     },
   };
 }
@@ -27,13 +28,18 @@ function formListener(formId, callback, tags = null) {
  */
 export default {
   default: formListener,
+
+  // Login listener - creates a post request for the login form.
   login: formListener("login-form", authRequest.login),
 
+  // Register listener - creates a post request for the registration form.
   register: formListener("registrationForm", authRequest.register),
 
-  createPost: (tags) => {
-    const data = formListener("create-post", authRequest.create, tags);
-    console.log(data);
-    data.auth(authRequest.create, tags);
+  // Create post listener - creates a post request for the create post form.
+  createPost: (tags, confirmMessage = "Post created") => {
+    const data = formListener("create-post", authRequest.create);
+    console.log(authRequest.create);
+    console.log("create post");
+    data.auth(tags, confirmMessage);
   },
 };
