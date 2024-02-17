@@ -1,9 +1,12 @@
 import modal from "../index.js";
 import request from "../../../api/auth/requests/index.js";
-import listener from "../../../api/handlers/eventListeners/index.js";
+import listener from "../../../api/handlers/eventListeners/formListen.js";
 
 export default function createNewPost(post) {
+  const formId = "create-post";
   const title = "Create new post";
+
+  let tags = ["CodeUnity"];
   const elements = [];
   const element1 = {
     type: "image",
@@ -20,14 +23,22 @@ export default function createNewPost(post) {
   };
 
   const element4 = {
-    type: "buttons",
-    id: post.id,
-    optionTwo: { text: "Publish" },
+    type: "tags",
+    text: "Tags",
+    tags,
+    addTag: true,
   };
 
-  elements.push(element1, element2, element3, element4);
+  const element5 = {
+    type: "buttons",
+    id: post.id,
+    optionTwo: { text: "Publish", listen: listener.createPost },
+    tags,
+  };
 
-  const data = { title, elements };
+  elements.push(element1, element2, element3, element4, element5);
+
+  const data = { title, elements, formId };
   data.id = post.id;
 
   modal(data, post);

@@ -11,8 +11,9 @@ export default function (data) {
 
   title.textContent = data.title ? data.title : "";
 
-  const modalBody = document.getElementById("modal-body");
+  const modalBody = document.querySelector(".modal-body");
   modalBody.innerHTML = "";
+  data.formId && modalBody.setAttribute("id", data.formId);
 
   const types = data.elements;
   if (types) types.forEach((ele) => modalBody.appendChild(checkType(ele)));

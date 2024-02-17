@@ -1,6 +1,7 @@
 import confirmation from "../../../components/modal/elements/confirmation.js";
 
 const modal = document.getElementById("modal-container");
+const modalBody = document.querySelector(".modal-body");
 
 export default {
   toggle: function () {
@@ -13,7 +14,7 @@ export default {
       btn.addEventListener("click", () => {
         modal.classList.remove("flex");
         modal.classList.add("hidden");
-        const modalBody = document.getElementById("modal-body");
+
         modalBody.innerHTML = "";
       });
     });
@@ -25,7 +26,7 @@ export default {
   close: () => {
     modal.classList.remove("flex");
     modal.classList.add("hidden");
-    document.getElementById("modal-body").innerHTML = "";
+    modalBody.innerHTML = "";
     document.getElementById("modal-header").textContent = "";
   },
 

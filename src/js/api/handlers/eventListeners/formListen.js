@@ -33,6 +33,7 @@ export default {
 
   createPost: (tags) => {
     const data = formListener("create-post", authRequest.create, tags);
+    console.log(data);
     data.auth(authRequest.create, tags);
   },
 };

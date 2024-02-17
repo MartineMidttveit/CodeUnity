@@ -56,7 +56,7 @@ export default class EventListener {
      */
     function submitCallback(e) {
       e.preventDefault();
-
+      console.log(authRequest);
       try {
         if (!authRequest) throw new Error("No authRequest function provided.");
         const form = e.target;

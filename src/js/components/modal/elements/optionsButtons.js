@@ -64,17 +64,16 @@ export default function optionsButton(ele) {
       }
     });
   } else if (optionTwo == "Publish") {
-    secondButton.addEventListener("click", async function (e) {
-      e.preventDefault();
-      modal.close();
-      try {
-        await ele.optionTwo.request();
-        modal.confirmAction("Post published");
-        update.profilePosts();
-      } catch (error) {
-        console.error(error);
-      }
-    });
+    try {
+      ele.optionTwo.listen(secondButton, ele.tags);
+      console.dir(ele.optionTwo.listen);
+      console.log("test");
+      secondButton.addEventListener("click", (e) => {
+        modal.close();
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return buttonsContainer;
