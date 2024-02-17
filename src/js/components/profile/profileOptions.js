@@ -1,4 +1,5 @@
 import followUser from "../../api/handlers/eventListeners/followUser.js";
+import createPost from "../modal/specificModals/createNewPost.js";
 
 const modalContainer = document.querySelector("#create-post-modal");
 
@@ -51,7 +52,7 @@ export default function profileOptions(profile, isOwner, user) {
       "hover:text-primary"
     );
     newPost.textContent = "New post";
-    newPost.addEventListener("click", openModal);
+    newPost.addEventListener("click", createPost);
 
     container.append(editProfile, newPost);
   } else {

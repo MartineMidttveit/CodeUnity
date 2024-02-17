@@ -63,6 +63,18 @@ export default function optionsButton(ele) {
         console.error(error);
       }
     });
+  } else if (optionTwo == "Publish") {
+    secondButton.addEventListener("click", async function (e) {
+      e.preventDefault();
+      modal.close();
+      try {
+        await ele.optionTwo.request();
+        modal.confirmAction("Post published");
+        update.profilePosts();
+      } catch (error) {
+        console.error(error);
+      }
+    });
   }
 
   return buttonsContainer;

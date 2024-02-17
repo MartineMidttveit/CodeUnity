@@ -4,6 +4,7 @@ import modal from "../../api/handlers/eventListeners/modalToggle.js";
 import createTextArea from "./elements/createTextArea.js";
 import deleteText from "./elements/deleteText.js";
 import optionsButtons from "./elements/optionsButtons.js";
+import postTags from "./elements/postTags.js";
 
 export default function (data) {
   const title = document.getElementById("modal-header");
@@ -27,6 +28,7 @@ function checkType(ele) {
   else if (ele.type === "textarea") data = createTextArea(ele);
   else if (ele.type === "image") data = figureMedia(ele);
   else if (ele.type === "deleteText") data = deleteText(ele);
+  else if (ele.type === "tags") data = postTags(ele);
 
   return data;
 }

@@ -28,8 +28,5 @@ export default function editPost(post) {
   const data = { title, elements };
   data.id = post.id;
 
-  console.log(data);
-  console.log(post);
-
   modal(data, post);
 }
