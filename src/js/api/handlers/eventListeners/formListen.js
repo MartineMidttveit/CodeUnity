@@ -15,29 +15,34 @@ function formListener(formId, callback, tags = null) {
 }
 
 /**
- * Event listener object for handling form submissions.
- * @module formListen
- * @default
- * @property {function} default - The default form listener function.
- * @property {function} login - The form listener function for the login form.
- * @property {function} register - The form listener function for the registration form.
- * @property {function} createPost - The form listener function for creating a post.
- * @param {Array} tags - The tags associated with the post.
- * @returns {function} - The form listener function.
+ * Sets up event listeners for form submissions.
+ * @param {string} formId - The ID of the form to attach the listener to.
+ * @param {function} callback - A callback function that will be invoked with the form data when the form is submitted.
+ * This function is typically used to make an authenticated request with the form data as the request body (will be mostly used for post requests).
  */
 export default {
+  /** @property {function} default - The default form listener function. */
   default: formListener,
 
-  // Login listener - creates a post request for the login form.
+  /** @property {function} login - The form listener function for the login form. */
   login: formListener("login-form", authRequest.login),
 
-  // Register listener - creates a post request for the registration form.
+  /** @property {function} register - The form listener function for the registration form. */
   register: formListener("registrationForm", authRequest.register),
 
-  // Create post listener - creates a post request for the create post form.
+  /**   @property {function} createPost - The form listener function for creating a post.   */
   createPost: (tags, confirmMessage = "Post created") => {
     const data = formListener("create-post", authRequest.create);
+    data.auth(tags, confirmMessage);
+  },
 
+  updatePost: (tags, postId, confirmMessage = "Post updated") => {
+    authRequest.id = postId;
+    console.log(postId);
+    const data = formListener(
+      "edit-post",
+      authRequest.update.bind(authRequest)
+    );
     data.auth(tags, confirmMessage);
   },
 };

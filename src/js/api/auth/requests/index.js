@@ -3,7 +3,7 @@ import Auth from "../index.js";
 import loginSpecific from "./login.js";
 import endpoints from "../data/endpoints/index.js";
 import storage from "../../../utils/storage.js";
-import update from "../../update/index.js";
+import updates from "../../update/index.js";
 import modal from "../../handlers/eventListeners/modalToggle.js";
 
 const request = (
@@ -51,7 +51,7 @@ export default {
     return data;
   },
 
-  // create post
+  // create new post
   create: async function (body, message = null) {
     const data = request(
       body,
@@ -60,14 +60,33 @@ export default {
       "post",
       message
     );
-    console.log(body);
-    const tagsContainer = document.getElementById("tagContainer");
-    console.log(tagsContainer);
+
     const createdPost = await data.fetch();
 
     if (createdPost.data) {
       modal.close();
-      update.profilePosts();
+      updates.profilePosts();
+    }
+  },
+
+  // Update post
+
+  update: async function (body, message = "Post updated") {
+    console.log(this);
+    // console.log(this.id);
+    const id = this.id;
+    const data = request(
+      body,
+      endpoints.posts.update(id),
+      headers.withAuthToken(),
+      "put",
+      message
+    );
+    const response = await data.fetch();
+
+    if (response.data) {
+      modal.close();
+      updates.profilePosts();
     }
   },
 

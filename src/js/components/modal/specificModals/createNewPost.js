@@ -13,8 +13,6 @@ export default function createNewPost(post) {
   const elements = [];
   const element1 = {
     type: "image",
-    media: post.media,
-    value: post.media?.url,
     input: true,
     text: "Image",
     name: "media",
@@ -35,7 +33,7 @@ export default function createNewPost(post) {
   element4.tags = ["test"];
   const element5 = {
     type: "buttons",
-    id: post.id,
+
     optionTwo: {
       text: "Publish",
       listen: () => listener.createPost(updateTags),
@@ -45,7 +43,6 @@ export default function createNewPost(post) {
   elements.push(element1, element2, element3, element4, element5);
 
   const data = { title, elements, formId, updateTags };
-  data.id = post.id;
 
   modal(data, post);
 }

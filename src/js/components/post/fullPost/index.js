@@ -1,6 +1,6 @@
 import userDetails from "../comps/userDetails.js";
 import detailsWithOptions from "../comps/detailsWithOptions.js";
-import postBody from "../thumbnail/postBody.js";
+import postBody from "../comps/postBody.js";
 import tags from "../comps/tags.js";
 import likesAndComments from "../comps/likesAndComments.js";
 import commentInput from "../comps/commentInput.js";

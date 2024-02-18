@@ -62,7 +62,7 @@ export default function optionsButton(ele) {
         console.error(error);
       }
     });
-  } else if (optionTwo == "Publish") {
+  } else if (optionTwo) {
     try {
       ele.optionTwo.listen();
     } catch (error) {
