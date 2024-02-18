@@ -9,8 +9,7 @@ import postTags from "./elements/postTags.js";
 export default function (data) {
   const title = document.getElementById("modal-header");
 
-  const tags = data.tags ? data.tags : null;
-  console.log(tags);
+  const updateTags = data.updateTags ? data.updateTags : null;
 
   title.textContent = data.title ? data.title : "";
 
@@ -20,20 +19,20 @@ export default function (data) {
 
   const types = data.elements;
   if (types)
-    types.forEach((ele) => modalBody.appendChild(checkType(ele, tags)));
+    types.forEach((ele) => modalBody.appendChild(checkType(ele, updateTags)));
 
   modal.toggle();
 }
 
-function checkType(ele, tags) {
+function checkType(ele, updateTags) {
   let data = null;
-  if (ele.type === "buttons") data = optionsButtons(ele, tags);
+  if (ele.type === "buttons") data = optionsButtons(ele, updateTags);
   else if (ele.type === "input") data = createInput(ele);
   else if (ele.type === "select") data = createSelect(ele);
   else if (ele.type === "textarea") data = createTextArea(ele);
   else if (ele.type === "image") data = figureMedia(ele);
   else if (ele.type === "deleteText") data = deleteText(ele);
-  else if (ele.type === "tags") data = postTags(ele, tags);
+  else if (ele.type === "tags") data = postTags(ele, updateTags);
 
   return data;
 }

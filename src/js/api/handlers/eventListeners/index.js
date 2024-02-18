@@ -55,6 +55,8 @@ export default class EventListener {
     function submitCallback(e) {
       e.preventDefault();
 
+      tags && (tags = tags.getValue());
+
       try {
         if (!authRequest) throw new Error("No authRequest function provided.");
         const form = e.target;
@@ -73,7 +75,7 @@ export default class EventListener {
           data.banner = { url: data.banner, alt: "user banner" };
         } else delete data.banner;
 
-        tags !== null && (data.tags = tags);
+        tags && (data.tags = tags);
 
         console.log(data);
         authRequest(data, confirmMessage);

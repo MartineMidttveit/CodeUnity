@@ -1,11 +1,14 @@
 import modal from "../index.js";
 import listener from "../../../api/handlers/eventListeners/formListen.js";
+import update from "../../../api/update/index.js";
 
 export default function createNewPost(post) {
   const formId = "create-post";
   const title = "Create new post";
 
   let tags = ["CodeUnity"];
+
+  const updateTags = update.updateValue(tags);
 
   const elements = [];
   const element1 = {
@@ -33,12 +36,15 @@ export default function createNewPost(post) {
   const element5 = {
     type: "buttons",
     id: post.id,
-    optionTwo: { text: "Publish", listen: () => listener.createPost(tags) },
+    optionTwo: {
+      text: "Publish",
+      listen: () => listener.createPost(updateTags),
+    },
   };
 
   elements.push(element1, element2, element3, element4, element5);
 
-  const data = { title, elements, formId, tags };
+  const data = { title, elements, formId, updateTags };
   data.id = post.id;
 
   modal(data, post);

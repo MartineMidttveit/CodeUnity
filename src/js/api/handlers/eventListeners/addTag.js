@@ -1,5 +1,11 @@
-export default function addTag(allTags, btn, input, container) {
-  allTags = ["CodeUnity"];
+import update from "../../update/index.js";
+
+export default function addTag(updateTags, btn, input, container) {
+  const allTags = updateTags.getValue();
+  console.log(allTags);
+
+  // const allTags = ["CodeUnity"];
+  console.log(allTags);
 
   btn.addEventListener("click", (e) => {
     e.preventDefault();
