@@ -1,3 +1,5 @@
+import requests from "../../../api/auth/requests/index.js";
+
 export default function commentInput(post) {
   const container = document.createElement("div");
   container.className = "mt-4 flex items-center";
@@ -31,6 +33,18 @@ export default function commentInput(post) {
   button.appendChild(svg);
   container.appendChild(input);
   container.appendChild(button);
+
+  button.addEventListener("click", async (e) => {
+    if (input.value === "") return;
+    const body = { body: input.value };
+    await requests.comment(body, post.id);
+    const commentsCount =
+      e.target.parentElement.parentElement.parentElement.querySelector(
+        "#comments-count"
+      );
+    commentsCount.textContent++;
+    input.value = "";
+  });
 
   return container;
 }

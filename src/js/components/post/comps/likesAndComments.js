@@ -31,13 +31,18 @@ export default function likesAndComments(post) {
   likes.appendChild(likesCount);
   likes.appendChild(likesText);
 
-  const comments = document.createElement("div");
-  comments.setAttribute("class", "flex items-center gap-x-3");
+  const comments = document.createElement("a");
+  comments.setAttribute(
+    "class",
+    "flex items-center gap-x-3 cursor-pointer text-primary"
+  );
+  comments.href = `/post/?id=${post.id}`;
 
   const commentsIcon = document.createElement("i");
   commentsIcon.setAttribute("class", "fa-regular fa-comment text-2xl");
 
   const commentsCount = document.createElement("span");
+  commentsCount.setAttribute("id", "comments-count");
   commentsCount.textContent = post._count.comments;
 
   const commentsText = document.createTextNode(" Comments");

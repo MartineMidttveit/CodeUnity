@@ -69,6 +69,18 @@ export default {
     }
   },
 
+  // Comment on post
+  comment: async function (body, id, message = "Comment added") {
+    const data = request(
+      body,
+      endpoints.posts.comment(id),
+      headers.withAuthToken(),
+      "post",
+      message
+    );
+    const response = await data.fetch();
+  },
+
   // Update post
 
   update: async function (body, message = "Post updated") {
