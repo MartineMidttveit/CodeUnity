@@ -37,8 +37,7 @@ export default {
   // Create post listener - creates a post request for the create post form.
   createPost: (tags, confirmMessage = "Post created") => {
     const data = formListener("create-post", authRequest.create);
-    console.log(authRequest.create);
-    console.log("create post");
+
     data.auth(tags, confirmMessage);
   },
 };

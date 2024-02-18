@@ -3,7 +3,7 @@ import endpoints from "../../../api/auth/data/endpoints/index.js";
 
 export default function likesAndComments(post) {
   const container = document.createElement("div");
-  container.setAttribute("class", "flex gap-x-8 ");
+  container.setAttribute("class", "flex gap-x-8 mt-6");
 
   const likes = document.createElement("div");
   likes.setAttribute("class", "flex items-center gap-x-3");

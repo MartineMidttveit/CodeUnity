@@ -48,29 +48,28 @@ export default class EventListener {
    * set to this.callback by default. but can be overridden.
    */
   submitForm(authRequest = this.callback, tags = null, confirmMessage = null) {
-    console.log(tags);
     /**
      * Callback function for form submission.
      * @param {Event} e - The submit event object.
      */
     function submitCallback(e) {
       e.preventDefault();
-      console.log(authRequest);
+
       try {
         if (!authRequest) throw new Error("No authRequest function provided.");
         const form = e.target;
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
-        if (data.hasOwnProperty("media")) {
+        if (data.hasOwnProperty("media") && data.media !== "") {
           data.media = { url: data.media, alt: "user media" };
         } else delete data.media;
 
-        if (data.hasOwnProperty("avatar")) {
+        if (data.hasOwnProperty("avatar") && data.avatar !== "") {
           data.avatar = { url: data.avatar, alt: "user avatar" };
         } else delete data.avatar;
 
-        if (data.hasOwnProperty("banner")) {
+        if (data.hasOwnProperty("banner") && data.banner !== "") {
           data.banner = { url: data.banner, alt: "user banner" };
         } else delete data.banner;
 

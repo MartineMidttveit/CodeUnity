@@ -60,6 +60,9 @@ export default {
       "post",
       message
     );
+    console.log(body);
+    const tagsContainer = document.getElementById("tagContainer");
+    console.log(tagsContainer);
     const createdPost = await data.fetch();
 
     if (createdPost.data) {

@@ -1,4 +1,6 @@
-export default function postTags() {
+import addTag from "../../../api/handlers/eventListeners/addTag.js";
+
+export default function postTags(ele, tags) {
   const container = document.createElement("div");
 
   const tagsLabel = document.createElement("label");
@@ -6,8 +8,8 @@ export default function postTags() {
   tagsLabel.setAttribute("class", "text-lg");
   tagsLabel.textContent = "Tags:";
 
-  const tags = document.createElement("div");
-  tags.setAttribute("class", "flex gap-4 flex-col");
+  const tagsContainer = document.createElement("div");
+  tagsContainer.setAttribute("class", "flex gap-4 flex-col");
 
   const tagInputContainer = document.createElement("div");
   tagInputContainer.setAttribute("class", "w-1/2 flex h-14 rounded my-2");
@@ -43,8 +45,9 @@ export default function postTags() {
   tagContainer.setAttribute("class", "flex gap-4");
 
   tagInputContainer.append(hashtag, tagInput, addTagButton);
-  tags.append(tagInputContainer, tagContainer);
-  container.append(tagsLabel, tags);
+  tagsContainer.append(tagInputContainer, tagContainer);
+  container.append(tagsLabel, tagsContainer);
 
+  addTag(tags, addTagButton, tagInput, tagContainer);
   return container;
 }

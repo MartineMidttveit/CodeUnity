@@ -1,16 +1,33 @@
-import input from "./createInput.js";
+import imagePreview from "../../../utils/helpers/imagePreview.js";
 
-export default function figureMedia(data) {
+export default function figureMedia(ele) {
   const figure = document.createElement("figure");
   figure.setAttribute("class", "mt-2");
   const img = document.createElement("img");
   img.setAttribute("id", "previewImage");
-  img.setAttribute("src", data.media ? data.media.url : "../images/image.png");
-  img.setAttribute("alt", data.media && data.media.alt);
+  img.setAttribute("src", ele.media ? ele.media.url : "../images/image.png");
+  img.setAttribute("alt", ele.media && ele.media.alt);
   img.setAttribute("class", "rounded-md w-full mb-6");
   figure.appendChild(img);
 
-  if (data.input) figure.appendChild(input(data));
+  const inputContainer = document.createElement("div");
+  const label = document.createElement("label");
+
+  label.classList.add("text-lg");
+  const input = document.createElement("input");
+  ele.name && (input.name = ele.name);
+  ele.text && (label.textContent = ele.text);
+  input.setAttribute(
+    "class",
+    "w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+  );
+  ele.value && (input.value = ele.value);
+  ele.placeholder && input.setAttribute("placeholder", ele.placeholder);
+  inputContainer.append(label, input);
+
+  figure.appendChild(inputContainer);
+
+  imagePreview(input, img);
 
   return figure;
 }

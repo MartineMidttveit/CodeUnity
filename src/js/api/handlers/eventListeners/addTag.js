@@ -1,17 +1,10 @@
-// import tags from "../../../components/post/comps/tags";
+export default function addTag(allTags, btn, input, container) {
+  allTags = ["CodeUnity"];
 
-const addTagBtn = document.querySelector("#addTag");
-const tagsInput = document.querySelector("#tags-input");
-const tagContainer = document.querySelector("#tagContainer");
-
-export default function addTag(allTags) {
-  allTags.push("codeUnity");
-  console.log(allTags);
-
-  addTagBtn.addEventListener("click", (e) => {
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    if (tagsInput.value === "") {
+    if (input.value === "") {
       console.log("Please enter a tag");
       return;
     }
@@ -20,8 +13,8 @@ export default function addTag(allTags) {
       console.log("You can not add more than 5 tags.");
       return;
     }
-    if (tagsInput.checkValidity()) {
-      if (allTags.includes(tagsInput.value)) {
+    if (input.checkValidity()) {
+      if (allTags.includes(input.value)) {
         console.log("Tag already exists");
         return;
       }
@@ -39,7 +32,7 @@ export default function addTag(allTags) {
         "text-secondary"
       );
 
-      newTag.textContent = `#${tagsInput.value}`;
+      newTag.textContent = `#${input.value}`;
 
       const icon = document.createElement("i");
       icon.classList.add(
@@ -52,19 +45,19 @@ export default function addTag(allTags) {
       );
 
       newTag.prepend(icon);
-      const tagValue = tagsInput.value;
+      const tagValue = input.value;
 
       icon.addEventListener("click", function () {
         allTags = allTags.filter((tag) => tag !== tagValue);
         newTag.remove();
       });
-      allTags.push(tagsInput.value);
+      allTags.push(input.value);
       console.log(allTags);
-      tagContainer.append(newTag);
+      container.append(newTag);
     } else {
       console.log("Invalid tag input. Please try again.");
     }
 
-    tagsInput.value = "";
+    input.value = "";
   });
 }

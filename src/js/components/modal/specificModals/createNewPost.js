@@ -6,6 +6,7 @@ export default function createNewPost(post) {
   const title = "Create new post";
 
   let tags = ["CodeUnity"];
+
   const elements = [];
   const element1 = {
     type: "image",
@@ -25,20 +26,19 @@ export default function createNewPost(post) {
   const element4 = {
     type: "tags",
     text: "Tags",
-    tags,
     addTag: true,
   };
 
+  element4.tags = ["test"];
   const element5 = {
     type: "buttons",
     id: post.id,
-    optionTwo: { text: "Publish", listen: listener.createPost },
-    tags,
+    optionTwo: { text: "Publish", listen: () => listener.createPost(tags) },
   };
 
   elements.push(element1, element2, element3, element4, element5);
 
-  const data = { title, elements, formId };
+  const data = { title, elements, formId, tags };
   data.id = post.id;
 
   modal(data, post);
