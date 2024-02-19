@@ -32,7 +32,7 @@ export default function editBannerAvatar(ele) {
   profileImageInput.setAttribute("id", "profileImage");
   profileImageInput.setAttribute(
     "class",
-    "w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3"
   );
   profileImageInput.name = "avatar";
 
@@ -59,7 +59,7 @@ export default function editBannerAvatar(ele) {
   imageCaptionInput.setAttribute("id", "imageCaption");
   imageCaptionInput.setAttribute(
     "class",
-    "w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3"
   );
 
   imageCaptionLabel.value = ele.avatar.alt ? ele.avatar.alt : "";
@@ -74,7 +74,7 @@ export default function editBannerAvatar(ele) {
   bannerImageInput.setAttribute("id", "bannerImage");
   bannerImageInput.setAttribute(
     "class",
-    "w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3"
   );
   bannerImageInput.setAttribute(
     "placeholder",
