@@ -4,7 +4,7 @@ export default function tags(tags) {
 
   tags.forEach((tag) => {
     const span = document.createElement("span");
-    span.setAttribute("class", "text-secondary text-lg");
+    span.setAttribute("class", "text-secondary 2xl:text-lg");
     span.textContent = `${tag}`;
     container.appendChild(span);
   });
