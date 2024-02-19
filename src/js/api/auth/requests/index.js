@@ -34,7 +34,8 @@ export default {
   },
 
   // Change profile media request (works with either banner or avatar)
-  profileMedia: async function (body, username) {
+  profileMedia: async function (body) {
+    const username = this.name;
     const data = request(
       body,
       endpoints.profiles.changeImg(username),

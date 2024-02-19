@@ -10,7 +10,7 @@ export default function editBio(ele) {
   biographyLabel.textContent = "Biography";
 
   const biographyTextarea = document.createElement("textarea");
-  biographyTextarea.setAttribute("name", "biography");
+  biographyTextarea.setAttribute("name", "bio");
   biographyTextarea.setAttribute("id", "biography");
   biographyTextarea.setAttribute(
     "class",

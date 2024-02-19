@@ -20,7 +20,10 @@ export default function editProfile(profile) {
 
   const element3 = {
     type: "buttons",
-    // optionTwo: { text: "Save" },
+    optionTwo: {
+      text: "Save",
+      listen: () => listener.updateProfile(profile.name),
+    },
   };
 
   elements.push(element1, element2, element3);

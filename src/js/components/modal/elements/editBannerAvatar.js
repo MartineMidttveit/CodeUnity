@@ -34,6 +34,8 @@ export default function editBannerAvatar(ele) {
     "class",
     "w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
   );
+  profileImageInput.name = "avatar";
+
   profileImageInput.setAttribute(
     "placeholder",
     "Their current URL to the profile image."
@@ -78,6 +80,7 @@ export default function editBannerAvatar(ele) {
     "placeholder",
     "The current URL to the banner image."
   );
+  bannerImageInput.name = "banner";
 
   bannerImageInput.value = ele.banner.url;
 
