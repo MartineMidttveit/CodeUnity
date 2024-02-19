@@ -5,6 +5,8 @@ import createTextArea from "./elements/createTextArea.js";
 import deleteText from "./elements/deleteText.js";
 import optionsButtons from "./elements/optionsButtons.js";
 import postTags from "./elements/postTags.js";
+import editBannerAvatar from "./elements/editBannerAvatar.js";
+import editBio from "./elements/editBio.js";
 
 export default function (data) {
   const title = document.getElementById("modal-header");
@@ -33,6 +35,7 @@ function checkType(ele, updateTags) {
   else if (ele.type === "image") data = figureMedia(ele);
   else if (ele.type === "deleteText") data = deleteText(ele);
   else if (ele.type === "tags") data = postTags(ele, updateTags);
-
+  else if (ele.type === "bannerAvatar") data = editBannerAvatar(ele);
+  else if (ele.type === "biography") data = editBio(ele);
   return data;
 }
