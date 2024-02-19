@@ -44,7 +44,6 @@ export default function profileStats(profile) {
   xFollowingText.textContent = "Following";
 
   following.append(xFollowing, xFollowingText);
-
   container.append(posts, followers, following);
 
   return container;
