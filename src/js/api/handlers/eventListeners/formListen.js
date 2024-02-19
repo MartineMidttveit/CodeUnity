@@ -47,6 +47,10 @@ export default {
 
   updateProfile: (name, confirmMessage = "Profile updated") => {
     authRequest.name = name;
-    const data = formListener("edit-profile");
+    const data = formListener(
+      "edit-profile",
+      authRequest.profileMedia.bind(authRequest)
+    );
+    data.auth(null, confirmMessage);
   },
 };
