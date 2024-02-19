@@ -1,6 +1,6 @@
 export default function postBody(post) {
   const container = document.createElement("div");
-  container.setAttribute("class", "pt-6");
+  container.setAttribute("class", "pt-2");
 
   if (post.media) {
     const img = document.createElement("img");
