@@ -56,13 +56,13 @@
           id="sidebarContainer"
         ></div>
 
-        <nav class="h-full flex flex-col">
+        <nav class="h-full flex">
           <div
-            class="flex md:flex-col py-4 px-10 md:px-0 space-y-8 2xl:space-y-16 mt-6 2xl:mt-28"
+            class="flex md:flex-col md:py-4 px-10 md:px-0 space-y-8 2xl:space-y-16 md:mt-6 2xl:mt-28 items-center justify-center"
           >
             <a
               href="/feed/index.html"
-              class="flex justify-center items-center home navLink gap-x-6"
+              class="flex justify-center items-center home gap-x-6"
             >
               <i class="fa-solid fa-house text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
               <span class="hidden navOption">Home</span>
@@ -70,7 +70,7 @@
 
             <a
               href="#"
-              class="flex justify-center items-center profile navLink gap-x-6"
+              class="flex justify-center items-center profile gap-x-6"
               id="sidebarProfileLink"
             >
               <i class="fa-solid fa-user text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
@@ -79,7 +79,7 @@
 
             <a
               href="#"
-              class="flex justify-center items-center groups navLink gap-x-6"
+              class="flex justify-center items-center groups gap-x-6"
             >
               <i class="fa-solid fa-globe text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
               <span class="hidden navOption">Explore</span>
@@ -87,7 +87,7 @@
 
             <a
               href="#"
-              class="flex justify-center items-center settings navLink gap-x-6"
+              class="flex justify-center items-center settings gap-x-6"
             >
               <i class="fa-solid fa-gear text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
               <span class="hidden navOption">Settings</span>
@@ -95,7 +95,7 @@
 
             <a
               href="#"
-              class="flex justify-center items-center inbox navLink gap-x-6"
+              class="flex justify-center items-center inbox gap-x-6"
             >
               <i
                 class="fa-solid fa-envelope text-xl 2xl:text-2xl w-6 2xl:w-8"
@@ -105,9 +105,8 @@
           </div>
 
           <button
-            class="text-gray-300 hover:text-white absolute bottom-2 w-full left-0 border-t py-3 2xl:py-8"
-            id="logoutButton"
-          >
+            class="text-gray-300 hover:text-white absolute bottom-2 left-0 text-center w-full border-t py-3 2xl:py-8 hidden md:block"
+            id="logoutButton">
             Log out
           </button>
         </nav>
