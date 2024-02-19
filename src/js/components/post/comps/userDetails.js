@@ -2,7 +2,7 @@ import formatDate from "../../../utils/helpers/formatDate.js";
 
 export default function userDetails(post) {
   const container = document.createElement("div");
-  container.setAttribute("class", "flex items-center");
+  container.setAttribute("class", "flex items-center gap-x-6");
 
   const imgContainer = document.createElement("div");
   imgContainer.setAttribute(
