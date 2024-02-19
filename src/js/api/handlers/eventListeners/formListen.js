@@ -45,4 +45,8 @@ export default {
     );
     data.auth(tags, confirmMessage);
   },
+
+  updateProfile: (name, confirmMessage = "Profile updated") => {
+    authRequest.profileMedia;
+  },
 };

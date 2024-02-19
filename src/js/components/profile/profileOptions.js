@@ -1,23 +1,6 @@
 import followUser from "../../api/handlers/eventListeners/followUser.js";
 import createPost from "../modal/specificModals/createNewPost.js";
-
-// const modalContainer = document.querySelector("#create-post-modal");
-
-// function openModal() {
-//   modalContainer.style.display = "flex";
-// }
-// function closeModal() {
-//   modalContainer.style.display = "none";
-// }
-
-// const xmarkIcon = document.querySelector(".fa-xmark");
-// xmarkIcon.addEventListener("click", closeModal);
-
-// modalContainer.addEventListener("click", function (event) {
-//   if (event.target === modalContainer) {
-//     closeModal();
-//   }
-// });
+import editProfile from "../../components/modal/specificModals/editProfile.js";
 
 export default function profileOptions(profile, isOwner, user) {
   const container = document.createElement("div");
@@ -37,6 +20,15 @@ export default function profileOptions(profile, isOwner, user) {
       "hover:border-light"
     );
     editProfile.textContent = "Edit profile";
+
+    console.log(profile);
+
+    console.log(profile.avatar);
+
+    editProfile.addEventListener("click", function (e) {
+      e.preventDefault();
+      editProfile(profile);
+    });
 
     const newPost = document.createElement("button");
     newPost.classList.add(
