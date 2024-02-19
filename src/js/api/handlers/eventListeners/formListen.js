@@ -38,11 +38,15 @@ export default {
 
   updatePost: (tags, postId, confirmMessage = "Post updated") => {
     authRequest.id = postId;
-    console.log(postId);
     const data = formListener(
       "edit-post",
       authRequest.update.bind(authRequest)
     );
     data.auth(tags, confirmMessage);
+  },
+
+  updateProfile: (name, confirmMessage = "Profile updated") => {
+    authRequest.name = name;
+    const data = formListener("edit-profile");
   },
 };

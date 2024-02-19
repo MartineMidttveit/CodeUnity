@@ -1,30 +1,13 @@
 import followUser from "../../api/handlers/eventListeners/followUser.js";
 import createPost from "../modal/specificModals/createNewPost.js";
-
-// const modalContainer = document.querySelector("#create-post-modal");
-
-// function openModal() {
-//   modalContainer.style.display = "flex";
-// }
-// function closeModal() {
-//   modalContainer.style.display = "none";
-// }
-
-// const xmarkIcon = document.querySelector(".fa-xmark");
-// xmarkIcon.addEventListener("click", closeModal);
-
-// modalContainer.addEventListener("click", function (event) {
-//   if (event.target === modalContainer) {
-//     closeModal();
-//   }
-// });
+import editProfile from "../../components/modal/specificModals/editProfile.js";
 
 export default function profileOptions(profile, isOwner, user) {
   const container = document.createElement("div");
   container.classList.add("flex", "justify-end", "gap-x-5");
   if (isOwner) {
-    const editProfile = document.createElement("button");
-    editProfile.classList.add(
+    const editProfileBtn = document.createElement("button");
+    editProfileBtn.classList.add(
       "flex",
       "items-center",
       "gap-3",
@@ -36,7 +19,16 @@ export default function profileOptions(profile, isOwner, user) {
       "hover:bg-light",
       "hover:border-light"
     );
-    editProfile.textContent = "Edit profile";
+    editProfileBtn.textContent = "Edit profile";
+
+    console.log(profile);
+
+    console.log(profile.avatar);
+
+    editProfileBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      editProfile(profile);
+    });
 
     const newPost = document.createElement("button");
     newPost.classList.add(
@@ -54,7 +46,7 @@ export default function profileOptions(profile, isOwner, user) {
     newPost.textContent = "New post";
     newPost.addEventListener("click", createPost);
 
-    container.append(editProfile, newPost);
+    container.append(editProfileBtn, newPost);
   } else {
     const followButton = document.createElement("button");
 

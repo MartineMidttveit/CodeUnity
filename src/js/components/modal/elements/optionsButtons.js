@@ -2,6 +2,7 @@ import modal from "../../../api/handlers/eventListeners/modalToggle.js";
 import update from "../../../api/update/index.js";
 
 export default function optionsButton(ele) {
+  console.log(ele);
   const optionOne = ele.optionOne ? ele.optionOne.text : "Cancel";
   const optionTwo = ele.optionTwo ? ele.optionTwo.text : "Save";
 
@@ -10,8 +11,8 @@ export default function optionsButton(ele) {
     "flex",
     "gap-4",
     "mt-6",
-    "justify-center",
-    "sm:justify-end"
+    "justify-start",
+    "md:justify-end"
   );
 
   const firstButton = document.createElement("button");

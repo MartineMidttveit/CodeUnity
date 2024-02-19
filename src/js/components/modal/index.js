@@ -20,6 +20,7 @@ export default function (data) {
   data.formId && modalBody.setAttribute("id", data.formId);
 
   const types = data.elements;
+  console.log(types);
   if (types)
     types.forEach((ele) => modalBody.appendChild(checkType(ele, updateTags)));
 
@@ -27,8 +28,9 @@ export default function (data) {
 }
 
 function checkType(ele, updateTags) {
+  console.log(updateTags);
   let data = null;
-  if (ele.type === "buttons") data = optionsButtons(ele, updateTags);
+  if (ele.type === "buttons") data = optionsButtons(ele);
   else if (ele.type === "input") data = createInput(ele);
   else if (ele.type === "select") data = createSelect(ele);
   else if (ele.type === "textarea") data = createTextArea(ele);

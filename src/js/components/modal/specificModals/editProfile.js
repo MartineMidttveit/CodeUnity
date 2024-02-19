@@ -9,23 +9,23 @@ export default function editProfile(profile) {
 
   const element1 = {
     type: "bannerAvatar",
-    media: profile.media,
-    value: profile.media?.url,
-    input: true,
+    banner: { url: profile.banner.url, alt: profile.banner.alt },
+    avatar: { url: profile.avatar.url, alt: profile.avatar.alt },
   };
 
-  const element2 = { 
-    type: "input", 
-    text: "Title:", 
-    value: post.title };
+  const element2 = {
+    type: "biography",
+    value: profile.bio,
+  };
 
   const element3 = {
     type: "buttons",
+    // optionTwo: { text: "Save" },
   };
 
   elements.push(element1, element2, element3);
 
-  const data = { title, elements };
+  const data = { title, elements, formId: "edit-profile" };
 
-  modal(data, profile);
+  modal(data);
 }
