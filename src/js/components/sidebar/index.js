@@ -7,11 +7,14 @@ export default function sidebarDetails(profile) {
 
     const sidebarImage = document.createElement("img");
     sidebarImage.classList.add(
-        "w-28", 
-        "h-28", 
+        "2xl:w-28", 
+        "2xl:h-28", 
+        "w-20",
+        "h-20",
         "rounded-full", 
         "object-cover", 
-        "mt-16"
+        "2xl:mt-16",
+        "mt-4"
     );
     sidebarImage.src = profile.avatar.url;
     sidebarImage.alt = profile.avatar.alt;
@@ -21,8 +24,10 @@ export default function sidebarDetails(profile) {
         "active", 
         "rounded-full", 
         "bg-green-700", 
-        "h-6", 
-        "w-6", 
+        "2xl:h-6", 
+        "2xl:w-6", 
+        "h-4",
+        "w-4",
         "absolute", 
         "bottom-0", 
         "right-0", 
@@ -36,15 +41,16 @@ export default function sidebarDetails(profile) {
     sidebarName.classList.add(
         "text-white", 
         "mt-3", 
-        "text-lg"
+        "2xl:text-lg"
     );
     sidebarName.textContent = profile.name;
 
     const changeStatus = document.createElement("button");
     changeStatus.classList.add(
         "text-white", 
-        "mt-1",  
-        "status"
+        "2xl:mt-1",  
+        "status",
+        "text-sm"
     );
     changeStatus.textContent = "Change status";
 

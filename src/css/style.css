@@ -68,6 +68,13 @@ body {
   width: 400px;
 }
 
+@media screen and (max-width: 1440px) {
+  #banner img {
+    height: 350px;
+    width: 350px;
+  }
+}
+
 .post-wrapper {
   padding: 0% 29%;
 }
