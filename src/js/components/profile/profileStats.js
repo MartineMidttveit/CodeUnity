@@ -1,6 +1,6 @@
 export default function profileStats(profile) {
   const container = document.createElement("div");
-  container.classList.add("flex", "gap-x-14", "sm:gap-x-20");
+  container.classList.add("flex", "gap-x-20", "md:gap-x-10", "lg:gap-x-20");
 
   // Posts
   const posts = document.createElement("div");

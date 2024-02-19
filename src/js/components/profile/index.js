@@ -19,7 +19,7 @@ export default function (profile, isOwner, user) {
 
   statsAndOptions.setAttribute(
     "class",
-    "flex items-center justify-between flex-wrap gap-6 pt-3 sm:pt-8"
+    "flex flex-col md:flex-row lg:items-center justify-between gap-8 pt-3 sm:pt-8"
   );
   statsAndOptions.setAttribute("id", "profileSubContainer");
   banner.prepend(images);

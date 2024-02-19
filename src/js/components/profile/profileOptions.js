@@ -4,7 +4,8 @@ import editProfile from "../../components/modal/specificModals/editProfile.js";
 
 export default function profileOptions(profile, isOwner, user) {
   const container = document.createElement("div");
-  container.classList.add("flex", "justify-end", "gap-x-5");
+  container.setAttribute("class", "flex justify-start md:justify-end gap-x-4")
+
   if (isOwner) {
     const editProfileBtn = document.createElement("button");
     editProfileBtn.classList.add(
@@ -12,7 +13,8 @@ export default function profileOptions(profile, isOwner, user) {
       "items-center",
       "gap-3",
       "py-4",
-      "px-8",
+      "px-6",
+      "lg:px-8",
       "rounded",
       "border",
       "border-primary",
@@ -38,7 +40,8 @@ export default function profileOptions(profile, isOwner, user) {
       "text-white",
       "bg-secondary",
       "py-4",
-      "px-8",
+      "px-6",
+      "lg:px-8",
       "rounded",
       "hover:bg-light",
       "hover:text-primary"
