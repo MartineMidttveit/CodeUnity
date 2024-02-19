@@ -38,7 +38,6 @@ export default {
 
   updatePost: (tags, postId, confirmMessage = "Post updated") => {
     authRequest.id = postId;
-    console.log(postId);
     const data = formListener(
       "edit-post",
       authRequest.update.bind(authRequest)
@@ -47,6 +46,7 @@ export default {
   },
 
   updateProfile: (name, confirmMessage = "Profile updated") => {
-    authRequest.profileMedia;
+    authRequest.name = name;
+    const data = formListener("edit-profile");
   },
 };

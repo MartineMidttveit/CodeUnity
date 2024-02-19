@@ -15,17 +15,17 @@ export default function editProfile(profile) {
 
   const element2 = {
     type: "biography",
-    value: post.bio,
+    value: profile.bio,
   };
 
   const element3 = {
     type: "buttons",
-    optionTwo: { text: "Save", request: "" },
+    // optionTwo: { text: "Save" },
   };
 
   elements.push(element1, element2, element3);
 
-  const data = { title, elements };
+  const data = { title, elements, formId: "edit-profile" };
 
-  modal(data, profile);
+  modal(data);
 }

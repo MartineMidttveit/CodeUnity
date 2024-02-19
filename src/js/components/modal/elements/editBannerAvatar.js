@@ -1,6 +1,6 @@
 export default function editBannerAvatar(ele) {
   const container = document.createElement("div");
-
+  console.log(ele);
   const bannerContainer = document.createElement("div");
   bannerContainer.setAttribute(
     "class",
@@ -24,7 +24,7 @@ export default function editBannerAvatar(ele) {
 
   const profileImageLabel = document.createElement("label");
   profileImageLabel.setAttribute("for", "profileImage");
-  profileImageLabel.setAttribute("class", "text-lg");
+  profileImageLabel.setAttribute("class", "text-lg flex mt-8 ");
   profileImageLabel.textContent = "Profile image";
 
   const profileImageInput = document.createElement("input");
@@ -47,16 +47,6 @@ export default function editBannerAvatar(ele) {
     "flex gap-x-3 mb-5 items-center"
   );
 
-  const defaultProfileImageCheckbox = document.createElement("input");
-  defaultProfileImageCheckbox.setAttribute("type", "checkbox");
-  defaultProfileImageCheckbox.setAttribute("id", "defaultProfileImage");
-  defaultProfileImageCheckbox.setAttribute("class", "h-4 w-4");
-
-  const defaultProfileImageLabel = document.createElement("label");
-  defaultProfileImageLabel.setAttribute("for", "defaultProfileImage");
-  defaultProfileImageLabel.setAttribute("class", "text-gray-600");
-  defaultProfileImageLabel.textContent = "Use default profile image";
-
   const imageCaptionLabel = document.createElement("label");
   imageCaptionLabel.setAttribute("for", "imageCaption");
   imageCaptionLabel.setAttribute("class", "text-lg");
@@ -69,7 +59,8 @@ export default function editBannerAvatar(ele) {
     "class",
     "w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
   );
-  imageCaptionInput.setAttribute("placeholder", "The current image caption.");
+
+  imageCaptionLabel.value = ele.avatar.alt ? ele.avatar.alt : "";
 
   const bannerImageLabel = document.createElement("label");
   bannerImageLabel.setAttribute("for", "bannerImage");
@@ -90,42 +81,16 @@ export default function editBannerAvatar(ele) {
 
   bannerImageInput.value = ele.banner.url;
 
-  const defaultBannerImageContainer = document.createElement("div");
-  defaultBannerImageContainer.setAttribute(
-    "class",
-    "flex gap-x-3 mb-5 items-center"
-  );
-
-  const defaultBannerImageCheckbox = document.createElement("input");
-  defaultBannerImageCheckbox.setAttribute("type", "checkbox");
-  defaultBannerImageCheckbox.setAttribute("id", "defaultBannerImage");
-  defaultBannerImageCheckbox.setAttribute("class", "h-4 w-4");
-
-  const defaultBannerImageLabel = document.createElement("label");
-  defaultBannerImageLabel.setAttribute("for", "defaultBannerImage");
-  defaultBannerImageLabel.setAttribute("class", "text-gray-600");
-  defaultBannerImageLabel.textContent = "Use default banner image";
-
-  defaultProfileImageContainer.append(
-    defaultProfileImageCheckbox,
-    defaultProfileImageLabel
-  );
-  defaultBannerImageContainer.append(
-    defaultBannerImageCheckbox,
-    defaultBannerImageLabel
-  );
-
   container.append(
     bannerContainer,
     profileImageLabel,
     profileImageInput,
-    defaultProfileImageContainer,
-    defaultBannerImageContainer,
+
     imageCaptionLabel,
     imageCaptionInput,
     bannerImageLabel,
     bannerImageInput
   );
-
+  console.log("test");
   return container;
 }

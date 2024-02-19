@@ -6,8 +6,8 @@ export default function profileOptions(profile, isOwner, user) {
   const container = document.createElement("div");
   container.classList.add("flex", "justify-end", "gap-x-5");
   if (isOwner) {
-    const editProfile = document.createElement("button");
-    editProfile.classList.add(
+    const editProfileBtn = document.createElement("button");
+    editProfileBtn.classList.add(
       "flex",
       "items-center",
       "gap-3",
@@ -19,13 +19,13 @@ export default function profileOptions(profile, isOwner, user) {
       "hover:bg-light",
       "hover:border-light"
     );
-    editProfile.textContent = "Edit profile";
+    editProfileBtn.textContent = "Edit profile";
 
     console.log(profile);
 
     console.log(profile.avatar);
 
-    editProfile.addEventListener("click", function (e) {
+    editProfileBtn.addEventListener("click", function (e) {
       e.preventDefault();
       editProfile(profile);
     });
@@ -46,7 +46,7 @@ export default function profileOptions(profile, isOwner, user) {
     newPost.textContent = "New post";
     newPost.addEventListener("click", createPost);
 
-    container.append(editProfile, newPost);
+    container.append(editProfileBtn, newPost);
   } else {
     const followButton = document.createElement("button");
 
