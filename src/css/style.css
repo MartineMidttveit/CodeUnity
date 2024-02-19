@@ -63,10 +63,6 @@ body {
   background-color: #f7f7f7;
 }
 
-#banner {
-  /* background: linear-gradient(180deg, #dfbaa1 0%, #909fb5 100%); */
-}
-
 #banner img {
   height: 400px;
   width: 400px;
@@ -118,39 +114,4 @@ header {
 
 .poppins {
   font-family: 'Poppins', sans-serif;
-}
-
-/* TIL PROFILBILDET SOM FACKET SEG */
-
-.container {
-  margin: 0 auto;
-  position: relative;
-  width: 700px; /* Adjust container width as needed */
-  height: 500px; /* Adjust container height as needed */
-}
-
-.image-container {
-  width: 700px; /* Adjust container width as needed */
-  height: 500px;
-}
-
-#background-image {
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 700px; /* Adjust container width as needed */
-  height: 500px;
-  cursor: grab;
-}
-
-.blurred {
-  width: 700px; /* Adjust container width as needed */
-  height: 500px;
-  background-color: rgba(234, 234, 234, 0.585);
-  position: absolute;
-  top: 0;
-  -webkit-mask-image: radial-gradient(circle 250px at center, transparent 100%, black 100%);
-  mask-image: radial-gradient(circle 250px at center, transparent 100%, black 100%);
-  mix-blend-mode: screen; /* Use screen blend mode to subtract from the blurred background */
 }

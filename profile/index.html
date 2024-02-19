@@ -200,24 +200,21 @@
         class="posts max-w-6xl md:pl-24 mt-16 mx-auto"
         id="posts-container"
       ></section>
-
-      <div
-        id="modal-container"
-        class="hidden bg-white mx-auto modal w-full fixed z-50 items-center left-[-3rem] top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12"
-      >
-        <div
-          class="max-w-3xl flex flex-col px-4 sm:px-12 py-10 rounded-lg bg-white mx-auto border modal-content w-full"
-        >
-          <div class="flex justify-between items-center mb-4">
-            <h2 class="text-2xl font-semibold" id="modal-header"></h2>
-            <i class="fa-solid fa-xmark text-xl cursor-pointer modal-close"></i>
-          </div>
-
-          <!--Modal body-->
-          <form class="modal-body"></form>
-        </div>
-      </div>
     </main>
+
+    <div
+      id="modal-container"
+      class="hidden mx-auto modal fixed z-50 items-center justify-center lg:left-[-3rem] top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12 min-w-full">
+      <div class="max-w-3xl flex flex-col px-4 sm:px-12 py-10 rounded-lg bg-white mx-auto border modal-content w-full">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl lg:text-2xl font-semibold" id="modal-header"></h2>
+          <i class="fa-solid fa-xmark text-xl cursor-pointer modal-close"></i>
+        </div>
+
+        <!--Modal body-->
+        <form class="modal-body"></form>
+      </div>
+    </div>
 
     <!--Footer-->
 

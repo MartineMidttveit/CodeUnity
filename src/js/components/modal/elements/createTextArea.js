@@ -1,7 +1,7 @@
 export default function createTextArea(ele) {
   const container = document.createElement("div");
   const label = document.createElement("label");
-  label.classList.add("text-lg");
+  label.classList.add("md:text-lg");
   label.textContent = ele.text;
   const textarea = document.createElement("textarea");
   textarea.setAttribute(

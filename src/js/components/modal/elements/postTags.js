@@ -5,19 +5,19 @@ export default function postTags(ele, tags) {
 
   const tagsLabel = document.createElement("label");
   tagsLabel.setAttribute("for", "tags");
-  tagsLabel.setAttribute("class", "text-lg");
+  tagsLabel.setAttribute("class", "md:text-lg");
   tagsLabel.textContent = "Tags:";
 
   const tagsContainer = document.createElement("div");
   tagsContainer.setAttribute("class", "flex gap-4 flex-col");
 
   const tagInputContainer = document.createElement("div");
-  tagInputContainer.setAttribute("class", "w-1/2 flex h-14 rounded my-2");
+  tagInputContainer.setAttribute("class", "w-full md:w-1/2 flex h-14 rounded my-2");
 
   const hashtag = document.createElement("span");
   hashtag.setAttribute(
     "class",
-    "hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold"
+    "hashtag border border-r-0 w-24 md:w-16 flex items-center justify-center text-xl font-semibold"
   );
   hashtag.textContent = "#";
 
