@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeUnity | Your profile</title>
 
-    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b515e79b0f.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="/dist/tailwind.css" />
     <link rel="stylesheet" href="/src/css/style.css" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon.png"
+    />
 
     <script defer src="/hamburger.js"></script>
     <script type="module" src="/src/js/pages/profile/index.js"></script>
@@ -19,49 +27,87 @@
   <body class="font-gilroy">
     <!--Sidebar-->
 
-    <div class="w-full md:w-24 md:h-screen z-30 bg-primary fixed md:flex md:justify-center md:items-start sidebar bottom-0">
+    <div
+      class="w-full md:w-24 md:h-screen z-30 bg-primary fixed md:flex md:justify-center md:items-start sidebar bottom-0"
+    >
       <div class="sidebar-content h-full">
-        <button class="hamburger md:mt-12 mb-2 hidden md:inline-block" id="hamburgerBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-8 h-8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"></path>
+        <button
+          class="hamburger md:mt-12 mb-2 hidden md:inline-block"
+          id="hamburgerBtn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="white"
+            class="w-8 h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+            ></path>
           </svg>
         </button>
 
-        <div class="sidebar-image hidden flex-col items-center justify-center" id="sidebarContainer"></div>
+        <div
+          class="sidebar-image hidden flex-col items-center justify-center"
+          id="sidebarContainer"
+        ></div>
 
         <nav class="h-full flex flex-col">
-
-          <div class="flex md:flex-col py-4 px-10 md:px-0 space-y-8 2xl:space-y-16 mt-6 2xl:mt-28">
-
-            <a href="/feed/index.html" class="flex justify-center items-center home navLink gap-x-6">
+          <div
+            class="flex md:flex-col py-4 px-10 md:px-0 space-y-8 2xl:space-y-16 mt-6 2xl:mt-28"
+          >
+            <a
+              href="/feed/index.html"
+              class="flex justify-center items-center home navLink gap-x-6"
+            >
               <i class="fa-solid fa-house text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
               <span class="hidden navOption">Home</span>
             </a>
 
-            <a href="#" class="flex justify-center items-center profile navLink gap-x-6" id="sidebarProfileLink">
+            <a
+              href="#"
+              class="flex justify-center items-center profile navLink gap-x-6"
+              id="sidebarProfileLink"
+            >
               <i class="fa-solid fa-user text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
               <span class="hidden navOption">Profile</span>
             </a>
 
-            <a href="#" class="flex justify-center items-center groups navLink gap-x-6">
+            <a
+              href="#"
+              class="flex justify-center items-center groups navLink gap-x-6"
+            >
               <i class="fa-solid fa-globe text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
               <span class="hidden navOption">Explore</span>
             </a>
 
-            <a href="#" class="flex justify-center items-center settings navLink gap-x-6">
+            <a
+              href="#"
+              class="flex justify-center items-center settings navLink gap-x-6"
+            >
               <i class="fa-solid fa-gear text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
               <span class="hidden navOption">Settings</span>
             </a>
 
-            <a href="#" class="flex justify-center items-center inbox navLink gap-x-6">
-              <i class="fa-solid fa-envelope text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
+            <a
+              href="#"
+              class="flex justify-center items-center inbox navLink gap-x-6"
+            >
+              <i
+                class="fa-solid fa-envelope text-xl 2xl:text-2xl w-6 2xl:w-8"
+              ></i>
               <span class="hidden navOption">Inbox</span>
             </a>
           </div>
 
           <button
             class="text-gray-300 hover:text-white absolute bottom-2 w-full left-0 border-t py-3 2xl:py-8"
-            id="logoutButton">
+            id="logoutButton"
+          >
             Log out
           </button>
         </nav>
@@ -142,7 +188,10 @@
 
     <!--Banner & Profile Image-->
 
-    <div class="md:pl-24 h-52 sm:h-64 md:h-72 lg:h-80 2xl:h-96" id="banner"></div>
+    <div
+      class="md:pl-24 h-52 sm:h-64 md:h-72 lg:h-80 2xl:h-96"
+      id="banner"
+    ></div>
     <main class="px-3 sm:px-8 md:px-12 lg:px-32">
       <!--Profile information-->
 
@@ -169,7 +218,7 @@
       class="hidden mx-auto modal fixed z-50 items-center justify-center lg:left-[-3rem] top-0 h-screen p-4 sm:p-10 lg:ml-12 min-w-full overflow-auto"
     >
       <div
-        class="relative max-w-3xl flex flex-col px-4 sm:px-12 py-6 sm:py-10 rounded-lg md:ml-24 bg-white border modal-content w-full self-start lg:self-center"
+        class="relative max-w-3xl flex flex-col px-4 sm:px-12 py-6 sm:py-10 rounded-lg md:ml-24 bg-white border modal-content w-full self-start"
       >
         <div class="flex justify-between items-center mb-4">
           <h2 class="text-xl lg:text-2xl font-semibold" id="modal-header"></h2>
