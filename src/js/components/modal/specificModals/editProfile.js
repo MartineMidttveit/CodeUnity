@@ -7,11 +7,23 @@ export default function editProfile(profile) {
 
   const elements = [];
 
+  const element1 = {
+    type: "bannerAvatar",
+    media: profile.media,
+    value: profile.media?.url,
+    input: true,
+  };
+
+  const element2 = { 
+    type: "input", 
+    text: "Title:", 
+    value: post.title };
+
   const element3 = {
     type: "buttons",
   };
 
-  elements.push(element3);
+  elements.push(element1, element2, element3);
 
   const data = { title, elements };
 
