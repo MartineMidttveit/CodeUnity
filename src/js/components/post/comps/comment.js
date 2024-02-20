@@ -11,17 +11,17 @@ export default function displayComments(comments) {
       const container = document.createElement("div");
       container.setAttribute(
         "class",
-        index % 2 === 0 ? "my-6 py-5 px-8 bg-gray-100 w-full" : "py-5 px-8 w-full"
+        index % 2 === 0 ? "my-6 py-3 px-4 lg:py-5 lg:px-8 bg-gray-100 w-full" : "py-5 px-8 w-full"
       );
 
       const commentAuthor = document.createElement("div");
       commentAuthor.setAttribute(
         "class",
-        "gap-16 flex pb-4 pt-4"
+        "gap-8 sm:gap-10 lg:gap-16 flex pb-4 pt-4"
       );
 
       const profileDetails = document.createElement("a");
-      profileDetails.setAttribute("class", "flex items-center");
+      profileDetails.setAttribute("class", "flex md:items-center");
       profileDetails.href = `/profile/?name=${comment.author.name}`;
 
       const profileImg = document.createElement("img");
@@ -44,7 +44,7 @@ export default function displayComments(comments) {
   
       const commentText = document.createElement("p");
       commentText.textContent = comment.body;
-      commentText.setAttribute("class", "text-lg mt-2 mb-4");
+      commentText.setAttribute("class", "lg:text-lg mt-2 mb-4");
 
       const commentDate = document.createElement("p");
       commentDate.setAttribute("class", "muted text-primary");
