@@ -31,6 +31,36 @@ export default function likesAndComments(post) {
   likes.appendChild(likesCount);
   likes.appendChild(likesText);
 
+// ANTALL FOLK SOM HAR LIKT
+
+likes.addEventListener('mouseenter', () => {
+    const liked = document.createElement("div");
+    liked.setAttribute("class", "z-10 py-2 px-8 text-primary liked bg-light flex rounded-md");
+  
+    if (post.reactions && post.reactions.length > 0) {
+      const likers = post.reactions[0].reactors;
+      const likersCount = likers.length;
+  
+      if (likersCount > 0) {
+        const likedText = `Liked by: ${likers[0]} and ${likersCount - 1} others`;
+        liked.textContent = likedText;
+      } else {
+        liked.textContent = 'No likes yet';
+      }
+    } else {
+      liked.textContent = 'No likes yet';
+    }
+  
+    container.appendChild(liked);
+  });
+  
+  likes.addEventListener('mouseleave', () => {
+    const liked = container.querySelector('.liked');
+    if (liked) container.removeChild(liked);
+  });
+
+  // ANTALL FOLK SOM HAR LIKT
+
   const comments = document.createElement("a");
   comments.setAttribute(
     "class",
