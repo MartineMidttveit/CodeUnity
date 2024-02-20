@@ -18,7 +18,6 @@ export default function userDetails(post) {
     "class",
     "w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover"
   );
-
   imgContainer.appendChild(img);
 
   const textContainer = document.createElement("div");
@@ -33,11 +32,8 @@ export default function userDetails(post) {
   timeP.setAttribute("class", "text-muted");
   timeP.textContent = formatDate(post.created);
 
-  textContainer.appendChild(nameP);
-  textContainer.appendChild(timeP);
-
-  container.appendChild(imgContainer);
-  container.appendChild(textContainer);
+  textContainer.append(nameP, timeP);
+  container.append(imgContainer, textContainer);
 
   return container;
 }
