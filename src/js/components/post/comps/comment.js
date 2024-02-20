@@ -1,5 +1,6 @@
 import userDetails from "../comps/userDetails.js";
 import detailsWithOptions from "./detailsWithOptions.js";
+import formatDate from "../../../utils/helpers/formatDate.js";
 
 export default function displayComments(comments) {
   const commentsContainer = document.createElement("div");
@@ -37,12 +38,17 @@ export default function displayComments(comments) {
 
       const profileName = document.createElement("p");
       profileName.textContent = comment.author.name;
-      profileName.setAttribute("class", "font-medium mb-2");
+      profileName.setAttribute("class", "font-medium mb-2 text-lg");
   
       const commentText = document.createElement("p");
       commentText.textContent = comment.body;
+      commentText.setAttribute("class", "text-lg");
 
-      commentTextBox.append(profileName, commentText);
+      const commentDate = document.createElement("p");
+      commentDate.setAttribute("class", "muted text-primary mt-3");
+      commentDate.textContent = formatDate(comment.created);
+
+      commentTextBox.append(profileName, commentText, commentDate);
       commentAuthor.append(profileDetails, commentTextBox);
       container.append(commentAuthor);
       commentsContainer.append(container);
