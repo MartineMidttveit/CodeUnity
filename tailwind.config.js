@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   purge: {
-    content: ["./**/*.html", "./**/*.js"],
+    content: ["./**/*.html", "./src/**/*.js"],
   },
   theme: {
     extend: {
@@ -11,10 +11,10 @@ module.exports = {
         light: "#C0E8EB",
         yellow: "#FFE68C",
         orange: "#F5841A",
-        background: "#F7F7F7"
+        background: "#F7F7F7",
       },
       fontFamily: {
-        'gilroy': ['Gilroy', 'sans-serif'],
+        gilroy: ["Gilroy", "sans-serif"],
       },
     },
   },

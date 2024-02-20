@@ -1,6 +1,14 @@
+import follow from "./follow.js";
+
 export default function profileStats(profile) {
   const container = document.createElement("div");
-  container.classList.add("flex", "gap-x-20", "md:gap-x-10", "lg:gap-x-20");
+  container.classList.add(
+    "flex",
+    "gap-x-20",
+    "md:gap-x-10",
+    "lg:gap-x-20",
+    "relative"
+  );
 
   // Posts
   const posts = document.createElement("div");
@@ -19,7 +27,10 @@ export default function profileStats(profile) {
 
   // Followers
   const followers = document.createElement("div");
-  followers.classList.add("text-center", "text-primary", "flex", "flex-col");
+  followers.setAttribute(
+    "class",
+    "text-center flex flex-col text-primary cursor-pointer"
+  );
 
   const xFollowers = document.createElement("strong");
   xFollowers.classList.add("text-lg");
@@ -46,6 +57,9 @@ export default function profileStats(profile) {
   following.append(xFollowing, xFollowingText);
   container.append(posts, followers, following);
 
+  followers.addEventListener("click", () =>
+    document.body.append(follow(profile))
+  );
+
   return container;
 }
-

@@ -9,7 +9,7 @@ export default function userDetails(post) {
     "class",
     "w-14 h-14 md:w-16 md:h-16 flex items-center"
   );
-  imgContainer.href = `/profile/?=name${post.author.name}`;
+  imgContainer.href = `/profile/?name=${post.author.name}`;
 
   const img = document.createElement("img");
   img.src = post.author.avatar.url;
@@ -26,7 +26,7 @@ export default function userDetails(post) {
   const nameP = document.createElement("a");
   nameP.setAttribute("class", "font-semibold text-lg hover:text-secondary");
   nameP.textContent = post.author.name;
-  nameP.href = `/profile/?=name${post.author.name}`;
+  nameP.href = `/profile/?name=${post.author.name}`;
 
   const timeP = document.createElement("p");
   timeP.setAttribute("class", "text-muted");
