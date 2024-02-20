@@ -31,7 +31,6 @@ export default function displayComments(comments) {
         "class",
         "rounded-full h-20 w-20 object-cover"
       );
-      
 
       profileDetails.append(profileImg);
 

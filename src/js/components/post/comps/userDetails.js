@@ -4,11 +4,12 @@ export default function userDetails(post) {
   const container = document.createElement("div");
   container.setAttribute("class", "flex items-center gap-x-6");
 
-  const imgContainer = document.createElement("div");
+  const imgContainer = document.createElement("a");
   imgContainer.setAttribute(
     "class",
     "w-12 h-12 md:w-16 md:h-16 flex items-center"
   );
+  imgContainer.href = `/profile/?=name${post.author.name}`;
 
   const img = document.createElement("img");
   img.src = post.author.avatar.url;
@@ -23,9 +24,10 @@ export default function userDetails(post) {
   const textContainer = document.createElement("div");
   textContainer.setAttribute("class", "ml-2 sm:ml-4  md:ml-8");
 
-  const nameP = document.createElement("p");
+  const nameP = document.createElement("a");
   nameP.setAttribute("class", "font-semibold text-lg");
   nameP.textContent = post.author.name;
+  nameP.href = `/profile/?=name${post.author.name}`;
 
   const timeP = document.createElement("p");
   timeP.setAttribute("class", "text-muted");
