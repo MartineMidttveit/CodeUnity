@@ -35,7 +35,7 @@ export default function likesAndComments(post) {
 
 likes.addEventListener('mouseenter', () => {
     const liked = document.createElement("div");
-    liked.setAttribute("class", "z-10 py-2 px-8 text-primary liked bg-light flex rounded-md");
+    liked.setAttribute("class", "py-2 px-8 text-primary liked bg-light flex rounded-md");
   
     if (post.reactions && post.reactions.length > 0) {
       const likers = post.reactions[0].reactors;

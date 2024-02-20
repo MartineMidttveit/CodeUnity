@@ -58,15 +58,6 @@ export default function profileOptions(profile, isOwner, user) {
       : "Follow";
 
     followButton.textContent = ifFollowing;
-
-    let icon = "plus";
-
-    if (ifFollowing === "Unfollow") {
-      icon = "minus";
-      followButton.classList.add("bg-red-900");
-      followButton.classList.add("hover:bg-red-300");
-    }
-
     followButton.classList.add(
       "flex",
       "items-center",
@@ -74,7 +65,8 @@ export default function profileOptions(profile, isOwner, user) {
       "gap-3",
       "text-white",
       `bg-secondary`,
-      "p-4",
+      "py-4",
+      "px-6",
       "rounded",
       "hover:bg-light",
       "hover:text-primary",
@@ -82,28 +74,21 @@ export default function profileOptions(profile, isOwner, user) {
       "w-32"
     );
 
-    const followIcon = document.createElement("i");
-    followIcon.classList.add("text-xl", "fa-solid", `fa-user-${icon}`);
-
     const messageButton = document.createElement("button");
     messageButton.classList.add(
       "flex",
       "items-center",
       "gap-3",
-      "p-4",
+      "py-4",
+      "px-6",
       "rounded",
       "border",
       "border-primary",
       "hover:bg-light",
       "hover:border-light"
     );
-
     messageButton.textContent = "Message";
-    const messageIcon = document.createElement("i");
-    messageIcon.classList.add("fa-regular", "fa-envelope", "text-xl");
 
-    messageButton.append(messageIcon);
-    followButton.append(followIcon);
     container.append(followButton, messageButton);
 
     followUser(followButton, profile.name);
