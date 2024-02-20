@@ -1,7 +1,7 @@
 export default function deleteText(ele) {
   const container = document.createElement("div");
   const headline = document.createElement("h2");
-  headline.classList.add("text-2xl", "font-semibold", "mb-4", "text-center");
+  headline.classList.add("text-2xl", "font-medium", "mb-4", "text-center");
   headline.textContent = "Are you sure you want to delete post?";
 
   const paragraph = document.createElement("p");

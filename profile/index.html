@@ -10,6 +10,10 @@
       crossorigin="anonymous"
     ></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/dist/tailwind.css" />
     <link rel="stylesheet" href="/src/css/style.css" />
     <link
@@ -24,17 +28,14 @@
     <script type="module" src="/src/js/api/auth/requests/logout.js"></script>
   </head>
 
-  <body class="font-gilroy">
+  <body>
     <!--Sidebar-->
 
-    <div
-      class="w-full md:w-24 md:h-screen z-30 bg-primary fixed md:flex md:justify-center md:items-start sidebar bottom-0"
-    >
+    <div class="w-full md:w-24 md:h-screen z-30 bg-primary fixed md:flex md:justify-center md:items-start sidebar bottom-0">
       <div class="sidebar-content h-full">
         <button
           class="hamburger md:mt-12 mb-2 hidden md:inline-block"
-          id="hamburgerBtn"
-        >
+          id="hamburgerBtn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -216,7 +217,7 @@
         class="relative max-w-3xl flex flex-col px-4 sm:px-12 py-6 sm:py-10 rounded-lg md:ml-24 bg-white border modal-content w-full self-start"
       >
         <div class="flex justify-between items-center mb-4">
-          <h2 class="text-xl lg:text-2xl font-semibold" id="modal-header"></h2>
+          <h2 class="text-xl lg:text-2xl font-medium" id="modal-header"></h2>
           <i class="fa-solid fa-xmark text-xl cursor-pointer modal-close"></i>
         </div>
 
@@ -239,7 +240,7 @@
           class="flex flex-col sm:flex-row justify-between lg:w-3/4 xl:w-1/2"
         >
           <div class="lg:ml-8 my-5 sm:my-0">
-            <h3 class="text-lg font-semibold">Support</h3>
+            <h3 class="text-lg font-medium">Support</h3>
             <ul class="mt-2 space-y-2">
               <li>
                 <a href="#" class="text-gray-300 hover:text-white">FAQ</a>
@@ -268,7 +269,7 @@
           </div>
 
           <div class="lg:ml-8 my-5 sm:my-0">
-            <h3 class="text-lg font-semibold">About</h3>
+            <h3 class="text-lg font-medium">About</h3>
             <ul class="mt-2 space-y-2">
               <li>
                 <a href="#" class="text-gray-300 hover:text-white">About us</a>
@@ -277,7 +278,7 @@
           </div>
 
           <div class="lg:ml-8 my-5 sm:my-0">
-            <h3 class="text-lg font-semibold">Privacy</h3>
+            <h3 class="text-lg font-medium">Privacy</h3>
             <ul class="mt-2 space-y-2">
               <li>
                 <a href="#" class="text-gray-300 hover:text-white"
