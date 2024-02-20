@@ -50,6 +50,20 @@
   font-display: swap;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fef0ff;
+  border-radius: 10px;
+}
+
 .muted {
   opacity: 0.8;
 }
@@ -116,6 +130,6 @@ body {
 }
 
 .follow-container {
-  left: 40%;
-  top: 30%;
+  width: 460px;
+  max-height: 590px;
 }

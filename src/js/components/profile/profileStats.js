@@ -1,4 +1,5 @@
 import follow from "./follow.js";
+import toggleContainer from "../dropdown/toggleContainer.js";
 
 export default function profileStats(profile) {
   const container = document.createElement("div");
@@ -57,9 +58,12 @@ export default function profileStats(profile) {
   following.append(xFollowing, xFollowingText);
   container.append(posts, followers, following);
 
-  followers.addEventListener("click", () =>
-    document.body.append(follow(profile))
-  );
+  const profileFollows = follow(profile);
+  const profileFollowing = follow(profile, true);
+  container.appendChild(profileFollowing);
+  container.appendChild(profileFollows);
+  toggleContainer(followers, profileFollows, true);
+  toggleContainer(following, profileFollowing, true);
 
   return container;
 }

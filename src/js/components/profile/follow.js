@@ -2,7 +2,7 @@ export default function follow(profile, follow = false) {
   const container = document.createElement("div");
   container.setAttribute(
     "class",
-    "bg-white mt-10 rounded-md mx-auto min-w-lg px-10 pt-8 fixed top-10 follow-container"
+    "hidden bg-white mt-10 rounded-md mx-auto px-10 py-8 absolute top-10  shadow-md z-30 text-left follow-container cursor-default  overflow-y-auto"
   );
 
   const heading = document.createElement("h3");
@@ -14,11 +14,12 @@ export default function follow(profile, follow = false) {
 
   const users = follow ? profile.following : profile.followers;
 
-  users.forEach((user) => {
+  users.forEach((user, i) => {
+    const border = i === 0 ? "" : "border-t";
     const followerDiv = document.createElement("div");
     followerDiv.setAttribute(
       "class",
-      "flex justify-between py-6 border-b items-center"
+      "flex justify-between py-6  items-center " + border
     );
 
     const imageDiv = document.createElement("div");
@@ -46,13 +47,25 @@ export default function follow(profile, follow = false) {
     span.append(nameHeading, profileLinkHeading);
     imageDiv.append(image, span);
 
+    let ifFollowing = "Unfollow";
+    let bgColor = "bg-light border-0";
+    if (!follow) {
+      ifFollowing = "Follow";
+      profile.following.find((following) => {
+        if (following.name === user.name) {
+          ifFollowing = "Unfollow";
+          bgColor = "";
+        }
+      });
+    }
     const button = document.createElement("button");
     button.setAttribute(
       "class",
-      "flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light"
+      "flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light " +
+        bgColor
     );
 
-    button.textContent = "Follow";
+    button.textContent = ifFollowing;
 
     followerDiv.append(imageDiv, button);
     container.append(followerDiv);

@@ -1,4 +1,4 @@
-export default function (ele, container) {
+export default function (ele, container, clickInside = false) {
   function showContainer(event) {
     event.stopPropagation();
     container.classList.remove("hidden");
@@ -7,6 +7,7 @@ export default function (ele, container) {
     ele.removeEventListener("click", showContainer);
 
     function hideContainer(e) {
+      if (clickInside && container.contains(e.target)) return;
       container.classList.add("hidden");
       document.removeEventListener("click", hideContainer);
       ele.addEventListener("click", showContainer);
