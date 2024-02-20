@@ -1,5 +1,13 @@
 import storage from "../../../utils/storage.js";
 
-storage;
+export default function avatar(body, response, username) {
+  const user = storage.load("profile");
+  document.getElementById("sidebar-avatar").src = body.avatar.url;
+  document.querySelector("#headerProfile img").src = body.avatar.url;
+  document.getElementById("main-profile-avatar").src = body.avatar.url;
 
-export default function avatar() {}
+  user.avatar.url = body.avatar.url;
+  user.banner.url = body.banner.url;
+
+  storage.save("profile", user);
+}

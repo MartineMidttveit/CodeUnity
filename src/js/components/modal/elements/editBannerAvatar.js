@@ -28,8 +28,9 @@ export default function editBannerAvatar(ele) {
   profileImageLabel.textContent = "Profile image";
 
   const profileImageInput = document.createElement("input");
-  profileImageInput.setAttribute("type", "text");
+  profileImageInput.setAttribute("type", "url");
   profileImageInput.setAttribute("id", "profileImage");
+
   profileImageInput.setAttribute(
     "class",
     "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3"
@@ -70,7 +71,7 @@ export default function editBannerAvatar(ele) {
   bannerImageLabel.textContent = "Banner image";
 
   const bannerImageInput = document.createElement("input");
-  bannerImageInput.setAttribute("type", "text");
+  bannerImageInput.setAttribute("type", "url");
   bannerImageInput.setAttribute("id", "bannerImage");
   bannerImageInput.setAttribute(
     "class",

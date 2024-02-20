@@ -22,6 +22,7 @@ export default function profileMedia(profile, isOwner) {
     "lg:max-w-96",
     "lg:max-h-96"
   );
+  profileImage.setAttribute("id", "main-profile-avatar");
 
   container.append(profileImage);
   return container;
