@@ -11,13 +11,13 @@ export default function displayComments(comments) {
       const container = document.createElement("div");
       container.setAttribute(
         "class",
-        index % 2 === 0 ? "my-6 py-3 px-4 lg:py-5 lg:px-8 bg-gray-100 w-full" : "py-5 px-8 w-full"
+        index % 2 === 0 ? "my-6 py-3 px-4 lg:py-5 lg:px-8 bg-gray-100 w-full" : "py-3 px-4 lg:py-5 lg:px-8 w-full"
       );
 
       const commentAuthor = document.createElement("div");
       commentAuthor.setAttribute(
         "class",
-        "gap-8 sm:gap-10 lg:gap-16 flex pb-4 pt-4"
+        "gap-6 sm:gap-10 lg:gap-16 flex pb-4 pt-4"
       );
 
       const profileDetails = document.createElement("a");
@@ -29,7 +29,7 @@ export default function displayComments(comments) {
       profileImg.alt = comment.author.avatar.alt;
       profileImg.setAttribute(
         "class",
-        "rounded-full h-20 w-20 object-cover"
+        "rounded-full h-14 w-14 md:h-20 md:w-20 object-cover"
       );
 
       profileDetails.append(profileImg);

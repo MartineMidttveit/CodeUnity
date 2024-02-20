@@ -7,7 +7,7 @@ export default function userDetails(post) {
   const imgContainer = document.createElement("a");
   imgContainer.setAttribute(
     "class",
-    "w-12 h-12 md:w-16 md:h-16 flex items-center"
+    "w-14 h-14 md:w-16 md:h-16 flex items-center"
   );
   imgContainer.href = `/profile/?=name${post.author.name}`;
 
@@ -16,7 +16,7 @@ export default function userDetails(post) {
   img.alt = post.author.avatar.alt;
   img.setAttribute(
     "class",
-    "w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover"
+    "w-14 h-14 lg:w-16 lg:h-16 rounded-full object-cover"
   );
   imgContainer.appendChild(img);
 
