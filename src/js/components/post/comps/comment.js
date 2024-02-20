@@ -20,8 +20,9 @@ export default function displayComments(comments) {
         "gap-16 flex pb-4 pt-4"
       );
 
-      const profileDetails = document.createElement("div");
+      const profileDetails = document.createElement("a");
       profileDetails.setAttribute("class", "flex items-center");
+      profileDetails.href = `/profile/?name=${comment.author.name}`;
 
       const profileImg = document.createElement("img");
       profileImg.src = comment.author.avatar.url;
@@ -30,22 +31,24 @@ export default function displayComments(comments) {
         "class",
         "rounded-full h-20 w-20 object-cover"
       );
+      
 
       profileDetails.append(profileImg);
 
       const commentTextBox = document.createElement("div");
       commentTextBox.setAttribute("class", "w-3/4");
 
-      const profileName = document.createElement("p");
+      const profileName = document.createElement("a");
       profileName.textContent = comment.author.name;
-      profileName.setAttribute("class", "font-medium mb-2 text-lg");
+      profileName.setAttribute("class", "font-medium text-lg hover:text-secondary");
+      profileName.href = `/profile/?name=${comment.author.name}`;
   
       const commentText = document.createElement("p");
       commentText.textContent = comment.body;
-      commentText.setAttribute("class", "text-lg");
+      commentText.setAttribute("class", "text-lg mt-2 mb-4");
 
       const commentDate = document.createElement("p");
-      commentDate.setAttribute("class", "muted text-primary mt-3");
+      commentDate.setAttribute("class", "muted text-primary");
       commentDate.textContent = formatDate(comment.created);
 
       commentTextBox.append(profileName, commentText, commentDate);
