@@ -17,7 +17,7 @@ export default function postTags(ele, tags) {
   const hashtag = document.createElement("span");
   hashtag.setAttribute(
     "class",
-    "hashtag border border-r-0 h-10 w-10 2xl:h-16 2xl:w-16 flex items-center justify-center text-xl font-semibold px-5"
+    "hashtag border border-r-0 h-10 w-10 2xl:h-16 2xl:w-16 flex items-center justify-center text-xl font-medium px-5"
   );
   hashtag.textContent = "#";
 

@@ -14,7 +14,7 @@ export default function postBody(post) {
   }
 
   const title = document.createElement("h2");
-  title.setAttribute("class", "text-xl font-semibold mt-5 mb-2");
+  title.setAttribute("class", "text-xl font-medium mt-5 mb-2");
   title.textContent = post.title;
 
   const body = document.createElement("p");

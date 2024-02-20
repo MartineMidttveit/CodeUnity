@@ -24,7 +24,7 @@ export default function userDetails(post) {
   textContainer.setAttribute("class", "ml-2 sm:ml-4  md:ml-8");
 
   const nameP = document.createElement("a");
-  nameP.setAttribute("class", "font-semibold text-lg hover:text-secondary");
+  nameP.setAttribute("class", "font-medium text-lg hover:text-secondary");
   nameP.textContent = post.author.name;
   nameP.href = `/profile/?name=${post.author.name}`;
 

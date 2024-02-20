@@ -4,7 +4,7 @@ export default function profileDetails(profile) {
     const profileName = document.createElement("h1");
     profileName.classList.add(
         "text-2xl", 
-        "font-semibold", 
+        "font-medium", 
         "pb-2"
     );
     profileName.textContent = profile.name;

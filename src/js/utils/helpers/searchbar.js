@@ -43,7 +43,7 @@ function result(post) {
   const username = document.createElement("div");
   username.textContent = "by: ";
   const usernameSpan = document.createElement("span");
-  usernameSpan.setAttribute("class", "font-semibold text-secondary");
+  usernameSpan.setAttribute("class", "font-medium text-secondary");
   usernameSpan.textContent = post.author.name;
   username.appendChild(usernameSpan);
 
