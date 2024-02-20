@@ -6,12 +6,12 @@ export default function likesAndComments(post) {
   container.setAttribute("class", "flex gap-x-8 mt-6");
 
   const likes = document.createElement("div");
-  likes.setAttribute("class", "flex items-center gap-x-3");
+  likes.setAttribute("class", "flex items-center gap-x-3 cursor-pointer");
 
   const likesIcon = document.createElement("i");
   likesIcon.setAttribute(
     "class",
-    "fa-regular fa-heart text-2xl cursor-pointer"
+    "fa-regular fa-heart text-2xl"
   );
 
   const likesCount = document.createElement("span");
@@ -64,7 +64,7 @@ likes.addEventListener('mouseenter', () => {
   const comments = document.createElement("a");
   comments.setAttribute(
     "class",
-    "flex items-center gap-x-3 cursor-pointer text-primary"
+    "flex items-center gap-x-3 text-primary"
   );
   comments.href = `/post/?id=${post.id}`;
 

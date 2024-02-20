@@ -107,7 +107,11 @@ body {
   font-size: 10rem;
 }
 
-p, a {
+p, span {
+  font-weight: 300;
+}
+
+p, a, span, #text {
   font-family: 'Poppins', sans-serif;
 }
 
