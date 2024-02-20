@@ -1,3 +1,5 @@
+import followUser from "../../api/handlers/eventListeners/followUser.js";
+
 export default function follow(profile, follow = false) {
   const container = document.createElement("div");
   container.setAttribute(
@@ -47,7 +49,7 @@ export default function follow(profile, follow = false) {
     span.append(nameHeading, profileLinkHeading);
     imageDiv.append(image, span);
 
-    let ifFollowing = "Unfollow";
+    let ifFollowing;
     let bgColor = "bg-light border-0";
     if (!follow) {
       ifFollowing = "Follow";
@@ -57,6 +59,9 @@ export default function follow(profile, follow = false) {
           bgColor = "";
         }
       });
+    } else {
+      ifFollowing = "Unfollow";
+      bgColor = "";
     }
     const button = document.createElement("button");
     button.setAttribute(
@@ -66,6 +71,8 @@ export default function follow(profile, follow = false) {
     );
 
     button.textContent = ifFollowing;
+
+    followUser(button, user.name);
 
     followerDiv.append(imageDiv, button);
     container.append(followerDiv);
