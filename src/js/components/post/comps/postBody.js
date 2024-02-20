@@ -3,11 +3,14 @@ export default function postBody(post) {
   container.setAttribute("class", "pt-2");
 
   if (post.media) {
+    const imgContainer = document.createElement("a");
+    imgContainer.href = `/post/?id=${post.id}`;
     const img = document.createElement("img");
     img.src = post.media.url;
     img.alt = "Post Image";
     img.setAttribute("class", "w-full object-cover rounded-lg my-5");
-    container.appendChild(img);
+    imgContainer.appendChild(img);
+    container.appendChild(imgContainer);
   }
 
   const title = document.createElement("h2");

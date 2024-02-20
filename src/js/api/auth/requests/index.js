@@ -42,7 +42,10 @@ export default {
       headers.withAuthToken(),
       "PUT"
     );
-    data.fetch();
+    const response = await data.fetch();
+    updates.avatar(body, response, username);
+
+    modal.close();
   },
 
   //standard get request. Can be used for any get request.
