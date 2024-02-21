@@ -171,16 +171,16 @@ class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full 
 
 <!--Latest posts-->
 
-<div class="flex justify-between px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper">
+<div class="flex justify-between px-3 sm:px-8 lg:pl-36 md:py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper gap-16">
   <main class="w-full max-w-6xl">
 
-    <h1 class="text-lg sm:text-xl md:text-2xl mt-4 mb-4 md:mb-8 font-medium">Latest posts</h1>
+    <h1 class="text-lg sm:text-xl xl:text-2xl mt-4 mb-4 md:mb-8 font-medium">Latest posts</h1>
       <div class="flex gap-3 justify-between flex-col sm:flex-row">
 
         <div class="bg-white flex px-4 md:px-8 rounded-md max-w-72 sm:max-w-sm md:max-w-md gap-8 items-center">
 
-          <span class="py-4 text-sm sm:text-base lg:text-lg font-normal text-secondary border-r pr-4 md:pr-8">Sort by:</span>
-            <select name="sort-posts" id="sort-posts" class="text-secondary h-full outline-none text-sm sm:text-base lg:text-lg sm:px-0">
+          <span class="py-4 text-sm sm:text-base lg:text-base font-normal text-secondary border-r pr-4 md:pr-8">Sort by:</span>
+            <select name="sort-posts" id="sort-posts" class="text-secondary h-full outline-none text-sm sm:text-base lg:text-base sm:px-0">
               <option value="recent" class="py-2 text-base">Recent posts</option>
               <option value="oldest" class="py-2 text-base">Oldest posts</option>
               <option value="most-liked" class="py-2 text-base">Most liked</option>
@@ -188,8 +188,8 @@ class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full 
             </select>
         </div>
 
-        <button class="flex items-center justify-center text-white bg-secondary py-4 px-4 md:px-8 md:py-2 rounded hover:bg-light hover:text-primary duration-500 max-w-44 md:max-w-52 text-xs sm:text-sm md:text-base">
-          Create new post
+        <button class="hidden lg:flex items-center justify-center text-white bg-secondary lg:px-8 lg:py-2 rounded hover:bg-light hover:text-primary duration-500">
+          New post
         </button>
       </div>
   </main>
