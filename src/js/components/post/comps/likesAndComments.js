@@ -3,7 +3,10 @@ import endpoints from "../../../api/auth/data/endpoints/index.js";
 
 export default function likesAndComments(post) {
   const container = document.createElement("div");
-  container.setAttribute("class", "flex gap-x-8 mt-6");
+  container.setAttribute("class", "flex mt-6 justify-between border-t items-center");
+
+  const likesComments = document.createElement("div");
+  likesComments.setAttribute("class", "flex gap-8 mt-4");
 
   const likes = document.createElement("div");
   likes.setAttribute("class", "flex items-center gap-x-3 cursor-pointer");
@@ -25,13 +28,7 @@ export default function likesAndComments(post) {
     likesCount.textContent = newPost.data._count.reactions;
   });
 
-  const likesText = document.createTextNode(" Likes");
-
-  likes.appendChild(likesIcon);
-  likes.appendChild(likesCount);
-  likes.appendChild(likesText);
-
-// ANTALL FOLK SOM HAR LIKT
+const likesText = document.createTextNode(" Likes");
 
 likes.addEventListener('mouseenter', () => {
     const liked = document.createElement("div");
@@ -59,8 +56,6 @@ likes.addEventListener('mouseenter', () => {
     if (liked) container.removeChild(liked);
   });
 
-  // ANTALL FOLK SOM HAR LIKT
-
   const comments = document.createElement("a");
   comments.setAttribute(
     "class",
@@ -77,12 +72,19 @@ likes.addEventListener('mouseenter', () => {
 
   const commentsText = document.createTextNode(" Comments");
 
-  comments.appendChild(commentsIcon);
-  comments.appendChild(commentsCount);
-  comments.appendChild(commentsText);
+  const viewComments = document.createElement("div");
+  viewComments.setAttribute("class", "flex");
 
-  container.appendChild(likes);
-  container.appendChild(comments);
+  const viewCommentsText = document.createElement("a");
+  viewComments.setAttribute("class", "text-secondary mt-4")
+  viewCommentsText.href = `/post/?id=${post.id}`;
+  viewCommentsText.textContent = "View comments";
+
+  likes.append(likesIcon, likesCount, likesText);
+  viewComments.append(viewCommentsText)
+  comments.append(commentsIcon, commentsCount, commentsText);
+  likesComments.append(likes, comments);
+  container.append(likesComments, viewComments);
 
   return container;
 }
