@@ -89,7 +89,8 @@ body {
   color: #c7fcff;
 }
 
-.groups {
+.groups,
+.addPost {
   color: #ffe1a9;
 }
 
@@ -97,11 +98,13 @@ body {
   color: #d3ffe8;
 }
 
-.settings {
+.settings,
+.explore {
   color: #ffb05b;
 }
 
-.inbox {
+.inbox,
+#hamburgerMobile {
   color: #ff8411;
 }
 
@@ -132,4 +135,9 @@ body {
 .follow-container {
   width: 460px;
   max-height: 590px;
+}
+
+.text-xxs {
+  font-size: .6rem;
+  margin-top: .04rem;
 }

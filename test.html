@@ -65,13 +65,13 @@
 
   <!--Etter at de har trykket delete. Tanken var at når de har trykket på delete knappen, så kommer denne inn og ut med opacity 0-100-->
 
-  <section class="alert flex max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light">
+  <!-- <section class="alert flex max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light">
     <span class="h-12 w-12 rounded-full bg-white flex items-center justify-center">
       <i class="fa-solid fa-check"></i>
     </span>
     
     <h3 class="text-lg text-primary">Post successfully deleted!</h3>
-  </section>
+  </section> -->
 
 <!--EDIT PROFILE-->
 <section class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg">
@@ -113,7 +113,7 @@
 
 <!--FOLLOWERS-->
 
-<section class="bg-white mt-10 rounded-md mx-auto max-w-lg px-10 pt-8">
+<!-- <section class="bg-white mt-10 rounded-md mx-auto max-w-lg px-10 pt-8">
   <h3 class="text-xl font-medium">Followers</h3>
 
   <div class="flex justify-between py-6 border-b items-center">
@@ -125,7 +125,7 @@
       </span>
     </div>
     <button class="flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light">Follow</button>
-  </div>
+  </div> -->
 
   <!-- <div class="flex justify-between py-6 border-b items-center">
     <div class="flex gap-5 lg:gap-10">
@@ -170,8 +170,37 @@
     </div>
     <button class="flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light">Follow</button>
   </div> -->
-</section>
+<!-- </section> -->
 
+
+<div class="bg-primary w-full fixed bottom-0 pt-3 pb-2">
+  <nav class="flex px-6 justify-between items-end">
+    <a href="/feed/" class="home flex flex-col text-center h-10">
+      <i class="fa-solid fa-house text-lg"></i>
+      <span class="text-xxs">HOME</span>
+    </a>
+
+    <a href="/profile/" class="profile flex flex-col text-center h-10">
+      <i class="fa-solid fa-user text-lg"></i>
+      <span class="text-xxs">PROFILE</span>
+    </a>
+
+    <a href="/feed/index.html" class="addPost flex flex-col text-center h-10">
+      <i class="fa-regular fa-square-plus text-lg"></i>
+      <span class="text-xxs">NEW POST</span>
+    </a>
+
+    <a href="/feed/index.html" class="explore flex flex-col text-center h-10">
+      <i class="fa-solid fa-globe text-lg"></i>
+      <span class="text-xxs">EXPLORE</span>
+    </a>
+
+    <a href="/feed/index.html" class="home flex flex-col text-center h-10" id="hamburgerMobile">
+      <i class="fa-solid fa-bars text-lg"></i>
+      <span class="text-xxs">MORE</span>
+    </a>
+  </nav>
+</div>
 
   </body>
 </html>
