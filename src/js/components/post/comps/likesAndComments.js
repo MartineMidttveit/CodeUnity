@@ -13,7 +13,7 @@ export default function likesAndComments(post, fullPost = false) {
   likesComments.setAttribute("class", "flex gap-8 ");
 
   const likes = document.createElement("div");
-  likes.setAttribute("class", "flex items-center gap-x-3 cursor-pointer");
+  likes.setAttribute("class", "flex items-center gap-2 md:gap-3 cursor-pointer text-sm");
 
   const likesIcon = document.createElement("i");
   likesIcon.setAttribute("class", "fa-regular fa-heart text-2xl");
@@ -30,7 +30,7 @@ export default function likesAndComments(post, fullPost = false) {
   });
 
   const comments = document.createElement("a");
-  comments.setAttribute("class", "flex items-center gap-x-3 text-primary");
+  comments.setAttribute("class", "flex items-center gap-2 md:gap-3 text-primary text-sm");
   comments.href = `/post/?id=${post.id}`;
 
   const commentsIcon = document.createElement("i");
@@ -39,7 +39,6 @@ export default function likesAndComments(post, fullPost = false) {
   const commentsCount = document.createElement("span");
   commentsCount.setAttribute("id", "comments-count");
   commentsCount.textContent = post._count.comments;
-
   const commentsText = document.createTextNode(" Comments");
 
   if (fullPost) {
@@ -51,6 +50,7 @@ export default function likesAndComments(post, fullPost = false) {
     viewComments.setAttribute("class", "text-secondary mt-4");
     viewCommentsText.href = `/post/?id=${post.id}`;
     viewCommentsText.textContent = "View comments";
+    viewCommentsText.setAttribute("class", "text-sm font-medium md:text-base md:font-regular")
     viewComments.append(viewCommentsText);
     container.appendChild(viewComments);
   }

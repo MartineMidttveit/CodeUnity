@@ -24,12 +24,12 @@ export default function userDetails(post) {
   textContainer.setAttribute("class", "ml-2 sm:ml-4  md:ml-8");
 
   const nameP = document.createElement("a");
-  nameP.setAttribute("class", "font-medium text-lg hover:text-secondary");
+  nameP.setAttribute("class", "font-medium sm:text-lg hover:text-secondary");
   nameP.textContent = post.author.name;
   nameP.href = `/profile/?name=${post.author.name}`;
 
   const timeP = document.createElement("p");
-  timeP.setAttribute("class", "text-muted");
+  timeP.setAttribute("class", "text-muted text-sm sm:text-base");
   timeP.textContent = formatDate(post.created);
 
   textContainer.append(nameP, timeP);
