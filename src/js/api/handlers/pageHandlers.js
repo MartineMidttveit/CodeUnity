@@ -2,8 +2,11 @@ import storage from "../../utils/storage.js";
 import sidebarDetails from "../../components/sidebar/index.js";
 import searchbar from "../../utils/helpers/searchbar.js";
 import getAllPosts from "../../api/auth/requests/getAllPosts.js";
+import mobileToggleNav from "../../components/sidebar/mobileToggleNav.js";
+// import requests from "../auth/requests/index.js";
 
 const headerProfile = document.querySelector("#headerProfile");
+const logoutBtns = document.querySelectorAll(".logout-btn");
 
 export default {
   enterPage() {
@@ -36,6 +39,16 @@ export default {
     document.addEventListener("DOMContentLoaded", async (e) => {
       const posts = await getAllPosts();
       searchbar(posts.data);
+    });
+
+    mobileToggleNav();
+
+    logoutBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        storage.clear();
+        window.location.href = "/";
+        console.log("test");
+      });
     });
 
     return { profile, token };

@@ -10,9 +10,12 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="/dist/tailwind.css" />
     <link rel="stylesheet" href="/src/css/style.css" />
@@ -23,19 +26,20 @@
       href="/images/favicon.png"
     />
 
-    <script defer src="/hamburger.js"></script>
     <script type="module" src="/src/js/pages/profile/index.js"></script>
-    <script type="module" src="/src/js/api/auth/requests/logout.js"></script>
   </head>
 
   <body>
     <!--Sidebar-->
 
-    <div class="w-full md:w-24 md:h-screen z-30 bg-primary fixed md:flex md:justify-center md:items-start sidebar bottom-0">
+    <div
+      class="hidden w-full md:w-24 md:h-screen z-30 bg-primary fixed lg:flex md:justify-center md:items-start sidebar bottom-0"
+    >
       <div class="sidebar-content h-full">
         <button
           class="hamburger md:mt-12 mb-2 hidden md:inline-block"
-          id="hamburgerBtn">
+          id="hamburgerBtn"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -106,7 +110,7 @@
           </div>
 
           <button
-            class="text-gray-300 hover:text-white absolute bottom-2 left-0 text-center w-full border-t py-3 2xl:py-8 hidden md:block"
+            class="text-gray-300 hover:text-white absolute bottom-2 left-0 text-center w-full border-t py-3 2xl:py-8 hidden md:block logout-btn"
             id="logoutButton"
           >
             Log out
@@ -223,6 +227,74 @@
 
         <!--Modal body-->
         <form class="modal-body"></form>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div
+      class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden"
+    >
+      <nav class="flex mx-auto gap-8 sm:gap-20">
+        <a href="/feed/" class="home flex flex-col text-center">
+          <i class="fa-solid fa-house text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">HOME</span>
+        </a>
+
+        <a href="/profile/" class="profile flex flex-col text-center">
+          <i class="fa-solid fa-user text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">PROFILE</span>
+        </a>
+
+        <button class="addPost flex flex-col items-center cursor-pointer">
+          <i
+            class="fa-regular fa-square-plus text-lg sm:text-xl md:text-2xl"
+          ></i>
+          <span class="text-xxs">NEW POST</span>
+        </button>
+
+        <a href="/feed/index.html" class="explore flex flex-col text-center">
+          <i class="fa-solid fa-globe text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">EXPLORE</span>
+        </a>
+
+        <button
+          class="home flex flex-col items-center cursor-pointer"
+          id="hamburgerMobile"
+        >
+          <i class="fa-solid fa-bars text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">MORE</span>
+        </button>
+      </nav>
+
+      <div
+        class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 hidden flex-col items-start py-3 px-5 border"
+        id="hamburgerOptions"
+      >
+        <div class="pb-3 pt-2 flex items-center justify-between w-full">
+          <p class="font-medium text-primary">MORE OPTIONS</p>
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </div>
+
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-solid fa-gear text-secondary"></i>
+          Settings
+        </button>
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-regular fa-envelope text-secondary"></i>
+          Inbox
+        </button>
+        <span class="border-b w-full"></span>
+
+        <button
+          class="text-primary py-3 flex gap-6 items-center md:text-lg logout-btn"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
+          Log out
+        </button>
       </div>
     </div>
 

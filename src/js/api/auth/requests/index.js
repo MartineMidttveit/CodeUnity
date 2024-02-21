@@ -28,11 +28,6 @@ export default {
     data.fetch();
   },
 
-  logout: async function () {
-    storage.clear();
-    window.location.href = "/";
-  },
-
   // Change profile media request (works with either banner or avatar)
   profileMedia: async function (body) {
     const username = this.name;

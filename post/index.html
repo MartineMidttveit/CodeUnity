@@ -18,8 +18,7 @@
       sizes="16x16"
       href="/images/favicon.png"
     />
-
-    <script defer src="/hamburger.js"></script>
+    <!-- <script defer src="/hamburger.js"></script> -->
 
     <!-- <script type="module" src="/src/js/api/auth/requests/logout.js"></script> -->
     <script type="module" src="/src/js/pages/post/index.js"></script>
@@ -27,7 +26,75 @@
 
   <body class="font-gilroy min-h-screen">
     <!--Sidebar-->
-    <div
+    <aside
+      class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed md:flex flex-col items-center justify-between gap-6"
+      id="sidebar"
+    >
+      <div class="h-4/5 flex flex-col">
+        <button class="mt-12 inline-block" id="sidebar-expand-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="white"
+            class="w-8 h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+            ></path>
+          </svg>
+        </button>
+        <div class="h-full">
+          <div
+            class="sidebar-image hidden flex-col items-center justify-center"
+            id="sidebarContainer"
+          ></div>
+          <nav
+            class="flex justify-between md:flex-col py-4 px-10 md:px-0 gap-8 mt-20 items-start xl:h-full max-h-96"
+          >
+            <a
+              href="/feed/index.html"
+              class="flex justify-center items-center home navLink gap-6"
+            >
+              <i class="fa-solid fa-house text-2xl w-8"></i>
+              <span class="hidden navOption">Home</span>
+            </a>
+
+            <a
+              href="/profile/index.html"
+              class="flex justify-center items-center profile navLink gap-6"
+              id="sidebarProfileLink"
+            >
+              <i class="fa-solid fa-user text-2xl w-8"></i>
+              <span class="hidden navOption">Profile</span>
+            </a>
+
+            <a
+              href=""
+              class="flex justify-center items-center groups navLink gap-6"
+            >
+              <i class="fa-solid fa-globe text-2xl w-8"></i>
+              <span class="hidden navOption">Explore</span>
+            </a>
+
+            <a href="" class="flex items-center settings navLink gap-6">
+              <i class="fa-solid fa-gear text-2xl w-8"></i>
+              <span class="hidden navOption">Settings</span>
+            </a>
+
+            <a href="" class="flex items-center inbox navLink gap-6">
+              <i class="fa-solid fa-envelope text-2xl w-8"></i>
+              <span class="hidden navOption">Inbox</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <button class="text-white py-8" id="logoutButton">Log out</button>
+    </aside>
+    <!-- <div
       class="w-full z-30 bg-primary md:w-24 md:h-screen fixed md:flex md:justify-center md:items-start sidebar bottom-0"
     >
       <div class="sidebar-content">
@@ -105,7 +172,7 @@
           <button class="text-white" id="logoutButton">Log out</button>
         </nav>
       </div>
-    </div>
+    </div> -->
 
     <!--Header-->
 
@@ -180,7 +247,9 @@
       </div>
     </header>
 
-    <main class="max-w-7xl mx-auto md:pl-24 min-h-full pt-4 pb-20 xl:py-20 px-4">
+    <main
+      class="max-w-7xl mx-auto md:pl-24 min-h-full pt-4 pb-20 xl:py-20 px-4"
+    >
       <div
         class="bg-white rounded-xl shadow-lg mb-8 px-4 sm:px-12 pt-5 lg:pt-9 pb-12 min-h-96"
         id="post-container"
@@ -189,8 +258,11 @@
 
     <div
       id="modal-container"
-      class="hidden mx-auto modal fixed z-50 items-center justify-center lg:left-[-3rem] top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12 min-w-full">
-      <div class="max-w-3xl flex flex-col px-4 sm:px-12 py-10 rounded-lg bg-white mx-auto border modal-content w-full">
+      class="hidden mx-auto modal fixed z-50 items-center justify-center lg:left-[-3rem] top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12 min-w-full"
+    >
+      <div
+        class="max-w-3xl flex flex-col px-4 sm:px-12 py-10 rounded-lg bg-white mx-auto border modal-content w-full"
+      >
         <div class="flex justify-between items-center mb-4">
           <h2 class="text-2xl font-semibold" id="modal-header"></h2>
           <i class="fa-solid fa-xmark text-xl cursor-pointer modal-close"></i>
