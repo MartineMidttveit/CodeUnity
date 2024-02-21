@@ -27,7 +27,7 @@
   <body class="font-gilroy min-h-screen">
     <!--Sidebar-->
     <aside
-      class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed md:flex flex-col items-center justify-between gap-6"
+      class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed lg:flex flex-col items-center justify-between gap-6"
       id="sidebar"
     >
       <div class="h-4/5 flex flex-col">
@@ -47,13 +47,13 @@
             ></path>
           </svg>
         </button>
-        <div class="h-full">
+        <div class="h-full flex flex-col">
           <div
             class="sidebar-image hidden flex-col items-center justify-center"
             id="sidebarContainer"
           ></div>
           <nav
-            class="flex justify-between md:flex-col py-4 px-10 md:px-0 gap-8 mt-20 items-start xl:h-full max-h-96"
+            class="flex justify-between md:flex-col py-4 gap-5 2xl:gap-8 mt-10 2xl:mt-20 items-start 2xl:h-full max-h-96"
           >
             <a
               href="/feed/index.html"
@@ -92,87 +92,78 @@
           </nav>
         </div>
       </div>
-      <button class="text-white py-8" id="logoutButton">Log out</button>
+      <button class="text-white py-8 border-t w-full" id="logoutButton">
+        Log out
+      </button>
     </aside>
-    <!-- <div
-      class="w-full z-30 bg-primary md:w-24 md:h-screen fixed md:flex md:justify-center md:items-start sidebar bottom-0"
+
+    <!-- mobile nav -->
+    <div
+      class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden"
     >
-      <div class="sidebar-content">
-        <button
-          class="hamburger md:mt-12 hidden md:inline-block"
-          id="hamburgerBtn"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="white"
-            class="w-8 h-8"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
-            ></path>
-          </svg>
+      <nav class="flex mx-auto gap-8 sm:gap-20">
+        <a href="/feed/" class="home flex flex-col text-center">
+          <i class="fa-solid fa-house text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">HOME</span>
+        </a>
+
+        <a href="/profile/" class="profile flex flex-col text-center">
+          <i class="fa-solid fa-user text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">PROFILE</span>
+        </a>
+
+        <button class="addPost flex flex-col items-center cursor-pointer">
+          <i
+            class="fa-regular fa-square-plus text-lg sm:text-xl md:text-2xl"
+          ></i>
+          <span class="text-xxs">NEW POST</span>
         </button>
 
-        <div
-          class="sidebar-image hidden flex-col items-center justify-center"
-          id="sidebarContainer"
-        ></div>
+        <a href="/feed/index.html" class="explore flex flex-col text-center">
+          <i class="fa-solid fa-globe text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">EXPLORE</span>
+        </a>
 
-        <nav>
-          <div
-            class="flex justify-between md:flex-col py-4 px-10 md:px-0 md:space-y-16 md:mt-28"
-          >
-            <a
-              href="/feed/index.html"
-              class="flex justify-center items-center home navLink gap-x-6"
-            >
-              <i class="fa-solid fa-house text-2xl w-8"></i>
-              <span class="hidden navOption">Home</span>
-            </a>
+        <button
+          class="home flex flex-col items-center cursor-pointer"
+          id="hamburgerMobile"
+        >
+          <i class="fa-solid fa-bars text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">MORE</span>
+        </button>
+      </nav>
 
-            <a
-              href="/profile/index.html"
-              class="flex justify-center items-center profile navLink md:gap-x-6"
-              id="sidebarProfileLink"
-            >
-              <i class="fa-solid fa-user text-2xl w-8"></i>
-              <span class="hidden navOption">Profile</span>
-            </a>
+      <div
+        class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 hidden flex-col items-start py-3 px-5 border"
+        id="hamburgerOptions"
+      >
+        <div class="pb-3 pt-2 flex items-center justify-between w-full">
+          <p class="font-medium text-primary">MORE OPTIONS</p>
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </div>
 
-            <a
-              href=""
-              class="flex justify-center items-center groups navLink md:gap-x-6"
-            >
-              <i class="fa-solid fa-globe text-2xl w-8"></i>
-              <span class="hidden navOption">Explore</span>
-            </a>
+        <span class="border-b w-full"></span>
 
-            <a
-              href=""
-              class="flex justify-center items-center settings navLink gap-x-6"
-            >
-              <i class="fa-solid fa-gear text-2xl w-8"></i>
-              <span class="hidden navOption">Settings</span>
-            </a>
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-solid fa-gear text-secondary"></i>
+          Settings
+        </button>
+        <span class="border-b w-full"></span>
 
-            <a
-              href=""
-              class="flex justify-center items-center inbox navLink gap-x-6"
-            >
-              <i class="fa-solid fa-envelope text-2xl w-8"></i>
-              <span class="hidden navOption">Inbox</span>
-            </a>
-          </div>
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-regular fa-envelope text-secondary"></i>
+          Inbox
+        </button>
+        <span class="border-b w-full"></span>
 
-          <button class="text-white" id="logoutButton">Log out</button>
-        </nav>
+        <button
+          class="text-primary py-3 flex gap-6 items-center md:text-lg logout-btn"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
+          Log out
+        </button>
       </div>
-    </div> -->
+    </div>
 
     <!--Header-->
 

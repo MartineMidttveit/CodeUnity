@@ -3,6 +3,7 @@ import sidebarDetails from "../../components/sidebar/index.js";
 import searchbar from "../../utils/helpers/searchbar.js";
 import getAllPosts from "../../api/auth/requests/getAllPosts.js";
 import mobileToggleNav from "../../components/sidebar/mobileToggleNav.js";
+import expandSidebar from "../../utils/helpers/expandSidebar.js";
 // import requests from "../auth/requests/index.js";
 
 const headerProfile = document.querySelector("#headerProfile");
@@ -50,6 +51,7 @@ export default {
         console.log("test");
       });
     });
+    expandSidebar();
 
     return { profile, token };
   },
