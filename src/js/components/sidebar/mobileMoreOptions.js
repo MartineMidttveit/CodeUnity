@@ -9,6 +9,7 @@ export default function mobileMoreOptions() {
 
     const closeIcon = document.createElement("i");
     closeIcon.setAttribute("class", "fa-solid fa-xmark text-lg");
+    closeIcon.setAttribute("id", "closeMobileOptions");
 
     const borderBottom1 = document.createElement("span");
     borderBottom1.setAttribute("class", "border-b w-full");
