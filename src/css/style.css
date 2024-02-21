@@ -98,11 +98,11 @@ body {
   }
 }
 
-p, span, input {
+p, span, input, option {
   font-weight: 300;
 }
 
-p, a, span, #text, input {
+p, a, span, #text, input, option, select {
   font-family: 'Poppins', sans-serif;
 }
 
