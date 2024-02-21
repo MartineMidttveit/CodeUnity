@@ -3,15 +3,17 @@ export default function profileDetails(profile) {
     
     const profileName = document.createElement("h1");
     profileName.classList.add(
-        "text-2xl", 
+        "text-xl",
+        "md:text-2xl", 
         "font-medium", 
-        "pb-2"
+        "md:pb-1",
+        "lg:pb-2"
     );
     profileName.textContent = profile.name;
 
     const profileEmail = document.createElement("h2");
     profileEmail.classList.add(
-        "text-xl", 
+        "md:text-xl", 
         "muted"
     );
     profileEmail.textContent = profile.email;

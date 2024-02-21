@@ -5,9 +5,10 @@ export default function profileStats(profile) {
   const container = document.createElement("div");
   container.classList.add(
     "flex",
-    "gap-x-20",
-    "md:gap-x-10",
-    "lg:gap-x-20",
+    "gap-12",
+    "sm:gap-20",
+    "md:gap-10",
+    "lg:gap-20",
     "relative"
   );
 
@@ -16,12 +17,12 @@ export default function profileStats(profile) {
   posts.classList.add("text-center", "text-primary", "flex", "flex-col");
 
   const xPosts = document.createElement("strong");
-  xPosts.classList.add("text-lg");
+  xPosts.classList.add("md:text-lg");
   xPosts.textContent = profile._count.posts;
   xPosts.setAttribute("id", "posts-count");
 
   const xPostsText = document.createElement("span");
-  xPostsText.classList.add("text-lg");
+  xPostsText.classList.add("md:text-lg");
   xPostsText.textContent = "Posts";
 
   posts.append(xPosts, xPostsText);
@@ -34,11 +35,11 @@ export default function profileStats(profile) {
   );
 
   const xFollowers = document.createElement("strong");
-  xFollowers.classList.add("text-lg");
+  xFollowers.classList.add("md:text-lg");
   xFollowers.textContent = profile._count.followers;
 
   const xFollowersText = document.createElement("span");
-  xFollowersText.classList.add("text-lg");
+  xFollowersText.classList.add("md:text-lg");
   xFollowersText.textContent = "Followers";
 
   followers.append(xFollowers, xFollowersText);
@@ -48,11 +49,11 @@ export default function profileStats(profile) {
   following.classList.add("text-center", "text-primary", "flex", "flex-col");
 
   const xFollowing = document.createElement("strong");
-  xFollowing.classList.add("text-lg");
+  xFollowing.classList.add("md:text-lg");
   xFollowing.textContent = profile._count.following;
 
   const xFollowingText = document.createElement("span");
-  xFollowingText.classList.add("text-lg");
+  xFollowingText.classList.add("md:text-lg");
   xFollowingText.textContent = "Following";
 
   following.append(xFollowing, xFollowingText);

@@ -12,14 +12,17 @@ export default function profileOptions(profile, isOwner, user) {
       "flex",
       "items-center",
       "gap-3",
-      "py-4",
+      "py-3",
       "px-6",
       "lg:px-8",
+      "lg:py-4",
       "rounded",
       "border",
       "border-primary",
       "hover:bg-light",
-      "hover:border-light"
+      "hover:border-light",
+      "text-sm",
+      "sm:text-base"
     );
     editProfileBtn.textContent = "Edit profile";
 
@@ -39,12 +42,15 @@ export default function profileOptions(profile, isOwner, user) {
       "gap-3",
       "text-white",
       "bg-secondary",
-      "py-4",
+      "py-3",
       "px-6",
+      "lg:py-4",
       "lg:px-8",
       "rounded",
       "hover:bg-light",
-      "hover:text-primary"
+      "hover:text-primary",
+      "text-sm",
+      "sm:text-base"
     );
     newPost.textContent = "New post";
     newPost.addEventListener("click", createPost);
