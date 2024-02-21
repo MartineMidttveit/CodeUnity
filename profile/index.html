@@ -32,14 +32,12 @@
   <body>
     <!--Sidebar-->
 
-    <div
-      class="hidden w-full md:w-24 md:h-screen z-30 bg-primary fixed lg:flex md:justify-center md:items-start sidebar bottom-0"
+    <aside
+      class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed lg:flex flex-col items-center justify-between gap-6"
+      id="sidebar"
     >
-      <div class="sidebar-content h-full">
-        <button
-          class="hamburger md:mt-12 mb-2 hidden md:inline-block"
-          id="hamburgerBtn"
-        >
+      <div class="h-4/5 flex flex-col">
+        <button class="mt-12 inline-block" id="sidebar-expand-btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -55,69 +53,55 @@
             ></path>
           </svg>
         </button>
-
-        <div
-          class="sidebar-image hidden flex-col items-center justify-center"
-          id="sidebarContainer"
-        ></div>
-
-        <nav class="h-full flex flex-col">
+        <div class="h-full flex flex-col">
           <div
-            class="flex md:flex-col md:py-4 px-10 md:px-0 gap-y-6 2xl:gap-y-16 md:mt-6 2xl:mt-28 justify-between"
+            class="sidebar-image hidden flex-col items-center justify-center"
+            id="sidebarContainer"
+          ></div>
+          <nav
+            class="flex justify-between md:flex-col py-4 gap-5 2xl:gap-8 mt-10 2xl:mt-20 items-start 2xl:h-full max-h-96"
           >
             <a
               href="/feed/index.html"
-              class="flex justify-between items-center home gap-x-6 navLink"
+              class="flex justify-center items-center home navLink gap-6"
             >
-              <i class="fa-solid fa-house text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
+              <i class="fa-solid fa-house text-2xl w-8"></i>
               <span class="hidden navOption">Home</span>
             </a>
 
             <a
-              href="#"
-              class="flex justify-between items-center profile gap-x-6 navLink"
+              href="/profile/index.html"
+              class="flex justify-center items-center profile navLink gap-6"
               id="sidebarProfileLink"
             >
-              <i class="fa-solid fa-user text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
+              <i class="fa-solid fa-user text-2xl w-8"></i>
               <span class="hidden navOption">Profile</span>
             </a>
 
             <a
-              href="#"
-              class="flex justify-between items-center groups gap-x-6 navLink"
+              href=""
+              class="flex justify-center items-center groups navLink gap-6"
             >
-              <i class="fa-solid fa-globe text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
+              <i class="fa-solid fa-globe text-2xl w-8"></i>
               <span class="hidden navOption">Explore</span>
             </a>
 
-            <a
-              href="#"
-              class="flex justify-between items-center settings gap-x-6 navLink"
-            >
-              <i class="fa-solid fa-gear text-xl 2xl:text-2xl w-6 2xl:w-8"></i>
+            <a href="" class="flex items-center settings navLink gap-6">
+              <i class="fa-solid fa-gear text-2xl w-8"></i>
               <span class="hidden navOption">Settings</span>
             </a>
 
-            <a
-              href="#"
-              class="flex justify-center items-center inbox gap-x-6 navLink"
-            >
-              <i
-                class="fa-solid fa-envelope text-xl 2xl:text-2xl w-6 2xl:w-8"
-              ></i>
+            <a href="" class="flex items-center inbox navLink gap-6">
+              <i class="fa-solid fa-envelope text-2xl w-8"></i>
               <span class="hidden navOption">Inbox</span>
             </a>
-          </div>
-
-          <button
-            class="text-gray-300 logout-btn hover:text-white absolute bottom-2 left-0 text-center w-full border-t py-3 2xl:py-8 hidden md:block logout-btn"
-            id="logoutButton"
-          >
-            Log out
-          </button>
-        </nav>
+          </nav>
+        </div>
       </div>
-    </div>
+      <button class="text-white py-9 border-t w-full" id="logoutButton">
+        Log out
+      </button>
+    </aside>
 
     <!--Header-->
 

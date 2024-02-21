@@ -15,5 +15,5 @@ export default async function () {
   console.log(post);
   const isOwner = user.name === post.author.name;
   fullPost(post, isOwner);
-  expandSidebar();
+  // expandSidebar();
 }
