@@ -33,10 +33,13 @@ export default async function postLikedBy(post, mainContainer) {
   textLikedBy.textContent = text;
 
   let imgLeft = 12;
+  let likeNumber = 0;
 
   for (const reacts of post.reactions) {
     for (const reactor of reacts.reactors) {
-      console.log(reactor);
+      if (likeNumber === 3) break;
+
+      likeNumber++;
       const { data: personLiked } = await getRequest.fetch(
         endpoints.profiles.byName(reactor)
       );
@@ -52,6 +55,7 @@ export default async function postLikedBy(post, mainContainer) {
 
       userImg.src = personLiked.avatar.url;
       imgContainer.appendChild(userImg);
+      console.log(likeNumber);
     }
   }
 
