@@ -138,6 +138,13 @@ body {
 }
 
 .text-xxs {
-  font-size: .6rem;
-  margin-top: .04rem;
+  font-size: .65rem;
+  margin-top: .06rem;
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .text-xxs {
+    font-size: .85rem;
+    margin-top: .25rem;
+  }
 }

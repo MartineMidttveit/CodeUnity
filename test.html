@@ -173,33 +173,53 @@
 <!-- </section> -->
 
 
-<div class="bg-primary w-full fixed bottom-0 pt-3 pb-2">
-  <nav class="flex px-6 justify-between items-end">
-    <a href="/feed/" class="home flex flex-col text-center h-10">
-      <i class="fa-solid fa-house text-lg"></i>
+<div class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden">
+  <nav class="flex mx-auto gap-8 sm:gap-20">
+
+    <a href="/feed/" class="home flex flex-col text-center">
+      <i class="fa-solid fa-house text-lg sm:text-xl md:text-2xl"></i>
       <span class="text-xxs">HOME</span>
     </a>
 
-    <a href="/profile/" class="profile flex flex-col text-center h-10">
-      <i class="fa-solid fa-user text-lg"></i>
+    <a href="/profile/" class="profile flex flex-col text-center">
+      <i class="fa-solid fa-user text-lg sm:text-xl md:text-2xl"></i>
       <span class="text-xxs">PROFILE</span>
     </a>
 
-    <a href="/feed/index.html" class="addPost flex flex-col text-center h-10">
-      <i class="fa-regular fa-square-plus text-lg"></i>
+    <a href="/feed/index.html" class="addPost flex flex-col text-center">
+      <i class="fa-regular fa-square-plus text-lg sm:text-xl md:text-2xl"></i>
       <span class="text-xxs">NEW POST</span>
     </a>
 
-    <a href="/feed/index.html" class="explore flex flex-col text-center h-10">
-      <i class="fa-solid fa-globe text-lg"></i>
+    <a href="/feed/index.html" class="explore flex flex-col text-center">
+      <i class="fa-solid fa-globe text-lg sm:text-xl md:text-2xl"></i>
       <span class="text-xxs">EXPLORE</span>
     </a>
 
-    <a href="/feed/index.html" class="home flex flex-col text-center h-10" id="hamburgerMobile">
-      <i class="fa-solid fa-bars text-lg"></i>
+    <a href="/feed/index.html" class="home flex flex-col text-center" id="hamburgerMobile">
+      <i class="fa-solid fa-bars text-lg sm:text-xl md:text-2xl"></i>
       <span class="text-xxs">MORE</span>
     </a>
   </nav>
+
+  <div class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 flex flex-col items-start py-3 px-5 border" id="hamburgerOptions">
+    <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+      <i class="fa-solid fa-gear text-secondary"></i>
+      Settings
+    </button>
+    <span class="border-b w-full"></span>
+
+    <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+      <i class="fa-regular fa-envelope text-secondary"></i>
+      Inbox
+    </button>
+    <span class="border-b w-full"></span>
+
+    <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+      <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
+      Log out
+    </button>
+  </div>
 </div>
 
   </body>
