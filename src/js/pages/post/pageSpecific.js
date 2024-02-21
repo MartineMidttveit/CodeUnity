@@ -12,8 +12,7 @@ export default async function () {
   const data = pageHandlers.enterPage();
   const getRequest = await requests.get();
   const { data: post } = await getRequest.fetch(endpoints.posts.byId(id));
-  console.log(post);
+
   const isOwner = user.name === post.author.name;
   fullPost(post, isOwner);
-  // expandSidebar();
 }

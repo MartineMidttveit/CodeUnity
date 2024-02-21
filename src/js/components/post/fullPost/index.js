@@ -4,7 +4,8 @@ import postBody from "../comps/postBody.js";
 import tags from "../comps/tags.js";
 import likesAndComments from "../comps/likesAndComments.js";
 import commentInput from "../comps/commentInput.js";
-import displayComments from "../comps/comment.js"; 
+import displayComments from "../comps/comment.js";
+import postLikedBy from "./postLikedBy.js";
 
 export default function renderPost(post, isOwner) {
   const container = document.getElementById("post-container");
@@ -12,9 +13,14 @@ export default function renderPost(post, isOwner) {
 
   container.appendChild(postBody(post));
   post.tags.length > 0 && container.appendChild(tags(post.tags));
-  container.appendChild(likesAndComments(post));
+  const likesAndCommentsDiv = likesAndComments(post, true);
 
-  if (post.comments.length > 0) { 
+  // post._count.reactions > 0 && postLikedBy(post, likesAndCommentsDiv);
+  container.appendChild(likesAndCommentsDiv);
+
+  console.log(post);
+
+  if (post.comments.length > 0) {
     const commentsContainer = displayComments(post.comments);
     container.appendChild(commentsContainer);
   }
