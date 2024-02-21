@@ -36,11 +36,11 @@ export default async function postLikedBy(post, mainContainer) {
 
   for (const reacts of post.reactions) {
     for (const reactor of reacts.reactors) {
-      console.log(reactor);
+      if (imgLeft < 0) break;
       const { data: personLiked } = await getRequest.fetch(
         endpoints.profiles.byName(reactor)
       );
-      console.log(personLiked);
+
       const userImg = document.createElement("img");
       userImg.setAttribute(
         "class",
@@ -55,12 +55,8 @@ export default async function postLikedBy(post, mainContainer) {
     }
   }
 
-  console.log(text);
-
   contentContainer.append(imgContainer, textLikedBy);
   container.appendChild(contentContainer);
-  console.log(container);
-
   mainContainer.appendChild(container);
 
   return container;
