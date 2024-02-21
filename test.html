@@ -21,27 +21,27 @@
       <figure class="mt-2 mb-6"><!--Bildet de har i innlegget sitt om det går an-->
           <img id="previewImage" src="/images/china.png" alt="" class="rounded-md">
       </figure>
-  
+
       <form action="" class="w-full">
         <label for="title" class="text-lg">Title:</label>
         <input type="text" id="title" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="Their current title on the post">
-        
+
         <label for="description" class="text-lg">Description:</label>
         <input type="text" id="description" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="The current text within the description.">
-        
+
         <label for="tags" class="text-lg">Tags:</label>
-        
+
         <div class="flex gap-4 flex-col">
             <div class="w-1/2 flex h-14 rounded my-2">
                 <span class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold">#</span>
-                <input type="text" id="tags" class="w-full border outline-none pl-3" minlength="2" maxlength="12" pattern="[a-zA-Z0-9]+" title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."> 
+                <input type="text" id="tags" class="w-full border outline-none pl-3" minlength="2" maxlength="12" pattern="[a-zA-Z0-9]+" title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers.">
                 <button id="addTag" type="button" class="px-5 bg-light text-2xl">+</button>
             </div>
-    
+
             <div id="tagContainer" class="flex gap-4"></div>
             <!--Få med taggene de har lagt til med mulighet for å fjerne dem-->
         </div>
-    
+
         <div class="flex gap-4 mt-6 justify-end">
             <button type="button" class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md">Cancel</button>
             <button type="submit" class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg">Save changes</button>
@@ -69,7 +69,7 @@
     <span class="h-12 w-12 rounded-full bg-white flex items-center justify-center">
       <i class="fa-solid fa-check"></i>
     </span>
-    
+
     <h3 class="text-lg text-primary">Post successfully deleted!</h3>
   </section> -->
 
@@ -84,15 +84,15 @@
   <form class="w-full mt-10">
     <label for="profileImage" class="text-lg">Profile image</label>
     <input type="text" id="profileImage" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="Their current URL to the profile image.">
-   
+
     <div class="flex gap-x-3 mb-5 items-center">
       <input type="checkbox" id="defaultProfileImage" class="h-4 w-4">
       <label for="defaultProfileImage" class="text-gray-600">Use default profile image</label>
     </div>
-    
+
     <label for="imageCaption" class="text-lg">Profile image caption</label>
     <input type="text" id="imageCaption" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="The current image caption.">
-    
+
     <label for="bannerImage" class="text-lg">Banner image</label>
     <input type="text" id="bannerImage" class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3" placeholder="The current URL to the banner image.">
 
@@ -185,29 +185,28 @@
       <span class="text-xxs">PROFILE</span>
     </a>
 
-    <a href="/feed/index.html" class="addPost flex flex-col text-center">
+    <button class="addPost flex flex-col items-center cursor-pointer">
       <i class="fa-regular fa-square-plus text-lg sm:text-xl md:text-2xl"></i>
       <span class="text-xxs">NEW POST</span>
-    </a>
+    </button>
 
     <a href="/feed/index.html" class="explore flex flex-col text-center">
       <i class="fa-solid fa-globe text-lg sm:text-xl md:text-2xl"></i>
       <span class="text-xxs">EXPLORE</span>
     </a>
 
-    <a href="/feed/index.html" class="home flex flex-col text-center" id="hamburgerMobile">
+    <button class="home flex flex-col items-center cursor-pointer" id="hamburgerMobile">
       <i class="fa-solid fa-bars text-lg sm:text-xl md:text-2xl"></i>
       <span class="text-xxs">MORE</span>
-    </a>
+    </button>
   </nav>
 
   <div class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 flex flex-col items-start py-3 px-5 border" id="hamburgerOptions">
-    
-    <div class="pb-3 pt-2 flex items-center justify-between w-full">
+    <!-- <div class="pb-3 pt-2 flex items-center justify-between w-full">
       <p class="font-medium text-primary">MORE OPTIONS</p>
       <i class="fa-solid fa-xmark text-lg"></i>
     </div>
-    
+
     <span class="border-b w-full"></span>
 
     <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
@@ -225,7 +224,7 @@
     <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
       <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
       Log out
-    </button>
+    </button> -->
   </div>
 </div>
 
