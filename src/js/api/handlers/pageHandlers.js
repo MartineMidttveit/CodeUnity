@@ -4,7 +4,7 @@ import searchbar from "../../utils/helpers/searchbar.js";
 import getAllPosts from "../../api/auth/requests/getAllPosts.js";
 import mobileToggleNav from "../../components/sidebar/mobileToggleNav.js";
 import expandSidebar from "../../utils/helpers/expandSidebar.js";
-// import requests from "../auth/requests/index.js";
+import createNewPost from "../../components/modal/specificModals/createNewPost.js";
 
 const headerProfile = document.querySelector("#headerProfile");
 const logoutBtns = document.querySelectorAll(".logout-btn");
@@ -52,6 +52,9 @@ export default {
       });
     });
     expandSidebar();
+
+    const createPostMobile = document.querySelector("create-post-mobile");
+    // createPostMobile.addEventListener("click", createNewPost);
 
     return { profile, token };
   },

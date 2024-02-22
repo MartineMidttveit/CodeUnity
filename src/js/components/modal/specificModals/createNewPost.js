@@ -2,9 +2,12 @@ import modal from "../index.js";
 import listener from "../../../api/handlers/eventListeners/formListen.js";
 import update from "../../../api/update/index.js";
 
-export default function createNewPost(post) {
+export default function createNewPost(e, mobile = false) {
   const formId = "create-post";
   const title = "Create new post";
+
+  const listenType = mobile ? listener.createPostMobile : listener.createPost;
+  console.log(listenType);
 
   let tags = ["CodeUnity"];
 
@@ -17,6 +20,7 @@ export default function createNewPost(post) {
     text: "Image",
     name: "media",
   };
+
   const element2 = { type: "input", text: "Title", name: "title" };
   const element3 = {
     type: "textarea",
@@ -36,7 +40,7 @@ export default function createNewPost(post) {
 
     optionTwo: {
       text: "Publish",
-      listen: () => listener.createPost(updateTags),
+      listen: () => listenType(updateTags),
     },
   };
 
@@ -44,5 +48,5 @@ export default function createNewPost(post) {
 
   const data = { title, elements, formId, updateTags };
 
-  modal(data, post);
+  modal(data);
 }

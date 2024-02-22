@@ -2,11 +2,8 @@ import pageHandlers from "../../api/handlers/pageHandlers.js";
 import storage from "../../utils/storage.js";
 import profileComponents from "../../components/profile/index.js";
 import postTemp from "../../components/post/thumbnail/index.js";
-import addTag from "../../api/handlers/eventListeners/addTag.js";
-import imagePreview from "../../utils/helpers/imagePreview.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
 import requests from "../../api/auth/requests/index.js";
-import listener from "../../api/handlers/eventListeners/formListen.js";
 
 const postContainer = document.getElementById("posts-container");
 const profileOwner = document.querySelector("#profileOwner");
