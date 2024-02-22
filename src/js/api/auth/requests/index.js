@@ -59,12 +59,10 @@ export default {
       "post",
       message
     );
-
     const createdPost = await data.fetch();
-
     if (createdPost.data) {
       modal.close();
-      updates.profilePosts();
+      updates.posts();
     }
   },
 
@@ -97,7 +95,7 @@ export default {
 
     if (response.data) {
       modal.close();
-      updates.profilePosts();
+      updates.posts();
     }
   },
 

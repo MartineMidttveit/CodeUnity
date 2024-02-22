@@ -33,4 +33,7 @@ export default {
 
   // - search for posts by query
   search: (query) => `/social/posts/search?q=${query}&${postFilter}`,
+
+  // - get posts endpoint depending on what page user is currently on
+  byPage: (profile = false) => {},
 };
