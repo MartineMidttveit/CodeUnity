@@ -8,6 +8,7 @@ import storage from "../../../utils/storage.js";
 
 // Function for rendering a post and its details on the page
 export default function (post, container) {
+  if (post.author.name === "maja" || post.author.name === "chralmli097") return;
   const profile = storage.load("profile");
   const isOwner = profile.name === post.author.name ? true : false;
 
