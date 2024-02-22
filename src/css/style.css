@@ -61,6 +61,10 @@ body {
   border-radius: 12px 0px 0px 12px;
 }
 
+.overlay {
+  background: linear-gradient(180deg, rgba(36, 36, 36, 0.00) 0%, #000 100%);
+}
+
 .modal {
   background-color: rgba(0, 0, 0, 0.4);
 }
