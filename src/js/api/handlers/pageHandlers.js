@@ -37,9 +37,13 @@ export default {
 
     headerProfile.append(headerProfileImage);
 
-    document.addEventListener("DOMContentLoaded", async (e) => {
+    document.addEventListener("DOMContentLoaded", async () => {
       const posts = await getAllPosts();
       searchbar(posts.data);
+
+      document
+        .querySelector("#create-post-mobile")
+        .addEventListener("click", createNewPost);
     });
 
     mobileToggleNav();
@@ -52,9 +56,6 @@ export default {
       });
     });
     expandSidebar();
-
-    const createPostMobile = document.querySelector("create-post-mobile");
-    // createPostMobile.addEventListener("click", createNewPost);
 
     return { profile, token };
   },

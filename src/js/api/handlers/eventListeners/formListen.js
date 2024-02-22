@@ -36,11 +36,6 @@ export default {
     data.auth(tags, confirmMessage);
   },
 
-  createPostMobile: (tags, confirmMessage = "Post created") => {
-    const data = formListener("create-post-mobile", authRequest.create);
-    data.auth(tags, confirmMessage);
-  },
-
   /**   @property {function} updatePost - The form listener function for updating a post.   */
   updatePost: (tags, postId, confirmMessage = "Post updated") => {
     authRequest.id = postId;

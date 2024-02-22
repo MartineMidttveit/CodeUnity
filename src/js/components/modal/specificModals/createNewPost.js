@@ -2,12 +2,9 @@ import modal from "../index.js";
 import listener from "../../../api/handlers/eventListeners/formListen.js";
 import update from "../../../api/update/index.js";
 
-export default function createNewPost(e, mobile = false) {
+export default function createNewPost() {
   const formId = "create-post";
   const title = "Create new post";
-
-  const listenType = mobile ? listener.createPostMobile : listener.createPost;
-  console.log(listenType);
 
   let tags = ["CodeUnity"];
 
@@ -40,7 +37,7 @@ export default function createNewPost(e, mobile = false) {
 
     optionTwo: {
       text: "Publish",
-      listen: () => listenType(updateTags),
+      listen: () => listener.createPost(updateTags),
     },
   };
 
