@@ -10,22 +10,27 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" href="/dist/tailwind.css" />
-    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/dist/tailwind.css">
+    <link rel="stylesheet" href="/src/css/style.css">
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/images/favicon.png"
-    />
-    <!-- <script defer src="/hamburger.js"></script> -->
+      href="/images/favicon.png">
 
-    <!-- <script type="module" src="/src/js/api/auth/requests/logout.js"></script> -->
     <script type="module" src="/src/js/pages/post/index.js"></script>
   </head>
 
   <body class="min-h-screen">
-    <!--Sidebar-->
+  
+<!--Sidebar-->
     <aside
       class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed lg:flex flex-col items-center justify-between gap-6"
       id="sidebar"
@@ -92,7 +97,7 @@
           </nav>
         </div>
       </div>
-      <button class="text-white py-8 border-t w-full" id="logoutButton">
+      <button class="text-white py-9 border-t w-full" id="logoutButton">
         Log out
       </button>
     </aside>
