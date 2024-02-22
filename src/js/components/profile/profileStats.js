@@ -1,7 +1,7 @@
 import follow from "./follow.js";
 import toggleContainer from "../dropdown/toggleContainer.js";
 
-export default function profileStats(profile) {
+export default async function profileStats(profile, isOwner = false) {
   const container = document.createElement("div");
   container.classList.add(
     "flex",
@@ -59,8 +59,8 @@ export default function profileStats(profile) {
   following.append(xFollowing, xFollowingText);
   container.append(posts, followers, following);
 
-  const profileFollows = follow(profile);
-  const profileFollowing = follow(profile, true);
+  const profileFollows = await follow(profile, false, isOwner);
+  const profileFollowing = await follow(profile, true, isOwner);
   container.appendChild(profileFollowing);
   container.appendChild(profileFollows);
   toggleContainer(followers, profileFollows, true);

@@ -7,12 +7,12 @@ const profileContainer = document.querySelector("#profileContainer");
 
 const banner = document.querySelector("#banner");
 
-export default function (profile, isOwner, user) {
+export default async function (profile, isOwner, user) {
   banner.style.backgroundImage = `url(${profile.banner.url})`;
   banner.style.backgroundSize = "cover";
   const details = profileDetails(profile);
   const images = profileMedia(profile, isOwner);
-  const stats = profileStats(profile);
+  const stats = await profileStats(profile, isOwner);
   const options = profileOptions(profile, isOwner, user);
 
   const statsAndOptions = document.createElement("div");
