@@ -13,7 +13,10 @@ export default function likesAndComments(post, fullPost = false) {
   likesComments.setAttribute("class", "flex gap-8 ");
 
   const likes = document.createElement("div");
-  likes.setAttribute("class", "flex items-center gap-2 md:gap-3 cursor-pointer text-sm");
+  likes.setAttribute(
+    "class",
+    "flex items-center gap-2 md:gap-3 cursor-pointer text-sm"
+  );
 
   const likesIcon = document.createElement("i");
   likesIcon.setAttribute("class", "fa-regular fa-heart text-2xl");
@@ -30,7 +33,10 @@ export default function likesAndComments(post, fullPost = false) {
   });
 
   const comments = document.createElement("a");
-  comments.setAttribute("class", "flex items-center gap-2 md:gap-3 text-primary text-sm");
+  comments.setAttribute(
+    "class",
+    "flex items-center gap-2 md:gap-3 text-primary text-sm"
+  );
   comments.href = `/post/?id=${post.id}`;
 
   const commentsIcon = document.createElement("i");
@@ -47,10 +53,14 @@ export default function likesAndComments(post, fullPost = false) {
     const viewComments = document.createElement("div");
     viewComments.setAttribute("class", "flex");
     const viewCommentsText = document.createElement("a");
-    viewComments.setAttribute("class", "text-secondary mt-4");
+    viewComments.setAttribute("class", "text-secondary");
     viewCommentsText.href = `/post/?id=${post.id}`;
     viewCommentsText.textContent = "View comments";
-    viewCommentsText.setAttribute("class", "text-sm font-medium md:text-base md:font-regular")
+    viewCommentsText.setAttribute(
+      "class",
+      "text-sm font-medium md:text-base md:font-regular"
+    );
+    container.classList.add("pr-12");
     viewComments.append(viewCommentsText);
     container.appendChild(viewComments);
   }
@@ -58,7 +68,7 @@ export default function likesAndComments(post, fullPost = false) {
   likes.append(likesIcon, likesCount);
   comments.append(commentsIcon, commentsCount, commentsText);
   likesComments.append(likes, comments);
-  container.append(likesComments);
+  container.prepend(likesComments);
 
   return container;
 }
