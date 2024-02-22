@@ -108,7 +108,12 @@ export default {
       "delete",
       message
     );
-    await data.fetch();
+    const response = await data.fetch();
+
+    if (response == "deleted") {
+      modal.close();
+      updates.posts();
+    }
   },
 
   // react to post

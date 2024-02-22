@@ -58,7 +58,6 @@ export default function optionsButton(ele) {
       modal.close();
       try {
         await ele.optionTwo.request(ele.id);
-        update.profilePosts();
       } catch (error) {
         console.error(error);
       }
