@@ -23,6 +23,7 @@ export default function likesAndComments(post, fullPost = false) {
 
   const likesCount = document.createElement("span");
   likesCount.textContent = post._count.reactions;
+  likesCount.setAttribute("class", "font-normal")
 
   likesIcon.addEventListener("click", async () => {
     await request.react(post.id);
@@ -45,7 +46,9 @@ export default function likesAndComments(post, fullPost = false) {
   const commentsCount = document.createElement("span");
   commentsCount.setAttribute("id", "comments-count");
   commentsCount.textContent = post._count.comments;
+  commentsCount.setAttribute("class", "font-normal");
   const commentsText = document.createTextNode(" Comments");
+  
 
   if (fullPost) {
     postLikedBy(post, container);
@@ -58,7 +61,7 @@ export default function likesAndComments(post, fullPost = false) {
     viewCommentsText.textContent = "View comments";
     viewCommentsText.setAttribute(
       "class",
-      "text-sm font-medium md:text-base md:font-regular"
+      "text-sm font-medium md:text-base md:font-normal"
     );
     container.classList.add("pr-12");
     viewComments.append(viewCommentsText);

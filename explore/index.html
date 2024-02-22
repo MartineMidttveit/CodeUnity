@@ -181,9 +181,8 @@
         <div class="logo flex items-end gap-x-2 sm:gap-x-5">
           <strong class="text-2xl lg:text-3xl">CodeUnity</strong>
           <span class="hidden md:flex md:text-xl">|</span>
-          <span class="muted hidden md:flex md:text-xl" id="profileOwner"
-            >Explore</span
-          >
+          <span class="muted hidden md:flex xl:text-xl" id="profileOwner"
+            >Explore</span>
         </div>
 
         <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
@@ -298,12 +297,15 @@
         
         <div class="relative" id="explore-container">
             <img src="/images/explore.jpg" alt="" class="customBorder relative" id="explore-img">
-            <div class="absolute bottom-0 pb-6 pl-8 2xl:pl-10 w-full overlay gap-6 items-center hidden customBorder" id="explore-overlay">
-                <img src="/images/explore2.png" alt="" class="rounded-full h-12 w-12 2xl:h-14 2xl:w-14 object-cover">
-                <span>
-                    <p class="text-white font-medium">The perfect setup!</p>
-                    <p class="text-white text-sm">Posted by Martine</p>
-                </span>
+            <div class="absolute bottom-0 pb-6 px-8 2xl:px-10 w-full overlay customBorder items-center justify-between opacity-0 transition-opacity duration-300" id="explore-overlay">
+                <div class="flex gap-6 items-center w-full">
+                    <img src="/images/explore2.png" alt="" class="rounded-full h-12 w-12 2xl:h-14 2xl:w-14 object-cover">
+                    <span>
+                        <p class="text-white font-medium">The perfect setup!</p>
+                        <p class="text-white text-sm">Posted by Martine</p>
+                    </span>
+                </div>
+                <i class="fas fa-arrow-right-long text-white text-lg"></i>
             </div>
         </div>
         
