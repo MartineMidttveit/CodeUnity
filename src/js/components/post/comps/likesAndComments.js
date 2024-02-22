@@ -61,7 +61,7 @@ export default function likesAndComments(post, fullPost = false) {
     viewCommentsText.textContent = "View comments";
     viewCommentsText.setAttribute(
       "class",
-      "text-sm font-medium md:text-base md:font-regular"
+      "text-sm font-medium md:text-base md:font-normal"
     );
     container.classList.add("pr-12");
     viewComments.append(viewCommentsText);
