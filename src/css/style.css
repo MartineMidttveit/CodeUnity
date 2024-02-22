@@ -98,11 +98,11 @@ body {
   }
 }
 
-p, span, input, option {
+p, span, input, option, textarea {
   font-weight: 300;
 }
 
-p, a, span, #text, input, option, select {
+p, a, span, #text, input, option, select, textarea {
   font-family: 'Poppins', sans-serif;
 }
 
