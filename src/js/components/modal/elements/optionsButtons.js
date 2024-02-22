@@ -10,7 +10,8 @@ export default function optionsButton(ele) {
   buttonsContainer.classList.add(
     "flex",
     "gap-4",
-    "mt-6",
+    "mt-2",
+    "md:mt-6",
     "justify-start",
     "md:justify-end"
   );
@@ -23,8 +24,10 @@ export default function optionsButton(ele) {
     "flex",
     "items-center",
     "justify-center",
-    "px-10",
-    "py-4",
+    "px-6",
+    "py-3",
+    "md:px-10",
+    "md:py-4",
     "hover:bg-light",
     "duration-500",
     "modal-close"

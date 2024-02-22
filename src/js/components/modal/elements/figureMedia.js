@@ -7,7 +7,7 @@ export default function figureMedia(ele) {
   img.setAttribute("id", "previewImage");
   img.setAttribute("src", ele.media ? ele.media.url : "../images/image.png");
   img.setAttribute("alt", ele.media && ele.media.alt);
-  img.setAttribute("class", "rounded-md w-full mb-6");
+  img.setAttribute("class", "rounded-md w-full mb-4 md:mb-6");
   figure.appendChild(img);
 
   const inputContainer = document.createElement("div");
