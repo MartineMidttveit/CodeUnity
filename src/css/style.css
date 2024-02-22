@@ -106,6 +106,6 @@ p, a, span, #text, input, option, select, textarea {
   font-family: 'Poppins', sans-serif;
 }
 
-h1, h2, h3, h4, h5, button, strong {
+h1, h2, h3, h4, h5, button, strong, label {
   font-family: 'Montserrat', sans-serif;
 }
