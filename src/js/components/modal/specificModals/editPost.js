@@ -14,6 +14,7 @@ export default function editPost(post) {
   const elements = [];
   const element1 = {
     type: "image",
+    name: "media",
     media: post.media,
     value: post.media?.url,
     input: true,
