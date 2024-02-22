@@ -44,7 +44,7 @@ export default function displayComments(comments) {
   
       const commentText = document.createElement("p");
       commentText.textContent = comment.body;
-      commentText.setAttribute("class", "lg:text-lg mt-2 mb-4");
+      commentText.setAttribute("class", "text-sm sm:text-base lg:text-lg mt-2 mb-4");
 
       const commentDate = document.createElement("p");
       commentDate.setAttribute("class", "muted text-primary");
