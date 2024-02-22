@@ -39,7 +39,7 @@ export default function displayComments(comments) {
 
       const profileName = document.createElement("a");
       profileName.textContent = comment.author.name;
-      profileName.setAttribute("class", "font-medium text-lg hover:text-secondary");
+      profileName.setAttribute("class", "font-medium text-sm md:text-lg hover:text-secondary");
       profileName.href = `/profile/?name=${comment.author.name}`;
   
       const commentText = document.createElement("p");
