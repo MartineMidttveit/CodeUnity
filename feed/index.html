@@ -27,6 +27,7 @@
     />
 
     <script type="module" src="/src/js/pages/feed/index.js"></script>
+    <script defer src="/sortBy.js"></script>
   </head>
 
   <body>
@@ -262,23 +263,26 @@
               >Sort by:</span
             >
             <select
-              name="sort-posts"
-              id="sort-posts"
-              class="text-secondary h-full outline-none text-sm sm:text-base sm:px-0"
-            >
-              <option value="recent" class="py-2 text-base">
-                Recent posts
-              </option>
-              <option value="oldest" class="py-2 text-base">
-                Oldest posts
-              </option>
-              <option value="most-liked" class="py-2 text-base">
-                Most liked
-              </option>
-              <option value="most-commented" class="py-2 text-base">
-                Most commented
-              </option>
-            </select>
+            name="sort-posts"
+            id="sort-posts"
+            class="text-secondary h-full outline-none text-sm sm:text-base sm:px-0"
+          >
+            <option value="all" class="py-2 text-base" selected>
+              All posts
+            </option>
+            <option value="order" class="py-2 text-base">
+              Title A-Z
+            </option>
+            <option value="order" class="py-2 text-base">
+              Title Z-A
+            </option>
+            <option value="most-liked" class="py-2 text-base">
+              Most liked
+            </option>
+            <option value="most-commented" class="py-2 text-base">
+              Most commented
+            </option>
+          </select>
           </div>
 
           <button
