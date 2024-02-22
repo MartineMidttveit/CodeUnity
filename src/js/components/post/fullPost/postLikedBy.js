@@ -3,10 +3,10 @@ import endpoints from "../../../api/auth/data/endpoints/index.js";
 
 export default async function postLikedBy(post, mainContainer) {
   const container = document.createElement("div");
-  container.setAttribute("class", "bg-white hidden sm:inline-block ");
+  container.setAttribute("class", "bg-white hidden md:inline-block text-xs md:text-sm lg:text-base");
 
   const contentContainer = document.createElement("div");
-  contentContainer.setAttribute("class", "flex gap-8 items-center");
+  contentContainer.setAttribute("class", "flex md:gap-6 xl:gap-8 items-center");
 
   const numLikes = post._count.reactions;
   const getRequest = await requests.get();
@@ -44,7 +44,7 @@ export default async function postLikedBy(post, mainContainer) {
       const userImg = document.createElement("img");
       userImg.setAttribute(
         "class",
-        "rounded-full h-10 w-10 object-cover absolute  border-gray-300"
+        "rounded-full h-10 w-10 object-cover absolute border-gray-300"
       );
 
       userImg.classList.add("left-" + imgLeft);
