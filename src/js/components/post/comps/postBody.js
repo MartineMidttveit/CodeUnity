@@ -1,6 +1,6 @@
 export default function postBody(post) {
   const container = document.createElement("div");
-  container.setAttribute("class", "pt-2");
+  container.setAttribute("class", "md:pt-2");
 
   if (post.media) {
     console.log(post.media.url);
@@ -9,7 +9,7 @@ export default function postBody(post) {
     const img = document.createElement("img");
     img.src = post.media.url;
     img.alt = "Post Image";
-    img.setAttribute("class", "w-full object-cover rounded-lg my-5");
+    img.setAttribute("class", "w-full object-cover rounded-lg my-4 md:my-5");
     imgContainer.appendChild(img);
     container.appendChild(imgContainer);
   }

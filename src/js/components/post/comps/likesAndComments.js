@@ -6,7 +6,7 @@ export default function likesAndComments(post, fullPost = false) {
   const container = document.createElement("div");
   container.setAttribute(
     "class",
-    "flex mt-6 justify-between border-t items-center pt-6 gap-6"
+    "flex mt-5 md:mt-6 justify-between border-t items-center pt-3 md:pt-6 gap-6"
   );
 
   const likesComments = document.createElement("div");

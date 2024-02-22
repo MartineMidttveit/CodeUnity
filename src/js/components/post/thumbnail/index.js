@@ -14,7 +14,7 @@ export default function (post, container) {
   const postContainer = document.createElement("div");
   postContainer.setAttribute(
     "class",
-    "bg-white rounded-xl shadow-lg mb-8 px-4 sm:px-12 pt-9 pb-12"
+    "bg-white rounded-xl shadow-lg mb-6 md:mb-8 px-4 sm:px-12 pt-5 md:pt-9 pb-8 md:pb-12"
   );
 
   postContainer.append(isOwner ? detailsWithOptions(post) : userDetails(post));
