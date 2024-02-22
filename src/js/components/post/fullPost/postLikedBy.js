@@ -61,28 +61,3 @@ export default async function postLikedBy(post, mainContainer) {
 
   return container;
 }
-
-{
-  // <section class="bg-white my-40 inline-block justify-self-auto p-6">
-  //   <div class="flex gap-8 items-center">
-  //     <div class="images relative w-20 flex items-center">
-  //       <img
-  //         src="/images/profile.png"
-  //         alt=""
-  //         class="rounded-full h-10 w-10 object-cover absolute left-12 border-gray-300"
-  //       />
-  //       <img
-  //         src="/images/china.png"
-  //         alt=""
-  //         class="rounded-full h-10 w-10 object-cover absolute left-6 border-gray-300"
-  //       />
-  //       <img
-  //         src="/images/newyork2.png"
-  //         alt=""
-  //         class="rounded-full h-10 w-10 object-cover absolute border-gray-300"
-  //       />
-  //     </div>
-  //     <p class="text-sm">Kristian and 2 others liked the post</p>
-  //   </div>
-  // </section>
-}
