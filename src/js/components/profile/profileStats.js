@@ -46,7 +46,13 @@ export default async function profileStats(profile, isOwner = false) {
 
   // Following
   const following = document.createElement("div");
-  following.classList.add("text-center", "text-primary", "flex", "flex-col");
+  following.classList.add(
+    "text-center",
+    "text-primary",
+    "flex",
+    "flex-col",
+    "cursor-pointer"
+  );
 
   const xFollowing = document.createElement("strong");
   xFollowing.classList.add("md:text-lg");
