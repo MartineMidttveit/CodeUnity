@@ -24,16 +24,15 @@ export default function editBannerAvatar(ele) {
 
   const profileImageLabel = document.createElement("label");
   profileImageLabel.setAttribute("for", "profileImage");
-  profileImageLabel.setAttribute("class", "text-lg flex mt-8 ");
+  profileImageLabel.setAttribute("class", "lg:text-lg flex mt-12 md:mt-8 ");
   profileImageLabel.textContent = "Profile image";
 
   const profileImageInput = document.createElement("input");
   profileImageInput.setAttribute("type", "url");
   profileImageInput.setAttribute("id", "profileImage");
-
   profileImageInput.setAttribute(
     "class",
-    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3"
+    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3 text-sm md:text-base"
   );
   profileImageInput.name = "avatar";
 
@@ -52,7 +51,7 @@ export default function editBannerAvatar(ele) {
 
   const imageCaptionLabel = document.createElement("label");
   imageCaptionLabel.setAttribute("for", "imageCaption");
-  imageCaptionLabel.setAttribute("class", "text-lg");
+  imageCaptionLabel.setAttribute("class", "lg:text-lg");
   imageCaptionLabel.textContent = "Profile image caption";
 
   const imageCaptionInput = document.createElement("input");
@@ -60,14 +59,14 @@ export default function editBannerAvatar(ele) {
   imageCaptionInput.setAttribute("id", "imageCaption");
   imageCaptionInput.setAttribute(
     "class",
-    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3"
+    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3 text-sm md:text-base"
   );
 
   imageCaptionLabel.value = ele.avatar.alt ? ele.avatar.alt : "";
 
   const bannerImageLabel = document.createElement("label");
   bannerImageLabel.setAttribute("for", "bannerImage");
-  bannerImageLabel.setAttribute("class", "text-lg");
+  bannerImageLabel.setAttribute("class", "lg:text-lg");
   bannerImageLabel.textContent = "Banner image";
 
   const bannerImageInput = document.createElement("input");
@@ -75,7 +74,7 @@ export default function editBannerAvatar(ele) {
   bannerImageInput.setAttribute("id", "bannerImage");
   bannerImageInput.setAttribute(
     "class",
-    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3"
+    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3 text-sm md:text-base"
   );
   bannerImageInput.setAttribute(
     "placeholder",

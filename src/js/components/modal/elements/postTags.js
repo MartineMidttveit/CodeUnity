@@ -24,7 +24,7 @@ export default function postTags(ele, tags) {
   const tagInput = document.createElement("input");
   tagInput.setAttribute("type", "text");
   tagInput.setAttribute("id", "tags-input");
-  tagInput.setAttribute("class", "w-full border outline-none pl-3 h-10 2xl:h-16");
+  tagInput.setAttribute("class", "w-full border outline-none pl-3 h-10 2xl:h-16 text-sm md:text-base");
   tagInput.setAttribute("minlength", "2");
   tagInput.setAttribute("maxlength", "12");
   tagInput.setAttribute("pattern", "[a-zA-Z0-9]+");

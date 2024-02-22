@@ -8,7 +8,7 @@ export default function input(ele) {
   ele.text && (label.textContent = ele.text);
   input.setAttribute(
     "class",
-    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3"
+    "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3 text-sm md:text-base"
   );
   ele.value && (input.value = ele.value);
   ele.placeholder && input.setAttribute("placeholder", ele.placeholder);

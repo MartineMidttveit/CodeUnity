@@ -6,7 +6,7 @@ export default function createTextArea(ele) {
   const textarea = document.createElement("textarea");
   textarea.setAttribute(
     "class",
-    "w-full border rounded mb-4 mt-2 outline-none pl-3 resize-none h-24 2xl:h-28 py-4"
+    "w-full border rounded mb-4 mt-2 outline-none pl-3 resize-none h-24 2xl:h-28 py-4 text-sm md:text-base"
   );
 
   ele.name && (textarea.name = ele.name);
