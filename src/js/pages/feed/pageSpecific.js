@@ -3,8 +3,10 @@ import postThumbnail from "../../components/post/thumbnail/index.js";
 import storage from "../../utils/storage.js";
 import requests from "../../api/auth/requests/index.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
+import filterPosts from "../../utils/helpers/filterPosts.js";
 
 const postsContainer = document.getElementById("posts-container");
+const sortPosts = document.getElementById("sort-posts");
 
 export default async function pageSpecific() {
   pageHandlers.enterPage();
@@ -20,4 +22,7 @@ export default async function pageSpecific() {
   posts.forEach((post) => {
     postThumbnail(post, postsContainer);
   });
+  console.log(sortPosts);
+
+  filterPosts(posts, sortPosts, postsContainer);
 }

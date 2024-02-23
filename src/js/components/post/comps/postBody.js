@@ -3,7 +3,6 @@ export default function postBody(post) {
   container.setAttribute("class", "md:pt-2");
 
   if (post.media) {
-    console.log(post.media.url);
     const imgContainer = document.createElement("a");
     imgContainer.href = `/post/?id=${post.id}`;
     const img = document.createElement("img");
