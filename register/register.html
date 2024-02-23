@@ -30,19 +30,19 @@
   <body>
 
 <main class="flex mx-auto gap-32 poppins min-h-screen">
-      <section class="xl:flex justify-start w-full gap-10 max-h-screen">
+      <section class="xl:flex justify-start w-full gap-10 xl:max-h-screen">
 
 <!--BILDE-->
-        <div class="w-full hidden lg:block xl:w-1/2">
+        <div class="w-full lg:block xl:w-1/2">
           <img
-            class="w-full xl:h-screen object-cover h-72"
+            class="w-full xl:h-screen object-cover h-44 md:h-56 lg:h-72"
             src="/images/register2.jpg"
             alt="">
         </div>
 
 <!--BILDE-->
 
-      <div class="py-16 max-h-full overflow-auto max-w-3xl xl:max-w-2xl px-10 2xl:ml-10 mx-auto xl:mx-0 mb-12">
+      <div class="py-10 md:py-16 lg:max-h-full max-w-3xl xl:max-w-2xl 2xl:max-w-3xl px-10 2xl:ml-16 mx-auto xl:mx-0 mb-12">
         <div class="flex relative h-10 items-center">
           <span
             class="h-8 w-8 2xl:h-10 2xl:w-10 rounded-full bg-light flex items-center justify-center"
@@ -54,6 +54,7 @@
             >2</span
           >
         </div>
+
         <div class="pt-8 sm:pt-10 2xl:pt-16">
           <h1 class="text-2xl 2xl:text-4xl font-bold">Customize profile.</h1>
           <p class="mt-4 mb-2 2xl:2xl:text-lg 2xl:my-6 leading-relaxed">
@@ -61,7 +62,9 @@
               profile image, banner image, and writing a bio to introduce yourself to the community.
           </p>
         </div>
-        <form id="registration-form" class="gap-8 ">
+        <div class="lg:overflow-auto scrollContainer">
+
+        <form id="registration-form" class="gap-8 pr-10">
           <div class="flex flex-col">
       
             <figure class="my-6">
@@ -91,92 +94,15 @@
     <a href="/profile/index.html" class="2xl:text-lg flex gap-5  text-secondary items-center">Skip this step <i class="fa-solid fa-arrow-right"></i></a>
   <button class="bg-secondary p-3 mt-2 w-32 text-white rounded-md text-center">Register</button>
   </div>
+</div>
   
   </div>
-        </form>
+</form>
       </div>
         <div>
       </section>
 
-      <!-- <div class="w-1/2 bg-red-400 min-h-screen">
-        <div class="w-full">
-           <img src="/images/register2.jpg" alt="" class="object-cover w-full min-h-screen "> 
-        </div>
-    </div>  
-
-    <section class=" overflow-auto max-h-2/3 flex flex-col gap-10 w-1/2 justify-center ">
-        <div class="max-w-2xl py-20">
-            <div class="flex items-center mb-12">
-                <span class="h-10 w-10 rounded-full bg-light flex items-center justify-center">1</span>
-                <span class="border-b-2 border-secondary w-12"></span>
-                <span class="h-10 w-10 rounded-full bg-secondary flex items-center justify-center text-white">2</span>
-            </div>
-
-            <h1 class="text-4xl font-bold">Customize profile.</h1>
-            <p class="2xl:text-lg my-6">
-                Welcome to the second step of your registration process! In this step, you'll set up your profile by selecting a 
-                profile image, banner image, and writing a bio to introduce yourself to the community.
-            </p>
-
-            <form id="registrationForm" class="w-full flex flex-col gap-5" method="post">
-                <div class="flex flex-col">
-                    <label for="profileImage" class="2xl:text-lg text-gray-700">Select a profile image:</label>
-                    <figure class="my-6">
-                        <img src="/images/image.png" alt="">
-                    </figure>
-                    <input type="text" id="profileImage" name="profileImage" 
-                        class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5">
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="profileBanner" class="2xl:text-lg text-gray-700">Select a banner:</label>
-                    <figure class="my-6">
-                        <img src="/images/banner.png" alt="">
-                    </figure>
-                    <input type="text" id="profileBanner" name="profileBanner" required class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5" />
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="biography" class="2xl:text-lg text-gray-700">Biography:</label>
-                    <textarea name="biography" id="biography" class="resize-none py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5"></textarea>
-                </div>
-
-                <div class="flex-col mt-4" id="passwordRequirements" style="display: none;">
-                    <h3 class="mb-3 text-gray-600">Password must contain:</h3>
-                    <div class="flex text-gray-600 gap-4">
-                        <span id="passwordLengthIcon"
-                            class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center">
-                            <i class="fa-solid fa-check text-white text-xs"></i>
-                        </span>
-                        Minimum 8 characters.
-                    </div>
-
-                    <div class="flex text-gray-600 gap-4 mt-1.5">
-                        <span id="passwordFormatIcon"
-                            class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center">
-                            <i class="fa-solid fa-check text-white text-xs"></i>
-                        </span>
-                        Lower- and uppercase letters, and numbers.
-                    </div>
-
-                    <div class="flex text-gray-600 gap-4 mt-1.5">
-                        <span id="passwordSymbol"
-                            class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center">
-                            <i class="fa-solid fa-check text-white text-xs"></i>
-                        </span>
-                        At least 1 special character.
-                    </div>
-                </div>
-
-                <div class="hidden" id="incorrectPassword">
-                    <p class="font-bold text-gray-700">The passwords do not match.</p>
-                </div>
-            </form>
-
-            <a href="/profile/index.html" class="2xl:text-lg flex gap-5 mt-10 text-secondary items-center">Skip this step <i class="fa-solid fa-arrow-right"></i></a></div>
-        </div> -->
-
-      <!-- </section> -->
+      
     </main>
 
     <!--Footer-->

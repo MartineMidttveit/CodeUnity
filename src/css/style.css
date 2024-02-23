@@ -114,3 +114,7 @@ p, a, span, #text, input, option, select, textarea {
 h1, h2, h3, h4, h5, button, strong, label {
   font-family: 'Montserrat', sans-serif;
 }
+
+.scrollContainer {
+  height: 75%;
+}
