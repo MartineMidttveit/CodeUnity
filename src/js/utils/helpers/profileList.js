@@ -50,15 +50,17 @@ function singleProfile(profile) {
   h4.setAttribute("class", "font-medium");
   h4.textContent = profile.name;
 
-  const h5 = document.createElement("h5");
-  h5.setAttribute(
+  const anchorTag = document.createElement("a");
+  anchorTag.setAttribute(
     "class",
     "muted text-sm 2xl:text-base font-medium text-secondary"
   );
-  h5.textContent = "View profile";
+  anchorTag.textContent = "View profile";
+
+  anchorTag.href = `/profile/?name=${profile.name}`;
 
   span.appendChild(h4);
-  span.appendChild(h5);
+  span.appendChild(anchorTag);
 
   innerDiv.appendChild(img);
   innerDiv.appendChild(span);
