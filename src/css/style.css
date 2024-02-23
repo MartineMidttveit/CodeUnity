@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  width: 5px;
-  right: 5px;
-  position: absolute;
+  width: 6px; 
+  right: 6px; 
+  position: absolute; 
+  background: #f0f0f0; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fef0ff;
-  border-radius: 10px;
+  background: #d4d4d4; 
+  border-radius: 10px; 
 }
 
 .muted {
