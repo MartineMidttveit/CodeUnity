@@ -15,7 +15,14 @@
       rel="stylesheet"
     />
 
+    <script
+    src="https://kit.fontawesome.com/b515e79b0f.js"
+    crossorigin="anonymous"
+  ></script>
+
+
     <script type="module" src="/src/js/pages/login/index.js"></script>
+    <script defer src="/seePassword.js"></script>
 
   </head>
   <body class="bg-background">
@@ -61,21 +68,13 @@
           required
         />
       </div>
-      <div class="flex flex-col mt-4">
+
+      <div class="flex flex-col mt-4 relative"> 
         <label for="" class="md:text-lg">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          class="rounded-sm py-1 px-3 border md:text-lg mt-1.5 "
-          pattern=".{8,}"
-          minlength="8"
-          autocomplete="current-password"
-          required
-          title="Password must be at least 8 characters long."
-        />
-      </div class="flex justify-between">
-  
+        <input type="password" id="password" name="password" class="rounded-sm py-1 px-3 border md:text-lg mt-1.5" autocomplete="current-password" minlength="8" required>
+        <i id="toggleButton" class="absolute bottom-2 right-5 cursor-pointer fa-regular fa-eye text-primary text-lg"></i>
+      </div>
+
       <div class="flex justify-between items-center">
         <div class="flex gap-3 items-center justify-center">
           <input
