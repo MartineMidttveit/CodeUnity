@@ -4,9 +4,11 @@ import storage from "../../utils/storage.js";
 import requests from "../../api/auth/requests/index.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
 import filterPosts from "../../utils/helpers/filterPosts.js";
+import profileList from "../../utils/helpers/profileList.js";
 
 const postsContainer = document.getElementById("posts-container");
 const sortPosts = document.getElementById("sort-posts");
+const connectProfiles = document.getElementById("connect-profiles");
 
 export default async function pageSpecific() {
   pageHandlers.enterPage();
@@ -17,7 +19,13 @@ export default async function pageSpecific() {
 
   const { data: posts } = await getRequest.fetch(endpoints.posts.all());
 
-  console.log(posts);
+  const { data: profiles } = await getRequest.fetch(endpoints.profiles.all());
+
+  const userProfile = profiles.find((profile) => profile.name === user.name);
+  console.log(userProfile);
+  console.log(profiles);
+
+  // console.log(posts);
 
   posts.forEach((post) => {
     postThumbnail(post, postsContainer);
@@ -25,4 +33,5 @@ export default async function pageSpecific() {
   console.log(sortPosts);
 
   filterPosts(posts, sortPosts, postsContainer);
+  profileList(profiles, user, connectProfiles, 5);
 }
