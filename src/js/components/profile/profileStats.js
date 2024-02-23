@@ -36,10 +36,12 @@ export default async function profileStats(profile, isOwner = false) {
 
   const xFollowers = document.createElement("strong");
   xFollowers.classList.add("md:text-lg");
+  xFollowers.setAttribute("id", "followers-count");
   xFollowers.textContent = profile._count.followers;
 
   const xFollowersText = document.createElement("span");
   xFollowersText.classList.add("md:text-lg");
+
   xFollowersText.textContent = "Followers";
 
   followers.append(xFollowers, xFollowersText);
@@ -57,6 +59,7 @@ export default async function profileStats(profile, isOwner = false) {
   const xFollowing = document.createElement("strong");
   xFollowing.classList.add("md:text-lg");
   xFollowing.textContent = profile._count.following;
+  xFollowing.setAttribute("id", "following-count");
 
   const xFollowingText = document.createElement("span");
   xFollowingText.classList.add("md:text-lg");

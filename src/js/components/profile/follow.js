@@ -88,7 +88,7 @@ export default async function follow(profile, follow = false, isOwner = false) {
       );
 
       button.textContent = ifFollowing;
-      followUser(button, follow.name);
+      followUser(button, follow.name, isOwner);
       followerDiv.append(button);
     }
 
