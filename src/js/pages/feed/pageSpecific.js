@@ -22,10 +22,6 @@ export default async function pageSpecific() {
   const { data: profiles } = await getRequest.fetch(endpoints.profiles.all());
 
   const userProfile = profiles.find((profile) => profile.name === user.name);
-  console.log(userProfile);
-  console.log(profiles);
-
-  // console.log(posts);
 
   posts.forEach((post) => {
     postThumbnail(post, postsContainer);
