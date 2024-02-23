@@ -29,8 +29,68 @@
   </head>
   <body>
     <main class="flex mx-auto gap-32 poppins min-h-screen">
-      <section class="flex">
-        <div><img src="/images/register2.jpg" alt="" /></div>
+      <section class="flex justify-start w-full gap-10 max-h-screen">
+        <div class="w-1/2">
+          <img
+            class=" h-screen object-cover"
+            src="/images/register2.jpg"
+            alt=""
+          />
+        </div>
+        <div class="py-16 max-h-full overflow-auto max-w-2xl mx-auto px-10 ">
+        <div class="flex relative h-10">
+          <span
+            class="h-10 w-10 rounded-full bg-light flex items-center justify-center"
+            >1</span
+          >
+          <span class=" border-2 border-secondary w-12 place-self-center"></span>
+          <span
+            class="h-10 w-10 rounded-full bg-secondary flex items-center justify-center text-white"
+            >2</span
+          >
+        </div>
+        <div class="pt-20">
+          <h1 class="text-4xl font-bold">Customize profile.</h1>
+          <p class="text-lg my-6">
+              Welcome to the second step of your registration process! In this step, you'll set up your profile by selecting a 
+              profile image, banner image, and writing a bio to introduce yourself to the community.
+          </p>
+        </div>
+        <form id="registration-form" class="gap-8 ">
+          <div class="flex flex-col">
+      
+            <figure class="my-6">
+                <img src="/images/image.png" alt="">
+            </figure>
+            <label for="profileImage" class="text-lg text-gray-700">Select a profile image:</label>
+            <input type="text" id="profileImage" name="profileImage" 
+                class="py-1 px-3 rounded-sm border text-lg mt-1.5">
+        </div>
+
+        <div class="flex flex-col my-6">
+ 
+          <figure class="my-6">
+              <img src="/images/banner.png" alt="">
+              
+          </figure>
+          <label for="profileBanner" class="text-lg text-gray-700">Select a banner:</label>
+          <input type="text" id="profileBanner" name="profileBanner" required class="py-1 px-3 rounded-sm border text-lg mt-1.5" />
+      </div>
+
+      <div class="flex flex-col my-6">
+        <label for="biography" class="text-lg text-gray-700">Biography:</label>
+        <textarea name="biography" id="biography" class="resize-none py-1 px-3 rounded-sm border text-lg mt-1.5"></textarea>
+    </div>
+
+    <div class="flex justify-between mt-10">
+    <a href="/profile/index.html" class="text-lg flex gap-5  text-secondary items-center">Skip this step <i class="fa-solid fa-arrow-right"></i></a>
+  <button class="bg-secondary p-3 mt-2 w-32 text-white rounded-md text-center">Register</button>
+  </div>
+  
+  </div>
+        </form>
+      </div>
+        <div>
       </section>
 
       <!-- <div class="w-1/2 bg-red-400 min-h-screen">
