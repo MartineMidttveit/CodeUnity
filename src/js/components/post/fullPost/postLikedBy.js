@@ -3,7 +3,10 @@ import endpoints from "../../../api/auth/data/endpoints/index.js";
 
 export default async function postLikedBy(post, mainContainer) {
   const container = document.createElement("div");
-  container.setAttribute("class", "bg-white hidden md:inline-block text-xs md:text-sm lg:text-base");
+  container.setAttribute(
+    "class",
+    "bg-white hidden md:inline-block text-xs md:text-sm lg:text-base"
+  );
 
   const contentContainer = document.createElement("div");
   contentContainer.setAttribute("class", "flex md:gap-6 xl:gap-8 items-center");
@@ -32,11 +35,11 @@ export default async function postLikedBy(post, mainContainer) {
   const textLikedBy = document.createElement("p");
   textLikedBy.textContent = text;
 
-  let imgLeft = 12;
+  let imgLeft = 0;
 
   for (const reacts of post.reactions) {
     for (const reactor of reacts.reactors) {
-      if (imgLeft < 0) break;
+      if (imgLeft > 12) break;
       const { data: personLiked } = await getRequest.fetch(
         endpoints.profiles.byName(reactor)
       );
@@ -44,14 +47,14 @@ export default async function postLikedBy(post, mainContainer) {
       const userImg = document.createElement("img");
       userImg.setAttribute(
         "class",
-        "rounded-full h-10 w-10 object-cover absolute border-gray-300"
+        "rounded-full h-10 w-10 object-cover absolute border-gray-300 border border-gray-100"
       );
 
       userImg.classList.add("left-" + imgLeft);
-      imgLeft -= 6;
+      imgLeft += 6;
 
       userImg.src = personLiked.avatar.url;
-      imgContainer.appendChild(userImg);
+      imgContainer.prepend(userImg);
     }
   }
 
