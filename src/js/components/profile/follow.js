@@ -7,7 +7,7 @@ export default async function follow(profile, follow = false, isOwner = false) {
   const container = document.createElement("div");
   container.setAttribute(
     "class",
-    "hidden bg-white mt-10 rounded-md mx-auto px-10 py-8 absolute top-10  shadow-md z-30 text-left follow-container cursor-default  overflow-y-auto"
+    "hidden bg-white mt-10 rounded-md mx-auto pl-2 pr-6 sm:px-6 py-8 absolute top-10  shadow-md z-30 text-left follow-container cursor-default overflow-y-auto  max-w-96 sm:max-w-lg "
   );
 
   const heading = document.createElement("h3");
@@ -39,11 +39,11 @@ export default async function follow(profile, follow = false, isOwner = false) {
     const followerDiv = document.createElement("div");
     followerDiv.setAttribute(
       "class",
-      "flex justify-between py-6  items-center " + border
+      "flex justify-between py-6  items-center  " + border
     );
 
     const imageDiv = document.createElement("div");
-    imageDiv.setAttribute("class", "flex gap-5 lg:gap-10");
+    imageDiv.setAttribute("class", "flex gap-3 sm:gap-5 lg:gap-10");
 
     const image = document.createElement("img");
     image.setAttribute("src", follow.avatar.url);
@@ -83,7 +83,7 @@ export default async function follow(profile, follow = false, isOwner = false) {
       const button = document.createElement("button");
       button.setAttribute(
         "class",
-        "flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light " +
+        "flex items-center p-2  md:px-6 rounded border border-primary hover:bg-light hover:border-light " +
           bgColor
       );
 
