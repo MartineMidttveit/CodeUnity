@@ -5,17 +5,25 @@ const passwordLength = document.querySelector("#passwordLengthIcon");
 const passwordFormat = document.querySelector("#passwordFormatIcon");
 const incorrectPassword = document.querySelector("#incorrectPassword");
 const passwordSymbol = document.querySelector("#passwordSymbol");
-const emailAddress = document.querySelector("#email");
+const emailAddress = document.getElementById("email");
+const validEmail = document.getElementById("validEmail");
+
+validEmail.classList.add("hidden");
 
 emailAddress.addEventListener("input", function () {
   const email = emailAddress.value;
-
   const emailPattern = /^[a-zA-Z0-9._-]+@(stud\.)?noroff\.no$/;
 
   if (emailPattern.test(email)) {
-    console.log("Valid email address");
+    validEmail.classList.add("hidden");
   } else {
-    console.log("Invalid email address");
+    validEmail.classList.remove("hidden");
+  }
+
+  if (email === "") {
+    setTimeout(function () {
+      validEmail.classList.add("hidden");
+    }, 500);
   }
 });
 
