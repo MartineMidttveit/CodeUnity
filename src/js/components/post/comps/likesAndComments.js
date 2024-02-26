@@ -23,7 +23,7 @@ export default function likesAndComments(post, fullPost = false) {
 
   const likesCount = document.createElement("span");
   likesCount.textContent = post._count.reactions;
-  likesCount.setAttribute("class", "font-normal")
+  likesCount.setAttribute("class", "font-normal");
 
   likesIcon.addEventListener("click", async () => {
     await request.react(post.id);
@@ -48,7 +48,6 @@ export default function likesAndComments(post, fullPost = false) {
   commentsCount.textContent = post._count.comments;
   commentsCount.setAttribute("class", "font-normal");
   const commentsText = document.createTextNode(" Comments");
-  
 
   if (fullPost) {
     postLikedBy(post, container);
@@ -56,7 +55,7 @@ export default function likesAndComments(post, fullPost = false) {
     const viewComments = document.createElement("div");
     viewComments.setAttribute("class", "flex");
     const viewCommentsText = document.createElement("a");
-    viewComments.setAttribute("class", "text-secondary");
+    viewComments.setAttribute("class", "text-secondary hidden sm:inline-block");
     viewCommentsText.href = `/post/?id=${post.id}`;
     viewCommentsText.textContent = "View comments";
     viewCommentsText.setAttribute(

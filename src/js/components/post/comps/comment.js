@@ -11,7 +11,9 @@ export default function displayComments(comments) {
       const container = document.createElement("div");
       container.setAttribute(
         "class",
-        index % 2 === 0 ? "my-6 py-3 px-4 lg:py-5 lg:px-8 bg-gray-100 w-full" : "py-3 px-4 lg:py-5 lg:px-8 w-full"
+        index % 2 === 0
+          ? "my-6 py-3 px-4 lg:py-5 lg:px-8 bg-gray-100 w-full"
+          : "py-3 px-4 lg:py-5 lg:px-8 w-full"
       );
 
       const commentAuthor = document.createElement("div");
@@ -37,14 +39,23 @@ export default function displayComments(comments) {
       const commentTextBox = document.createElement("div");
       commentTextBox.setAttribute("class", "w-3/4");
 
+      const nameAndDelete = document.createElement("div");
+      nameAndDelete.setAttribute("class", "flex justify-between");
+
       const profileName = document.createElement("a");
       profileName.textContent = comment.author.name;
-      profileName.setAttribute("class", "font-medium text-sm md:text-lg hover:text-secondary");
+      profileName.setAttribute(
+        "class",
+        "font-medium text-sm md:text-lg hover:text-secondary"
+      );
       profileName.href = `/profile/?name=${comment.author.name}`;
-  
+
       const commentText = document.createElement("p");
       commentText.textContent = comment.body;
-      commentText.setAttribute("class", "text-sm sm:text-base lg:text-lg mt-2 mb-4");
+      commentText.setAttribute(
+        "class",
+        "text-sm sm:text-base lg:text-lg mt-2 mb-4"
+      );
 
       const commentDate = document.createElement("p");
       commentDate.setAttribute("class", "muted text-primary");
