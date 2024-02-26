@@ -21,7 +21,11 @@ export default function renderPost(post, isOwner) {
   console.log(post);
 
   if (post.comments.length > 0) {
-    const commentsContainer = displayComments(post.comments);
+    const commentsContainer = displayComments(
+      post.comments,
+      isOwner,
+      post.author.name
+    );
     container.appendChild(commentsContainer);
   }
 

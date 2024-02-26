@@ -7,7 +7,7 @@ export default async function follow(profile, follow = false, isOwner = false) {
   const container = document.createElement("div");
   container.setAttribute(
     "class",
-    "hidden bg-white mt-10 rounded-md mx-auto pl-2 pr-6 sm:px-6 py-8 absolute top-10  shadow-md z-30 text-left follow-container cursor-default overflow-y-auto  max-w-96 sm:max-w-lg "
+    "hidden bg-white mt-10 rounded-md mx-auto pl-2 pr-6 sm:px-6 py-8 absolute top-10  shadow-md z-30 text-left follow-container cursor-default overflow-y-auto  max-w-96 sm:w-full sm:max-w-md "
   );
 
   const heading = document.createElement("h3");

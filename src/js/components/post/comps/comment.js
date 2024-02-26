@@ -1,11 +1,11 @@
-import userDetails from "../comps/userDetails.js";
-import detailsWithOptions from "./detailsWithOptions.js";
 import formatDate from "../../../utils/helpers/formatDate.js";
+import storage from "../../../utils/storage.js";
 
-export default function displayComments(comments) {
+export default function displayComments(comments, isOwner = false) {
   const commentsContainer = document.createElement("div");
   commentsContainer.setAttribute("class", "displayComments");
 
+  const user = storage.load("profile");
   if (comments && comments.length > 0) {
     comments.forEach((comment, index) => {
       const container = document.createElement("div");
@@ -50,6 +50,21 @@ export default function displayComments(comments) {
       );
       profileName.href = `/profile/?name=${comment.author.name}`;
 
+      const usersComment = comment.author.name === user.name;
+      console.log(usersComment);
+
+      if (isOwner || usersComment) {
+        const deleteComment = document.createElement("button");
+        deleteComment.textContent = "Delete";
+        deleteComment.setAttribute("class", "text-primary text-sm");
+        deleteComment.addEventListener("click", async () => {
+          await request.deleteComment(comment.id);
+          container.remove();
+        });
+        nameAndDelete.append(profileName, deleteComment);
+        commentTextBox.append(nameAndDelete);
+      } else commentTextBox.append(profileName);
+
       const commentText = document.createElement("p");
       commentText.textContent = comment.body;
       commentText.setAttribute(
@@ -61,7 +76,7 @@ export default function displayComments(comments) {
       commentDate.setAttribute("class", "muted text-primary");
       commentDate.textContent = formatDate(comment.created);
 
-      commentTextBox.append(profileName, commentText, commentDate);
+      commentTextBox.append(commentText, commentDate);
       commentAuthor.append(profileDetails, commentTextBox);
       container.append(commentAuthor);
       commentsContainer.append(container);
