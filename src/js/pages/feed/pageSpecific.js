@@ -23,11 +23,16 @@ export default async function pageSpecific() {
 
   const userProfile = profiles.find((profile) => profile.name === user.name);
 
+  console.log(profiles);
   posts.forEach((post) => {
     postThumbnail(post, postsContainer);
   });
   console.log(sortPosts);
 
   filterPosts(posts, sortPosts, postsContainer);
-  profileList(profiles, user, connectProfiles, 5);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    // const allProfiles = profiles.filter((profile) => profile.name !== user.name);
+    profileList(profiles, user, connectProfiles, 5);
+  });
 }
