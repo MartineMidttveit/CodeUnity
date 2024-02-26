@@ -119,6 +119,10 @@ h1, h2, h3, h4, h5, button, strong, label {
   height: 75%;
 }
 
+.scrollContainer2 {
+  height: 50%;
+}
+
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .scrollContainer {
     height: 65%;
